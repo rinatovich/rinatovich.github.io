@@ -34,6 +34,8 @@ Colors:
 /*     General Styles     */
 /**************************/
 
+
+
 @font-face {
 	font-family: Audiowide;
 	src: url('./Audiowide-Regular.ttf');
@@ -611,7 +613,8 @@ input[type='checkbox'] {
 }
 
 .basic-2 .fas,
-.basic-2 .far {
+.basic-2 .far,
+.basic-2 .fa{
 	margin-bottom: 1.75rem;
 	color: #0b36a8;
 	font-size: 3.5rem;
