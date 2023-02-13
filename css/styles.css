@@ -47,6 +47,10 @@ html {
 	height: 100%;
 }
 
+#services .col-lg-4 .text-box{
+	background-color: rgb(253, 253, 253);
+}
+
 body, p {
 	color: #4d5055; 
 	font: 400 1rem/1.625rem "Open Sans", sans-serif;
@@ -393,15 +397,16 @@ input[type='checkbox'] {
 }
 
 .navbar .logo-image {
-	font-family: Audiowide;
-	color: #7CF745;
+	font-family: Calibri;
+	color: #3eff2d;
 	text-decoration: none;
+	font-weight: 600;
 }
 
 .navbar .logo-text {
 	color: #ffffff;
 	font-weight: 700;
-	font-size: 1.875rem;
+	font-size: 1.975rem;
 	line-height: 1rem;
 	text-decoration: none;
 }
@@ -444,7 +449,7 @@ input[type='checkbox'] {
 .navbar .nav-item.dropdown.show .nav-link,
 .navbar .nav-item .nav-link:hover,
 .navbar .nav-item .nav-link.active {
-	color: #9c9ead;
+	color: #535353;
 }
 
 /* Dropdown Menu */
@@ -530,11 +535,10 @@ input[type='checkbox'] {
 .header {
 	padding-top: 7rem;
 	padding-bottom: 5.5rem;
-	background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url('../images/notebook-natural-laptop-macbook.jpg') center center no-repeat;
+	background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url('../images/back.jpg') center center no-repeat;
 	background-size: cover;
 	text-align: center;
 }
-
 .header .h1-large {
 	margin-bottom: 1.75rem;
 	color: #ffffff;
@@ -566,8 +570,8 @@ input[type='checkbox'] {
 /*     About     */
 /*****************/
 .basic-1 {
-	padding-top: 7.75rem;
-	padding-bottom: 5.25rem;
+	padding-top: 2.75rem;
+	padding-bottom: 1.25rem;
 }
 
 .basic-1 .text-container {
@@ -592,8 +596,8 @@ input[type='checkbox'] {
 /*     Services     */
 /********************/
 .basic-2 {
-	padding-top: 7.75rem;
-	padding-bottom: 5.25rem;
+	padding-top: 2.75rem;
+	padding-bottom: 1.25rem;
 }
 
 .basic-2 .h2-heading {
@@ -630,7 +634,7 @@ input[type='checkbox'] {
 /*******************/
 .split .area-1 {
 	height: 430px;
-	background: linear-gradient(to bottom right, rgba(25, 26, 29, 0.5), rgba(25, 26, 29, 0.5)), url('../images/details-background.png') center center no-repeat;
+	background: linear-gradient(to bottom right, rgba(25, 26, 29, 0.5), rgba(25, 26, 29, 0.5)), url('../images/first\ sec.jpg') center center no-repeat;
 	background-size: cover;
 }
 
@@ -659,7 +663,7 @@ input[type='checkbox'] {
 /*     Projects     */
 /********************/
 .basic-3 {
-	padding-top: 7.75rem;
+	padding-top: 2.75rem;
 	padding-bottom: 1rem;
 }
 
@@ -789,7 +793,7 @@ input[type='checkbox'] {
 /*     Questions     */
 /*********************/
 .accordion-1 {
-	padding-top: 7.75rem;
+	padding-top: 2.75rem;
 	padding-bottom: 6.75rem;
 }
 
@@ -865,7 +869,7 @@ input[type='checkbox'] {
 /*     Footer     */
 /******************/
 .footer {
-	padding-top: 6.25rem;
+	padding-top: 2.75rem;
 	padding-bottom: 2rem;
 	background-color: #24262a;
 	text-align: center;
@@ -1232,7 +1236,7 @@ a:hover.back-to-top {
 	/* Header */
 	.header {
 		padding-top: 18.25rem;
-		padding-bottom: 17.25rem;
+		padding-bottom: 16.25rem;
 	}
 	/* end of header */
 
