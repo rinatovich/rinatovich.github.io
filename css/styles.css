@@ -63,7 +63,10 @@ h1 {
 	line-height: 3.25rem;
 	font-family: "Poppins"
 }
-
+.ru h1,.time, h2,h3,h4,h5,h6{
+	font-family: Calibri !important;
+} 
+ 
 h2 {
 	color: #24262a;
 	font-weight: 700;
@@ -398,11 +401,14 @@ input[type='checkbox'] {
 
 .navbar .logo-image {
 	font-family: Calibri;
-	color: #3eff2d;
+	color: #1aff00;
 	text-decoration: none;
 	font-weight: 600;
 }
-
+.icon_arrow{
+	height: 1.4rem;
+	margin-right: -2px;
+}
 .navbar .logo-text {
 	color: #ffffff;
 	font-weight: 700;
@@ -639,8 +645,17 @@ input[type='checkbox'] {
 }
 
 .split .area-2 {
-	padding-top: 7.75rem;
+	padding-top: 2.75rem;
 	padding-bottom: 7.75rem;
+}
+.lang-btn{
+	display: flex;
+}
+.lang-btn .active_lang{
+	color:#1aff00 !important;
+}
+.lang-btn .active_lang:hover{
+	color: #1aff00 !important;
 }
 
 .split p {
