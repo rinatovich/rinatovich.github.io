@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Резюме · IT Project Manager & Full‑Stack Developer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --color-bg: #F8FAFC;
+            --color-surface: #FFFFFF;
+            --color-text: #1A1C1E;
+            --color-text-muted: #64748B;
+            --color-accent: #3B82F6;
+            --color-navy: #0A2540;
+            --glass-bg: rgba(255, 255, 255, 0.75);
+            --border-color: rgba(0, 0, 0, 0.08);
+            --status-success: #22C55E;
+            --console-bg: rgba(255, 255, 255, 0.98);
+            --console-text: #1E293B;
+            --console-border: var(--color-accent);
+            --font-main: 'Inter', system-ui, -apple-system, sans-serif;
+            --radius-sm: 8px;
+            --radius-md: 16px;
+            --radius-lg: 24px;
+            --transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+            --shadow-sm: 0 8px 20px rgba(0, 0, 0, 0.02), 0 2px 6px rgba(0, 0, 0, 0.03);
+            --shadow-md: 0 20px 35px -12px rgba(0, 0, 0, 0.08);
+        }
+
+        body {
+            background: var(--color-bg);
+            color: var(--color-text);
+            font-family: var(--font-main);
+            font-weight: 400;
+            line-height: 1.5;
+            padding: 40px 24px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .resume-container {
+            max-width: 1050px;
+            margin: 0 auto;
+            background: var(--color-surface);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            overflow: hidden;
+        }
+
+        .resume-paper {
+            padding: 48px 52px;
+        }
+
+        /* Фото + шапка в flex-компоновке */
+        .header-with-photo {
+            display: flex;
+            gap: 28px;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+            padding-bottom: 1.2rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .photo-zone {
+            flex-shrink: 0;
+        }
+
+        .avatar-uploader {
+            width: 200px;
+            height: 200px;
+            border-radius: 5%;
+            background: #F1F5F9;
+            border: 2px var(--color-accent);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            overflow: hidden;
+            position: relative;
+            transition: 0.2s;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .avatar-uploader:hover {
+            border-color: #2563eb;
+            background: #EFF6FF;
+        }
+
+        .avatar-preview {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .upload-placeholder {
+            text-align: center;
+            padding: 0.6rem;
+        }
+
+        .upload-placeholder span {
+            font-size: 2rem;
+            font-weight: 300;
+            color: var(--color-accent);
+        }
+
+        .upload-placeholder p {
+            font-size: 0.65rem;
+            color: var(--color-text-muted);
+            margin-top: 6px;
+            font-weight: 500;
+        }
+
+        .remove-photo-btn {
+            position: absolute;
+            bottom: 4px;
+            right: 4px;
+            background: rgba(0,0,0,0.6);
+            backdrop-filter: blur(4px);
+            border-radius: 30px;
+            padding: 4px 8px;
+            font-size: 10px;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-family: monospace;
+            display: none;
+        }
+
+        .avatar-uploader.has-photo .remove-photo-btn {
+            display: block;
+        }
+
+        .info-area {
+            flex: 1;
+        }
+
+        .name-title h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            line-height: 1.2;
+            color: var(--color-navy);
+            margin-bottom: 0.4rem;
+        }
+
+        .badge-role {
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--color-accent);
+            background: rgba(59, 130, 246, 0.1);
+            display: inline-block;
+            padding: 0.2rem 0.8rem;
+            border-radius: 50px;
+        }
+
+        .tagline {
+            color: var(--color-text-muted);
+            margin-top: 0.7rem;
+            font-size: 1rem;
+        }
+
+        .console-strip {
+            background: var(--console-bg);
+            border-left: 4px solid var(--console-border);
+            padding: 0.75rem 1rem;
+            font-family: monospace;
+            font-size: 0.8rem;
+            border-radius: var(--radius-sm);
+            margin: 1rem 0 0.5rem 0;
+            backdrop-filter: blur(2px);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .contacts-list {
+            margin-top: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            align-items: flex-start;
+        }
+
+        .contact-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-size: 0.8rem;
+            color: var(--color-text-muted);
+            text-decoration: none;
+            transition: 0.2s;
+        }
+
+        .contact-item:hover { color: var(--color-accent); }
+        .contact-dot {
+            width: 4px;
+            height: 4px;
+            background: var(--color-accent);
+            border-radius: 50%;
+        }
+
+        .section-title {
+            font-size: 1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--color-accent);
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid rgba(59, 130, 246, 0.2);
+            padding-bottom: 0.5rem;
+            display: inline-block;
+        }
+
+        .about-text {
+            background: #F1F5F9;
+            padding: 1.4rem 1.8rem;
+            border-radius: var(--radius-md);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #1e293b;
+            margin: 0 0 1.8rem 0;
+        }
+
+        .grid-2col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .exp-item {
+            margin-bottom: 2rem;
+            padding-bottom: 1.2rem;
+            border-bottom: 1px dashed var(--border-color);
+        }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            align-items: baseline;
+        }
+
+        .exp-company {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--color-navy);
+        }
+
+        .exp-period {
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: var(--color-text-muted);
+            background: #f1f5f9;
+            padding: 0.2rem 0.6rem;
+            border-radius: 20px;
+        }
+
+        .exp-role {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--color-accent);
+            margin: 0.2rem 0 0.6rem;
+        }
+
+        .exp-desc {
+            font-size: 0.88rem;
+            color: var(--color-text-muted);
+            margin-bottom: 0.6rem;
+            line-height: 1.5;
+        }
+
+        .exp-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .exp-tag {
+            background: #EEF2FF;
+            color: var(--color-accent);
+            font-size: 0.7rem;
+            font-weight: 500;
+            padding: 0.2rem 0.7rem;
+            border-radius: 30px;
+        }
+
+        .skills-group {
+            background: #F9FAFE;
+            padding: 1rem 1.2rem;
+            border-radius: var(--radius-md);
+            margin-bottom: 1.2rem;
+        }
+
+        .skill-group-title {
+            font-weight: 700;
+            font-size: 0.85rem;
+            color: var(--color-navy);
+            margin-bottom: 1rem;
+            border-left: 3px solid var(--color-accent);
+            padding-left: 0.6rem;
+        }
+
+        .skill-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.7rem;
+            font-size: 0.8rem;
+        }
+
+        .skill-name {
+            font-weight: 500;
+            color: #334155;
+        }
+
+        .skill-bar-bg {
+            width: 140px;
+            height: 5px;
+            background: #E2E8F0;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .skill-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--color-accent), #60A5FA);
+            width: 0%;
+            border-radius: 10px;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.2rem;
+            margin: 0.7rem 0 1rem;
+        }
+
+        .portfolio-card {
+            background: #F9F9FF;
+            border-radius: var(--radius-md);
+            padding: 1.2rem;
+            text-decoration: none;
+            border: 1px solid var(--border-color);
+            transition: 0.2s;
+        }
+
+        .portfolio-card:hover {
+            transform: translateY(-3px);
+            border-color: rgba(59,130,246,0.4);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .portfolio-title {
+            font-weight: 700;
+            font-size: 1rem;
+            margin: 0.4rem 0 0.3rem;
+            color: var(--color-navy);
+        }
+
+        .portfolio-desc {
+            font-size: 0.75rem;
+            color: #5b6e8c;
+            margin-bottom: 0.6rem;
+        }
+
+        .portfolio-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+        }
+
+        .portfolio-tag {
+            background: #EFF6FF;
+            font-size: 0.65rem;
+            padding: 0.15rem 0.6rem;
+            border-radius: 30px;
+            color: #2563EB;
+        }
+
+        .edu-item {
+            margin-bottom: 1.2rem;
+        }
+
+        .edu-school {
+            font-weight: 700;
+            font-size: 1rem;
+            color: var(--color-navy);
+        }
+        .edu-year {
+            font-size: 0.7rem;
+            color: var(--color-text-muted);
+        }
+        .edu-degree {
+            font-size: 0.85rem;
+            color: var(--color-text-muted);
+        }
+
+        .lang-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-note {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 2rem;
+            padding-top: 1.2rem;
+            border-top: 1px solid var(--border-color);
+            font-size: 0.7rem;
+            color: var(--color-text-muted);
+        }
+
+        .print-button {
+            background: var(--color-accent);
+            border: none;
+            color: white;
+            padding: 6px 16px;
+            border-radius: 40px;
+            font-size: 0.7rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: 0.2s;
+            margin-bottom: 16px;
+        }
+
+        @media (max-width: 780px) {
+            body { padding: 16px; }
+            .resume-paper { padding: 28px 24px; }
+            .header-with-photo { flex-direction: column; align-items: center; text-align: center; }
+            .contacts-list { align-items: center; }
+            .grid-2col { grid-template-columns: 1fr; gap: 1rem; }
+            .portfolio-grid { grid-template-columns: 1fr; }
+            .name-title h1 { font-size: 2.2rem; }
+            .skill-bar-bg { width: 100px; }
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+                margin: 0;
+            }
+            .resume-container {
+                box-shadow: none;
+                border-radius: 0;
+            }
+            .resume-paper {
+                padding: 0.6cm 0.8cm;
+            }
+            .print-button, .print-hide, .remove-photo-btn {
+                display: none !important;
+            }
+            .avatar-uploader {
+                border: 1px solid #ccc;
+                background: white;
+            }
+            .skill-bar-fill {
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+            @page {
+                size: A4;
+                margin: 1.2cm;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="resume-container">
+    <div class="resume-paper">
+        <div class="print-hide" style="text-align: right; margin-bottom: 16px;">
+            <button class="print-button" onclick="window.print();">📄 Распечатать / Сохранить PDF (A4)</button>
+        </div>
+
+        <!-- ШАПКА + ФОТО С ЗАГРУЗКОЙ -->
+        <div class="header-with-photo">
+            <div class="photo-zone">
+                <div class="avatar-uploader" id="avatarUploader">
+                    
+                    <img src="./ME.jpg" class="avatar-preview" alt="Фото" >
+                </div>
+            </div>
+            <div class="info-area">
+                <div class="name-title">
+                    <h1>Махаматов <span style="color:#3B82F6;">Валиахмад</span></h1>
+                    <div class="badge-role">IT Project Manager · Full‑Stack Engineer · System Administrator</div>
+                    <div class="tagline">Банковские ИТ-проекты · Разработка · Архитектура · Системное администрирование</div>
+                    <!-- <div class="console-strip">
+                        <span>⚡ &gt;_</span> project_manager@fintech:~$ <span style="color:#3B82F6;">--active_projects 4  --uptime 5+years</span><br>
+                        <span>📡 &gt;_</span> fullstack pipeline: React • Django • Docker • CI/CD
+                    </div> -->
+                </div>
+                <div class="contacts-list">
+                    <a href="tel:+998939492499" class="contact-item">+998 93 949 24 99 <span class="contact-dot"></span></a>
+                    <a href="mailto:a.voronov@example.com" class="contact-item">makhamatov.valiakhmad@gmail.com <span class="contact-dot"></span></a>
+                    <a href="https://www.linkedin.com/in/valiakhmad-makhamatov-55b2aa203/" class="contact-item">linkedin.com/in/aliakhmad-makhamatov-55b2aa203 <span class="contact-dot"></span></a>
+                    <a href="https://github.com/rinatovich" class="contact-item">github.com/rinatovich <span class="contact-dot"></span></a>
+                    <span class="contact-item">Ташкент, Узбекистан <span class="contact-dot"></span></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- О себе -->
+        <div class="about-text">
+            🔹 Проектный менеджер с опытом <strong>внедрения ИТ-систем в финансовом секторе</strong>, специализирующийся на контакт-центрах и цифровой трансформации. Веду полный жизненный цикл проектов — от инициации до post‑релиза. Эффективно управляю стейкхолдерами и кросс-функциональными командами. Параллельно практикую <strong>full-stack разработку</strong> на React/Django и проектирование серверной инфраструктуры (Docker, CI/CD, Linux). Умею переводить бизнес-требования в технические решения.
+        </div>
+
+        <!-- ОПЫТ РАБОТЫ -->
+        <div style="margin-bottom: 2rem;">
+            <h2 class="section-title">Опыт работы</h2>
+            <div class="exp-item">
+                <div class="exp-header">
+                    <div class="exp-company">🔹 Ipoteka Bank OTP Group / Департамент развития бизнеса</div>
+                    <div class="exp-period">2025 — н.в.</div>
+                </div>
+                <div class="exp-role">IT Project Manager (Контакт-центр и клиентские сервисы)</div>
+                <p class="exp-desc">
+                    Работаю на стыке между вендором, поставщиками, внутренними ИТ-командами банка и руководством. Управляю проектами по цифровой трансформации банка: 
+                    внедрение AI-решений (голосовые помощники, аналитика клиентского опыта), оптимизация кредитного конвейера и бэк-офисных процессов. 
+                    Веду полный жизненный цикл проектов: от сбора требований до внедрения и пост-релиза. Готовлю проектную документацию (уставы, планы, отчёты), 
+                    аналитические сводки для C-level, провожу презентации стейкхолдерам. Упрощаю и реинжиниринг бизнес-процессов: автоматизация рутинных операций, 
+                    сокращение времени согласований на 25%. Выступаю связующим звеном между бизнес-заказчиками и техническими командами, разрешаю конфликты приоритетов и 
+                    управляю рисками интеграции.
+                </p>
+                <div class="exp-tags">
+                    <span class="exp-tag">Цифровая трансформация</span>
+                    <span class="exp-tag">AI / ML внедрение</span>
+                    <span class="exp-tag">Управление стейкхолдерами</span>
+                    <span class="exp-tag">Банковские процессы</span>
+                    <span class="exp-tag">Проектная документация</span>
+                    <span class="exp-tag">Бизнес-анализ</span>
+                    <span class="exp-tag">Agile / Hybrid</span>
+                </div>
+            </div>
+
+            <div class="exp-item">
+                <div class="exp-header">
+                    <div class="exp-company">🔹 VALSTATEX</div>
+                    <div class="exp-period">2024 — 2025</div>
+                </div>
+                <div class="exp-role">Менеджер проектов (IT Infrastructure)</div>
+                <p class="exp-desc">
+                    Реализовал комплексные проекты по интеграции новых серверов, систем хранения данных (СХД) и сетевого оборудования в банковскую инфраструктуру. 
+                    Провёл детальный анализ существующей ИТ-инфраструктуры, выявил узкие места и сформировал план модернизации. 
+                    Руководил процессами планирования, внедрения и пуско-наладки устройств (Cisco, Dell EMC, HP). 
+                    Обеспечил бесшовную интеграцию с существующими системами мониторинга и резервного копирования. 
+                    Выступал связующим звеном между бизнес-подразделениями и инженерными командами: переводил бизнес-требования в технические спецификации, согласовывал сроки и ресурсы.
+                </p>
+                <div class="exp-tags">
+                    <span class="exp-tag">Интеграция серверов/СХД</span>
+                    <span class="exp-tag">Сетевая инфраструктура</span>
+                    <span class="exp-tag">Анализ и планирование</span>
+                    <span class="exp-tag">Пуско-наладка</span>
+                    <span class="exp-tag">Банковские стандарты</span>
+                    <span class="exp-tag">Cisco / Dell EMC</span>
+                    <span class="exp-tag">Agile / Waterfall</span>
+                </div>
+            </div>
+
+            <div class="exp-item">
+                <div class="exp-header">
+                    <div class="exp-company">🔹 Web Development</div>
+                    <div class="exp-period">2020 — н.в.</div>
+                </div>
+                <div class="exp-role">Full-Stack Developer (продуктовая разработка)</div>
+                <p class="exp-desc">
+                    Разрабатываю и деплою веб-платформы под ключ. Архитектура: React SPA, Django REST, PostgreSQL, контейнеризация Docker, CI/CD через GitHub Actions. Настройка VPS (Ubuntu, Nginx, SSL). Реализовал систему лендингов с админ-панелью для малого бизнеса. Активно использую современные практики (TypeScript, Tailwind, DRF).
+                </p>
+                <div class="exp-tags">
+                    <span class="exp-tag">React / TS</span>
+                    <span class="exp-tag">Django/DRF</span>
+                    <span class="exp-tag">PostgreSQL</span>
+                    <span class="exp-tag">Docker</span>
+                    <span class="exp-tag">CI/CD (GH Actions)</span>
+                    <span class="exp-tag">Nginx</span>
+                </div>
+            </div>
+            <div class="exp-item">
+                <div class="exp-header">
+                    <div class="exp-company">🔹 Системное администрирование / ИТ-инфраструктура (фриланс, поддержка заказчиков)</div>
+                    <div class="exp-period">2024 — н.в.</div>
+                </div>
+                <div class="exp-role">Системный администратор / Инженер инфраструктуры</div>
+                <p class="exp-desc">
+                    Осуществляю полный цикл настройки и поддержки ИТ-инфраструктуры для малого и среднего бизнеса, а также банковских подразделений.  
+                    <strong>Виртуализация и серверная среда:</strong> развёртывание и обслуживание виртуальных машин (VMware ESXi, Proxmox VE), миграция физических серверов в виртуальную среду, обеспечение отказоустойчивости кластеров.  
+                    <strong>Резервное копирование и отказоустойчивость:</strong> проектирование и внедрение системы бэкапов (Veeam, Bacula, rsync), построение отказоустойчивой архитектуры (RAID, репликация, резервные каналы).  
+                    <strong>Мониторинг и наблюдение:</strong> настройка систем мониторинга состояния серверов и сетевых устройств (Zabbix, Prometheus+Grafana, Checkmk) с отправкой алертов в Telegram/Slack.  
+                    <strong>Сеть и безопасность:</strong> проектирование и настройка сетевых соединений, межсетевых экранов (firewalld, iptables, pfSense), маршрутизация VLAN, построение VPN-туннелей (OpenVPN, WireGuard, IPsec). Работа с оборудованием MikroTik (RouterOS), Cisco (IOS), а также Linux-маршрутизаторами.  
+                    <strong>Поддержка и сопровождение:</strong> обеспечение бесперебойной работы ИТ-инфраструктуры заказчиков 24/7, плановое обновление ПО и ОС, аудит безопасности, консультирование по вопросам масштабирования.
+                </p>
+                <div class="exp-tags">
+                    <span class="exp-tag">VMware / Proxmox</span>
+                    <span class="exp-tag">Linux (Ubuntu/CentOS/Debian)</span>
+                    <span class="exp-tag">MikroTik / Cisco</span>
+                    <span class="exp-tag">VPN (WireGuard, OpenVPN, IPsec)</span>
+                    <span class="exp-tag">Файрволы / iptables </span>
+                    <span class="exp-tag">Резервное копирование (Veeam, Bacula)</span>
+                    <span class="exp-tag">Мониторинг (Zabbix, Prometheus)</span>
+                    <span class="exp-tag">Отказоустойчивость / Репликация</span>
+                    <span class="exp-tag">Настройка VLAN / маршрутизация</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- НАВЫКИ -->
+<h2 class="section-title">Ключевые компетенции</h2>
+<div class="grid-2col" style="margin-bottom: 1rem;">
+    <!-- Левая колонка -->
+    <div>
+        <div class="skills-group">
+            <div class="skill-group-title">⚛️ Full‑Stack разработка</div>
+            <div class="skill-row"><span class="skill-name">React / TypeScript</span><div class="skill-bar-bg"><div class="skill-bar-fill" style="width:88%"></div></div></div>
+            <div class="skill-row"><span class="skill-name">HTML5 / CSS3 / Tailwind</span><div class="skill-bar-bg"><div class="skill-bar-fill" style="width:92%"></div></div></div>
+            <div class="skill-row"><span class="skill-name">Django / DRF (Python)</span><div class="skill-bar-bg"><div class="skill-bar-fill" style="width:86%"></div></div></div>
+            <div class="skill-row"><span class="skill-name">PostgreSQL / SQL</span><div class="skill-bar-bg"><div class="skill-bar-fill" style="width:82%"></div></div></div>
+            <div class="skill-row"><span class="skill-name">REST API / Docker / CI/CD</span><div class="skill-bar-bg"><div class="skill-bar-fill" style="width:84%"></div></div></div>
+        </div>
+        <div class="skills-group">
+            <div class="skill-group-title">🖧 Инфраструктура, сети & виртуализация</div>
+            <div class="skill-row"><span class="skill-name">VMware ESXi / Proxmox VE</span><div class="skill-bar-bg"><div class="skill-bar-fill" style="width:85%"></div></div></div>
+            <div class="skill-row"><span class="skill-name">Linux (Ubuntu/CentOS/Debian)</span><div class="skill-bar-bg"><div class="skill-bar-fill" style="width:90%"></div></div></div>
+            <div class="skill-row"><span class="skill-name">MikroTik / Cisco (RouterOS, IOS)</span><div class="skill-bar-bg"><div class="skill-bar-fill" style="width:80%"></div></div></div>
+            <div class="skill-row"><span class="skill-name">VPN (WireGuard, OpenVPN, IPsec)</span><div class="skill-bar-bg"><div class="skill-bar-fill" style="width:85%"></div></div></div>
+            <div class="skill-row"><span class="skill-name">Файрволы (iptables, pfSense)</span><div class="skill-bar-bg"><div class="skill-bar-fill" style="width:78%"></div></div></div>
+            <div class="skill-row"><span class="skill-name">Мониторинг (Zabbix, Prometheus+Grafana)</span><div class="skill-bar-bg"><div class="skill-bar-fill" style="width:82%"></div></div></div>
+            <div class="skill-row"><span class="skill-name">Резервное копирование (Veeam, Bacula, rsync)</span><div class="skill-bar-bg"><div class="skill-bar-fill" style="width:80%"></div></div></div>
+            <div class="skill-row"><span class="skill-name">Отказоустойчивость / Репликация / RAID</span><div class="skill-bar-bg"><div class="skill-bar-fill" style="width:83%"></div></div></div>
+        </div>
+    </div>
+
+    <!-- Правая колонка -->
+    <div>
+        <div class="skills-group">
+            <div class="skill-group-title">📋 Project Management & AI</div>
+            <div class="skill-row"><span class="skill-name">Управление жизненным циклом IT-проектов</span><div class="skill-bar-bg"><div class="skill-bar-fill" style="width:93%"></div></div></div>
+            <div class="skill-row"><span class="skill-name">Agile / Scrum / Kanban / Waterfall</span><div class="skill-bar-bg"><div class="skill-bar-fill" style="width:90%"></div></div></div>
+            <div class="skill-row"><span class="skill-name">Внедрение AI‑решений (голосовые помощники, аналитика)</span><div class="skill-bar-bg"><div class="skill-bar-fill" style="width:82%"></div></div></div>
+            <div class="skill-row"><span class="skill-name">Управление стейкхолдерами / Риск-менеджмент</span><div class="skill-bar-bg"><div class="skill-bar-fill" style="width:88%"></div></div></div>
+            <div class="skill-row"><span class="skill-name">Jira / Confluence / Trello</span><div class="skill-bar-bg"><div class="skill-bar-fill" style="width:89%"></div></div></div>
+            <div class="skill-row"><span class="skill-name">Бюджетирование / Финансовые модели (Excel)</span><div class="skill-bar-bg"><div class="skill-bar-fill" style="width:85%"></div></div></div>
+        </div>
+        <div class="skills-group">
+            <div class="skill-group-title">📊 Инструменты & Бизнес-анализ</div>
+            <div class="skill-row"><span class="skill-name">Excel / Google Sheets (фин. модели, дашборды)</span><div class="skill-bar-bg"><div class="skill-bar-fill" style="width:88%"></div></div></div>
+            <div class="skill-row"><span class="skill-name">PowerPoint / Canva / Miro</span><div class="skill-bar-bg"><div class="skill-bar-fill" style="width:94%"></div></div></div>
+            <div class="skill-row"><span class="skill-name">Бизнес-анализ / BPMN / Оптимизация процессов</span><div class="skill-bar-bg"><div class="skill-bar-fill" style="width:84%"></div></div></div>
+            <div class="skill-row"><span class="skill-name">Проектная документация (Устав, План, Отчёты)</span><div class="skill-bar-bg"><div class="skill-bar-fill" style="width:92%"></div></div></div>
+            <div class="skill-row"><span class="skill-name">Настройка VLAN / маршрутизация (TCP/IP)</span><div class="skill-bar-bg"><div class="skill-bar-fill" style="width:78%"></div></div></div>
+        </div>
+    </div>
+</div>
+
+        <!-- ПОРТФОЛИО -->
+<!-- ПОРТФОЛИО -->
+<h2 class="section-title">Избранные проекты</h2>
+<div class="portfolio-grid">
+    <!-- 1. Реестр опасных химических проектов -->
+    <div class="portfolio-card">
+        <div class="portfolio-num">⤴️ 01</div>
+        <div class="portfolio-title">Реестр опасных химических проектов</div>
+        <p class="portfolio-desc">
+            Разработана бэкенд-часть на Django REST Framework с реализацией API в рамках микросервисной архитектуры. 
+            Создана клиентская веб-часть для конечных пользователей и удобная административная панель для управления данными. 
+            Обеспечен полный цикл деплоя и тестирования: инфраструктура развёрнута в Docker-контейнерах, настроены мониторинг (Prometheus + Grafana) 
+            и автоматическое резервное копирование (Veeam, rsync) с регламентом восстановления. 
+            Результат — централизованная платформа для учёта и контроля опасных химических веществ.
+        </p>
+        <div class="portfolio-stack">
+            <span class="portfolio-tag">Django / DRF</span>
+            <span class="portfolio-tag">React / TypeScript</span>
+            <span class="portfolio-tag">Docker / Compose</span>
+            <span class="portfolio-tag">Prometheus + Grafana</span>
+            <span class="portfolio-tag">PostgreSQL</span>
+        </div>
+        <div class="portfolio-link">
+            <a href="https://chemical-safety.uz/" target="_blank">Сайт проекта</a>
+        </div>
+    </div>
+
+    <!-- 2. Веб‑страница Лор Врача -->
+    <div class="portfolio-card">
+        <div class="portfolio-num">⤴️ 02</div>
+        <div class="portfolio-title">Веб‑страница Лор Врача</div>
+        <p class="portfolio-desc">
+            Выполнена адаптивная вёрстка многостраничного сайта-визитки для медицинского специалиста (ЛОР-врача). 
+            Проведена полная подготовка к запуску: размещение на хостинге, регистрация домена, настройка SSL-сертификата и почтовых уведомлений. 
+            Интегрирована форма обратной связи с отправкой заявок на электронную почту. 
+            Сайт оптимизирован для поисковых систем (SEO-базовые настройки) и корректно отображается на всех типах устройств.
+        </p>
+        <div class="portfolio-stack">
+            <span class="portfolio-tag">HTML5 / CSS3</span>
+            <span class="portfolio-tag">JavaScript (ES6)</span>
+            <span class="portfolio-tag">Адаптивная вёрстка</span>
+            <span class="portfolio-tag">Хостинг / cPanel</span>
+        </div>
+        <div class="portfolio-link">
+            <a href="https://timur-madazimov.uz/" target="_blank">Сайт проекта</a>
+        </div>
+    </div>
+
+    <!-- 3. Веб‑сайт поставщика промышленной электроники -->
+    <div class="portfolio-card">
+        <div class="portfolio-num">⤴️ 03</div>
+        <div class="portfolio-title">Веб‑сайт поставщика промышленной электроники</div>
+        <p class="portfolio-desc">
+            Спроектирована и разработана полнофункциональная платформа для B2B-компании — поставщика промышленной электроники. 
+            Реализованы бэкенд на Django REST Framework и фронтенд на React с каталогами товаров, сложной фильтрацией и пагинацией. 
+            Разработана административная панель для управления ассортиментом, ценами, остатками и заказами. 
+            Настроена система авторизации с разграничением ролей (клиент / менеджер). Выполнен деплой на VPS с использованием Docker + CI/CD (GitHub Actions).
+        </p>
+        <div class="portfolio-stack">
+            <span class="portfolio-tag">Django / DRF</span>
+            <span class="portfolio-tag">React / Redux</span>
+            <span class="portfolio-tag">PostgreSQL</span>
+            <span class="portfolio-tag">Docker / CI/CD</span>
+            <span class="portfolio-tag">Nginx / Gunicorn</span>
+        </div>
+        <div class="portfolio-link">
+            <a href="https://vectorengineering.uz/" target="_blank">Сайт проекта</a>
+        </div>
+    </div>
+
+    <!-- 4. Модернизация ИТ инфраструктуры банка -->
+    <div class="portfolio-card">
+        <div class="portfolio-num">⤴️ 04</div>
+        <div class="portfolio-title">Модернизация ИТ инфраструктуры банка</div>
+        <p class="portfolio-desc">
+            Выполнена комплексная модернизация ИТ-инфраструктуры крупного национального банка. 
+            Произведена замена устаревшего сетевого оборудования на современные решения Cisco / MikroTik, осуществлена миграция серверного парка и систем хранения данных (СХД) на высокопроизводительные кластеры VMware ESXi + Dell EMC. 
+            Внедрены фирменные системы мониторинга (Zabbix, Prometheus + Grafana) и комплексной информационной безопасности (межсетевые экраны, резервное копирование по принципу 3-2-1). 
+            Обеспечена отказоустойчивость критических сервисов и соответствие требованиям регулятора (Фин CERT, PCI DSS). 
+            Результат — повышение доступности инфраструктуры до 99,98% и снижение времени восстановления (RTO) на 40%.
+        </p>
+        <div class="portfolio-stack">
+            <span class="portfolio-tag">VMware / Proxmox</span>
+            <span class="portfolio-tag">Cisco / MikroTik</span>
+            <span class="portfolio-tag">Zabbix / Prometheus</span>
+            <span class="portfolio-tag">Veeam / Бэкапы</span>
+            <span class="portfolio-tag">Файрволы / VPN</span>
+        </div>
+        <!-- Для этого проекта ссылка не требуется, но если нужна — можно добавить -->
+    </div>
+</div>
+
+        <!-- ОБРАЗОВАНИЕ + ЯЗЫКИ -->
+        <div class="grid-2col" style="margin-top: 1rem;">
+            <div>
+                <h2 class="section-title">Образование</h2>
+                <div class="edu-item">
+                    <div class="edu-school">Ташкентский государственный технический университет</div>
+                    <div class="edu-year">2019 — 2023</div>
+                    <div class="edu-degree">Бакалавр · Приборостроение и электроника</div>
+                </div>
+                <div class="edu-item">
+                    <div class="edu-school">Ташкенский Профессиональный колледж информационных технологий</div>
+                    <div class="edu-year">2016-2019</div>
+                    <div class="edu-degree">Программирование и компьютерная наука</div>
+                </div>
+            </div>
+            <div>
+                <h2 class="section-title">Языки</h2>
+                <div class="lang-row"><span class="skill-name">Русский</span><div class="skill-bar-bg"><div class="skill-bar-fill" style="width:100%"></div></div><span style="font-size:0.7rem;">Свободно</span></div>
+                <div class="lang-row"><span class="skill-name">Узбекский</span><div class="skill-bar-bg"><div class="skill-bar-fill" style="width:98%"></div></div><span style="font-size:0.7rem;">Родной</span></div>
+                <div class="lang-row"><span class="skill-name">Английский</span><div class="skill-bar-bg"><div class="skill-bar-fill" style="width:72%"></div></div><span style="font-size:0.7rem;">Upper-Intermediate (B2)</span></div>
+               
+            </div>
+        </div>
+
+        <div class="footer-note">
+            <span>📅 Обновлено: май 2026</span>
+            <span>💼 Открыт к сотрудничеству и новым вызовам</span>
+            <span class="print-hide">🖨️ <button onclick="window.print();" style="background:none; border:none; color:#3B82F6; cursor:pointer;">Печать</button></span>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
