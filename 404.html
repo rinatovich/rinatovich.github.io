@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>404 — Page Not Found</title>
+  <meta name="robots" content="noindex, nofollow"/>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg"/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <style>
+    .error-page {
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: var(--sp-6);
+      gap: var(--sp-4);
+    }
+    .error-page__code {
+      font-size: clamp(80px, 18vw, 160px);
+      font-weight: 800;
+      letter-spacing: -0.05em;
+      color: var(--col-text);
+      opacity: 0.08;
+      line-height: 1;
+    }
+    .error-page__title { font-size: 22px; font-weight: 700; color: var(--col-text); }
+    .error-page__desc  { font-size: 15px; color: var(--col-text-sec); max-width: 360px; }
+  </style>
+</head>
+<body>
+  <div class="error-page">
+    <div class="error-page__code">404</div>
+    <h1 class="error-page__title">Page not found.</h1>
+    <p class="error-page__desc">The page you're looking for doesn't exist or has been moved.</p>
+    <a href="/" class="btn btn--primary" style="margin-top: 16px;">← Back to homepage</a>
+  </div>
+</body>
+</html>

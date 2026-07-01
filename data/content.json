@@ -1,0 +1,174 @@
+{
+  "person": {
+    "name": "Valiakhmad Makhamatov",
+    "role": "Technical Project Manager & Full Stack Engineer",
+    "location": "Remote · UTC+5",
+    "email": "hello@valiakhmad.dev",
+    "linkedin": "https://linkedin.com/in/valiakhmad",
+    "github": "https://github.com/valiakhmad",
+    "cv": "/assets/valiakhmad-makhamatov-cv-2025.pdf",
+    "availability": {
+      "open": true,
+      "label": "Open to opportunities"
+    }
+  },
+  "hero": {
+    "eyebrow": "Technical Project Manager & Full Stack Engineer",
+    "headline": "Valiakhmad\nMakhamatov",
+    "description": "I bridge engineering complexity and business outcomes. With 8+ years of experience, I architect scalable systems, lead cross-functional teams, and ship products that outlast the sprint cycle.",
+    "cta_primary": { "label": "View Projects", "href": "#projects" },
+    "cta_secondary": { "label": "Download Resume", "href": "/assets/valiakhmad-makhamatov-cv-2025.pdf" }
+  },
+  "about": {
+    "title": "About",
+    "paragraphs": [
+      "I work at the intersection of software engineering and product delivery — where architectural decisions meet business constraints, and where team dynamics determine whether a good idea ships or stalls.",
+      "My background spans full-stack engineering, platform architecture, and technical project management. I've led teams of 4 to 20, rebuilt legacy monoliths without downtime, and reduced deployment cycles from weeks to hours.",
+      "I believe the best technical leaders write code and talk to customers. Both habits make you sharper."
+    ],
+    "stats": [
+      { "value": "8+", "label": "Years in product delivery" },
+      { "value": "12", "label": "Products shipped" },
+      { "value": "40%", "label": "Avg. deploy time reduction" },
+      { "value": "20", "label": "Engineers led" }
+    ]
+  },
+  "skills": {
+    "title": "Technical Skills",
+    "categories": [
+      {
+        "name": "Languages",
+        "items": ["TypeScript", "Python", "Go", "SQL", "Bash"]
+      },
+      {
+        "name": "Frontend",
+        "items": ["React", "Next.js", "CSS / Tailwind", "Framer Motion"]
+      },
+      {
+        "name": "Backend",
+        "items": ["Node.js", "FastAPI", "PostgreSQL", "Redis", "GraphQL"]
+      },
+      {
+        "name": "Infrastructure",
+        "items": ["AWS", "Docker", "Kubernetes", "GitHub Actions", "Terraform"]
+      },
+      {
+        "name": "Management",
+        "items": ["Technical Roadmapping", "OKRs", "Sprint Planning", "Architecture Review", "Hiring"]
+      }
+    ]
+  },
+  "projects": {
+    "title": "Selected Work",
+    "subtitle": "Case studies from projects where both the engineering and the outcome mattered.",
+    "items": [
+      {
+        "id": "platform-rebuild",
+        "title": "Platform Rebuild Without Downtime",
+        "domain": "Platform Engineering",
+        "year": "2023",
+        "description": "Migrated a 5-year-old monolith serving 1,000 concurrent users to a microservices architecture. Zero downtime. 6-month timeline. Team of 6 engineers.",
+        "outcome": "10× capacity increase. 40% reduction in infrastructure cost.",
+        "tags": ["Next.js", "Node.js", "AWS ECS", "PostgreSQL"],
+        "role": "Tech Lead / Architect"
+      },
+      {
+        "id": "ci-cd-overhaul",
+        "title": "CI/CD Pipeline Overhaul",
+        "domain": "Developer Experience",
+        "year": "2022",
+        "description": "Redesigned deployment pipelines across 4 product teams. Introduced trunk-based development, automated testing gates, and environment promotion workflows.",
+        "outcome": "Deploy frequency: weekly → daily. Rollback time: 2 hours → 4 minutes.",
+        "tags": ["GitHub Actions", "Docker", "Terraform", "Datadog"],
+        "role": "Technical PM"
+      },
+      {
+        "id": "b2b-saas-mvp",
+        "title": "B2B SaaS MVP — 0 to Launch",
+        "domain": "Product Engineering",
+        "year": "2021",
+        "description": "Took a fintech B2B product from whiteboard to production in 4 months. Owned both technical architecture and sprint delivery. First paying customer in week 16.",
+        "outcome": "$120K ARR at launch. Raised seed round 3 months later.",
+        "tags": ["React", "FastAPI", "PostgreSQL", "Stripe"],
+        "role": "Full Stack Engineer / TPM"
+      }
+    ]
+  },
+  "certificates": {
+    "title": "Certifications",
+    "subtitle": "Verified professional credentials.",
+    "items": [
+      {
+        "name": "AWS Solutions Architect – Associate",
+        "issuer": "Amazon Web Services",
+        "date": "2023",
+        "expiry": "2026",
+        "valid": true,
+        "verify": "https://aws.amazon.com/verification",
+        "badge": "AWS"
+      },
+      {
+        "name": "Professional Scrum Master I",
+        "issuer": "Scrum.org",
+        "date": "2022",
+        "expiry": null,
+        "valid": true,
+        "verify": "https://www.scrum.org/certificates",
+        "badge": "PSM"
+      },
+      {
+        "name": "Google Project Management Certificate",
+        "issuer": "Google / Coursera",
+        "date": "2021",
+        "expiry": null,
+        "valid": true,
+        "verify": "https://coursera.org/verify",
+        "badge": "GCP"
+      }
+    ]
+  },
+  "blog": {
+    "title": "Writing",
+    "subtitle": "Observations on engineering, product, and the space between.",
+    "items": [
+      {
+        "title": "Why Platform Teams Fail (And How to Fix It)",
+        "date": "2024-11-12",
+        "readTime": "7 min read",
+        "category": "Engineering",
+        "excerpt": "Platform teams that focus on tooling instead of developer experience don't fail because the tools are bad. They fail because they forgot who they're building for."
+      },
+      {
+        "title": "The Technical PM's Dilemma: Code or Coordinate?",
+        "date": "2024-09-03",
+        "readTime": "5 min read",
+        "category": "Leadership",
+        "excerpt": "The best technical project managers I've worked with share one habit: they keep their hands in the codebase. Not to prove a point — to stay honest."
+      },
+      {
+        "title": "Strangler Fig Migration: A Practical Playbook",
+        "date": "2024-06-20",
+        "readTime": "12 min read",
+        "category": "Architecture",
+        "excerpt": "A big-bang rewrite is almost always the wrong call. Here's the step-by-step approach I've used to migrate three legacy monoliths without a feature freeze."
+      }
+    ]
+  },
+  "contact": {
+    "title": "Let's Talk",
+    "subtitle": "Open to senior engineering and technical leadership roles. I read every message personally.",
+    "response_time": "I typically respond within 2 business days.",
+    "methods": [
+      { "label": "LinkedIn", "href": "https://linkedin.com/in/valiakhmad", "icon": "linkedin" },
+      { "label": "GitHub", "href": "https://github.com/valiakhmad", "icon": "github" },
+      { "label": "Email", "href": "mailto:hello@valiakhmad.dev", "icon": "email" }
+    ]
+  },
+  "nav": [
+    { "label": "About", "href": "#about" },
+    { "label": "Projects", "href": "#projects" },
+    { "label": "Certificates", "href": "#certificates" },
+    { "label": "Writing", "href": "#blog" },
+    { "label": "Contact", "href": "#contact" }
+  ]
+}
