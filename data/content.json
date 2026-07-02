@@ -99,31 +99,54 @@
     "subtitle": "Verified professional credentials.",
     "items": [
       {
-        "name": "AWS Solutions Architect – Associate",
-        "issuer": "Amazon Web Services",
-        "date": "2023",
-        "expiry": "2026",
-        "valid": true,
-        "verify": "https://aws.amazon.com/verification",
-        "badge": "AWS"
-      },
-      {
-        "name": "Professional Scrum Master I",
-        "issuer": "Scrum.org",
-        "date": "2022",
-        "expiry": null,
-        "valid": true,
-        "verify": "https://www.scrum.org/certificates",
-        "badge": "PSM"
-      },
-      {
-        "name": "Google Project Management Certificate",
-        "issuer": "Google / Coursera",
+        "name": "CS50's Compyuter Science",
+        "issuer": "Edx and Harvard University",
         "date": "2021",
         "expiry": null,
         "valid": true,
-        "verify": "https://coursera.org/verify",
-        "badge": "GCP"
+        "image": "../assets/img/certificates/img/Makhamatov_Valiakhmad_CS50x_2021.jpg",
+        "verify": "../assets/img/certificates/pdf/Makhamatov_Valiakhmad_CS50x_2021.pdf",
+        "badge": "Computer Science"
+      },
+      {
+        "name": "Fullstack Web Development",
+        "issuer": "STARK EDU",
+        "date": "2019",
+        "expiry": null,
+        "valid": true,
+        "image": "../assets/img/certificates/img/Makhamatov_Valiakhmad_Fullstack_Web_Development_2019.jpg",
+        "verify": "../assets/img/certificates/pdf/Makhamatov_Valiakhmad_Fullstack_Web_Development_2019.pdf",
+        "badge": "Fullstack Web Development"
+      },
+      {
+        "name": "Fortinet Certified Fundamentals in Cybersecurity",
+        "issuer": "Fortinet",
+        "date": "2025",
+        "expiry": "2027",
+        "valid": true,
+        "image": "../assets/img/certificates/img/Makhamatov_Valiakhmad_Fortinet_Certified_Fundamentals_in_Cybersecurity_2025.jpg",
+        "verify": "../assets/img/certificates/pdf/Makhamatov_Valiakhmad_Fortinet_Certified_Fundamentals_in_Cybersecurity_2025.pdf",
+        "badge": "Cybersecurity"
+      },
+      {
+        "name": "Introduction to the Threat Landscape",
+        "issuer": "Fortinet",
+        "date": "2025",
+        "expiry": null,
+        "valid": true,
+        "image": "../assets/img/certificates/img/Makhamatov_Valiakhmad_Fortinet_Introduction_to_the_Threat_Landscape_2025.jpg",
+        "verify": "../assets/img/certificates/pdf/Makhamatov_Valiakhmad_Fortinet_Introduction_to_the_Threat_Landscape_2025.pdf",
+        "badge": "Cybersecurity"
+      },
+      {
+        "name": "Project management",
+        "issuer": "Google",
+        "date": "2022",
+        "expiry": null,
+        "valid": true,
+        "image": "../assets/img/certificates/img/Makhamatov_Valiakhmad_Google_Project_Management_2022.jpg",
+        "verify": "../assets/img/certificates/pdf/Makhamatov_Valiakhmad_Google_Project_Management_2022.pdf",
+        "badge": "Project Management"
       }
     ]
   },

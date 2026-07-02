@@ -49,6 +49,9 @@ function renderCertCard(c, i) {
         <div class="cert-card__name">${escHtml(c.name)}</div>
         <div class="cert-card__issuer">${escHtml(c.issuer)}</div>
       </div>
+      <div>
+        <img src="${escHtml(c.image)}" alt="${escHtml(c.name)}" class="cert-card__image" />
+      </div>
       <div class="cert-card__footer">
         <div class="cert-card__dates">${expiryStr}</div>
         <a href="${escHtml(c.verify)}" target="_blank" rel="noopener noreferrer" class="cert-card__verify">
