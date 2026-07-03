@@ -225,6 +225,59 @@ ul, ol { list-style: none; }
   color: var(--col-text-inv);
 }
 
+/* Language switcher */
+.lang-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  padding: 3px;
+  background: var(--col-alt);
+  border: 1px solid var(--col-border);
+  border-radius: var(--r-pill, 999px);
+  flex-shrink: 0;
+}
+
+.lang-switch__btn {
+  appearance: none;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--col-text-sec);
+  padding: 5px 10px;
+  border-radius: 999px;
+  transition: background var(--t-fast), color var(--t-fast);
+}
+
+.lang-switch__btn:hover {
+  color: var(--col-text);
+}
+
+.lang-switch__btn.is-active {
+  background: var(--col-accent);
+  color: var(--col-text-inv);
+}
+
+.lang-switch__btn:focus-visible {
+  outline: 2px solid var(--col-accent);
+  outline-offset: 2px;
+}
+
+/* Mobile menu language switcher */
+.nav__mobile .lang-switch {
+  align-self: flex-start;
+  margin-top: var(--sp-2);
+  padding: 4px;
+}
+
+.nav__mobile .lang-switch__btn {
+  font-size: 14px;
+  padding: 8px 16px;
+}
+
 /* Mobile nav toggle */
 .nav__toggle {
   display: none;
@@ -252,7 +305,7 @@ ul, ol { list-style: none; }
 
 /* Mobile menu */
 .nav__mobile {
-  display: none;
+  display: flex;
   position: fixed;
   inset: var(--nav-h) 0 0 0;
   background: var(--col-surface);
@@ -262,9 +315,21 @@ ul, ol { list-style: none; }
   border-top: 1px solid var(--col-border);
   z-index: 99;
   overflow-y: auto;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-14px);
+  pointer-events: none;
+  transition: opacity 0.28s cubic-bezier(0.16,1,0.3,1),
+              transform 0.28s cubic-bezier(0.16,1,0.3,1),
+              visibility 0.28s;
 }
 
-.nav__mobile.is-open { display: flex; }
+.nav__mobile.is-open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
 
 .nav__mobile-link {
   font-size: 18px;
@@ -296,6 +361,7 @@ ul, ol { list-style: none; }
 @media (max-width: 768px) {
   .nav__links, .nav__cta { display: none; }
   .nav__toggle { display: flex; }
+  .nav__inner .lang-switch { display: none; }
 }
 
 /* ============================================================
@@ -1247,14 +1313,15 @@ ul, ol { list-style: none; }
 /* Scroll reveal */
 .reveal {
   opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.5s cubic-bezier(0.16,1,0.3,1),
-              transform 0.5s cubic-bezier(0.16,1,0.3,1);
+  transform: translateY(28px) scale(0.97);
+  transition: opacity 0.7s cubic-bezier(0.16,1,0.3,1),
+              transform 0.7s cubic-bezier(0.16,1,0.3,1);
+  will-change: opacity, transform;
 }
 
 .reveal.is-visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateY(0) scale(1);
 }
 
 .reveal--delay-1 { transition-delay: 0.08s; }
@@ -1704,19 +1771,19 @@ ul, ol { list-style: none; }
 
 .page-exit {
   opacity: 0;
-  transform: translateY(6px);
-  transition: opacity 0.15s ease-in, transform 0.15s ease-in;
+  transform: translateY(6px) scale(0.994);
+  transition: opacity 0.16s ease-in, transform 0.16s ease-in;
   pointer-events: none;
 }
 
 .page-enter {
   opacity: 0;
-  transform: translateY(8px);
-  animation: pageFadeIn 0.28s cubic-bezier(0.16,1,0.3,1) forwards;
+  transform: translateY(10px) scale(0.994);
+  animation: pageFadeIn 0.42s cubic-bezier(0.16,1,0.3,1) forwards;
 }
 
 @keyframes pageFadeIn {
-  to { opacity: 1; transform: translateY(0); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
 }
 
 /* ============================================================
@@ -2295,3 +2362,348 @@ ul, ol { list-style: none; }
    ============================================================ */
 
 .hero { padding-top: var(--nav-h); }
+
+/* ============================================================
+   MOTION & DELIGHT
+   Ambient background motion, hover micro-interactions, spotlight
+   cards, magnetic buttons, and a scroll progress indicator.
+   Everything here is automatically muted by the global
+   prefers-reduced-motion rule near the top of this file.
+   ============================================================ */
+
+/* ── Scroll progress bar ─────────────────────────────────── */
+
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  z-index: 200;
+  background: transparent;
+  pointer-events: none;
+}
+
+.scroll-progress__bar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--col-accent), var(--col-success));
+  transition: width 0.1s linear;
+  box-shadow: 0 0 8px rgba(37,99,235,0.5);
+}
+
+/* ── Ambient hero blobs ──────────────────────────────────── */
+
+.hero::before,
+.hero::after {
+  content: '';
+  position: absolute;
+  z-index: 0;
+  border-radius: 50%;
+  filter: blur(90px);
+  pointer-events: none;
+  opacity: 0.55;
+}
+
+.hero::before {
+  top: -180px;
+  left: -140px;
+  width: 480px;
+  height: 480px;
+  background: radial-gradient(circle, rgba(37,99,235,0.18), transparent 70%);
+  animation: heroBlobFloat1 18s ease-in-out infinite;
+}
+
+.hero::after {
+  bottom: -220px;
+  right: -160px;
+  width: 560px;
+  height: 560px;
+  background: radial-gradient(circle, rgba(5,150,105,0.12), transparent 70%);
+  animation: heroBlobFloat2 22s ease-in-out infinite;
+}
+
+@keyframes heroBlobFloat1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50%      { transform: translate(60px, 40px) scale(1.12); }
+}
+
+@keyframes heroBlobFloat2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50%      { transform: translate(-50px, -30px) scale(1.08); }
+}
+
+/* ── Nav: animated underline + logo micro-bounce ─────────── */
+
+.nav__logo {
+  display: inline-flex;
+  transition: color var(--t-fast), transform 0.3s cubic-bezier(0.34,1.56,0.64,1);
+}
+
+.nav__logo:active { transform: scale(0.94); }
+
+.nav__link {
+  position: relative;
+}
+
+.nav__link::after {
+  content: '';
+  position: absolute;
+  left: var(--sp-3);
+  right: var(--sp-3);
+  bottom: 4px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--col-accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s cubic-bezier(0.16,1,0.3,1);
+}
+
+.nav__link:hover::after,
+.nav__link--active::after {
+  transform: scaleX(1);
+}
+
+.nav__cta svg,
+.nav__mobile-cta svg {
+  transition: transform 0.3s cubic-bezier(0.34,1.56,0.64,1);
+}
+
+.nav__cta:hover svg,
+.nav__mobile-cta:hover svg {
+  transform: translateY(2px);
+}
+
+/* ── Buttons: shine sweep + magnetic-ready transform ─────── */
+
+.btn {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent 30%, rgba(255,255,255,0.35) 50%, transparent 70%);
+  transform: translateX(-120%);
+  transition: transform 0.6s cubic-bezier(0.16,1,0.3,1);
+  pointer-events: none;
+}
+
+.btn--primary:hover::before {
+  transform: translateX(120%);
+}
+
+/* Note: transform on hover for .btn--primary / .btn--secondary is now
+   driven entirely by the magnetic-button JS (see initMagneticButtons in
+   utils.js) — it bakes in the same subtle lift, plus a smooth cursor-
+   relative pull. Defining a competing CSS `transform` here would cause
+   a visible snap the instant JS takes over on the first mousemove. */
+
+/* ── Spotlight hover glow: cards that follow the cursor ──── */
+
+.project-card,
+.cert-card,
+.post-card,
+.hero__visual-card,
+.case-result-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.project-card::after,
+.cert-card::after,
+.post-card::after,
+.hero__visual-card::after,
+.case-result-card::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 360px;
+  height: 360px;
+  background: radial-gradient(circle, rgba(37,99,235,0.10), transparent 70%);
+  transform: translate(calc(var(--mx, 50%) - 180px), calc(var(--my, 50%) - 180px));
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+  will-change: transform;
+  z-index: 0;
+}
+
+.project-card:hover::after,
+.cert-card:hover::after,
+.post-card:hover::after,
+.hero__visual-card:hover::after,
+.case-result-card:hover::after {
+  opacity: 1;
+}
+
+.project-card__link,
+.cert-card__badge,
+.cert-card__body,
+.cert-card__actions,
+.post-card__link,
+.case-result-card__metric,
+.case-result-card__detail {
+  position: relative;
+  z-index: 1;
+}
+
+.hero__visual-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Slightly stronger lift on hover, layered on top of existing rules */
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--sh-lg), 0 0 0 1px var(--col-accent-med);
+}
+
+.post-card:hover {
+  transform: translateY(-2px);
+}
+
+.cert-card:hover {
+  transform: translateY(-3px);
+}
+
+.case-result-card {
+  transition: border-color var(--t-fast), box-shadow var(--t-fast), transform var(--t-fast);
+}
+
+.case-result-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--sh-md);
+}
+
+/* ── Tags & skill items: tiny pop on hover ───────────────── */
+
+.tag {
+  transition: background var(--t-fast), color var(--t-fast), transform var(--t-fast), border-color var(--t-fast);
+}
+
+.tag:hover {
+  transform: translateY(-2px);
+  border-color: var(--col-accent-med);
+  color: var(--col-accent);
+  background: var(--col-accent-lt);
+}
+
+.skill-cat {
+  transition: transform var(--t-fast);
+}
+
+.skill-cat:hover {
+  transform: translateY(-3px);
+}
+
+.skill-cat__item {
+  transition: color var(--t-fast), transform var(--t-fast), padding-left var(--t-fast);
+}
+
+.skill-cat__item:hover {
+  transform: translateX(4px);
+}
+
+/* ── Footer socials: gentle lift + rotate ────────────────── */
+
+.footer__social {
+  display: inline-flex;
+  transition: color var(--t-fast), transform 0.3s cubic-bezier(0.34,1.56,0.64,1);
+}
+
+.footer__social:hover {
+  color: var(--col-accent);
+  transform: translateY(-3px) rotate(-6deg);
+}
+
+/* ── Lang switch: satisfying pressed state ───────────────── */
+
+.lang-switch__btn {
+  position: relative;
+  overflow: hidden;
+  transition: background var(--t-fast), color var(--t-fast), transform 0.15s ease;
+}
+
+.lang-switch__btn:active {
+  transform: scale(0.92);
+}
+
+.lang-switch__btn.is-active {
+  animation: langPop 0.3s cubic-bezier(0.34,1.56,0.64,1);
+}
+
+@keyframes langPop {
+  0%   { transform: scale(0.85); }
+  100% { transform: scale(1); }
+}
+
+.lang-switch__btn::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: var(--col-accent);
+  opacity: 0;
+  transform: scale(1);
+  pointer-events: none;
+}
+
+.lang-switch__btn.is-rippling::after {
+  animation: langRipple 0.5s cubic-bezier(0.16,1,0.3,1);
+}
+
+@keyframes langRipple {
+  0%   { opacity: 0.35; transform: scale(1); }
+  100% { opacity: 0; transform: scale(1.9); }
+}
+
+/* ── Language switch: nav/footer content cross-fade ──────── */
+
+.lang-fade-out {
+  transition: opacity 0.16s ease, filter 0.16s ease;
+  opacity: 0;
+  filter: blur(3px);
+}
+
+.lang-fade-in {
+  animation: langChromeFadeIn 0.42s cubic-bezier(0.16,1,0.3,1) forwards;
+}
+
+@keyframes langChromeFadeIn {
+  from { opacity: 0; filter: blur(3px); }
+  to   { opacity: 1; filter: blur(0); }
+}
+
+/* ── Availability dot: slightly livelier pulse ring ──────── */
+
+.hero__dot {
+  position: relative;
+}
+
+.hero__dot::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 1.5px solid var(--col-success);
+  opacity: 0;
+  animation: dotRing 2.4s ease-out infinite;
+}
+
+@keyframes dotRing {
+  0%   { transform: scale(0.6); opacity: 0.6; }
+  100% { transform: scale(1.8); opacity: 0; }
+}
+
+/* ── Count-up stat values: stop layout jump while animating ─ */
+
+.hero__stat-value,
+.about__stat-value {
+  font-variant-numeric: tabular-nums;
+}

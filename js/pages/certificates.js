@@ -35,29 +35,27 @@ function renderCertificatesPage() {
 }
 
 function renderCertCard(c, i) {
-  const expiryStr = c.expiry
-    ? `Issued ${escHtml(c.date)} · Expires ${escHtml(c.expiry)}`
-    : `Issued ${escHtml(c.date)} · No expiry`;
+  const expiryText = c.expiry
+    ? `${escHtml(t('cert_issued'))} ${escHtml(c.date)} · ${escHtml(t('cert_expires'))} ${escHtml(c.expiry)}`
+    : `${escHtml(t('cert_issued'))} ${escHtml(c.date)} · ${escHtml(t('cert_no_expiry'))}`;
 
   return `
-    <div class="cert-card reveal reveal--delay-${i % 3 + 1}">
-      <div class="cert-card__top">
-        <div class="cert-card__badge">${escHtml(c.badge)}</div>
-        ${c.valid ? `<span class="cert-card__status cert-card__status--valid">${ICONS.check} Valid</span>` : ''}
-      </div>
-      <div>
-        <div class="cert-card__name">${escHtml(c.name)}</div>
-        <div class="cert-card__issuer">${escHtml(c.issuer)}</div>
+    <article class="cert-card reveal reveal--delay-${i % 3 + 1}">
+      <div class="cert-card__badge" aria-hidden="true">${escHtml(c.badge)}</div>
+      <div class="cert-card__body">
+        <h3 class="cert-card__name">${escHtml(c.name)}</h3>
+        <p class="cert-card__issuer">${escHtml(c.issuer)}</p>
+        <p class="cert-card__date">${expiryText}</p>
       </div>
       <div>
         <img src="${escHtml(c.image)}" alt="${escHtml(c.name)}" class="cert-card__image" />
       </div>
-      <div class="cert-card__footer">
-        <div class="cert-card__dates">${expiryStr}</div>
-        <a href="${escHtml(c.verify)}" target="_blank" rel="noopener noreferrer" class="cert-card__verify">
-          Verify ${ICONS.externalLink}
+      <div class="cert-card__actions">
+        ${c.valid ? `<span class="cert-card__valid">${ICONS.check} ${escHtml(t('cert_valid'))}</span>` : ''}
+        <a href="${escHtml(c.verify)}" class="cert-card__verify" target="_blank" rel="noopener noreferrer">
+          ${escHtml(t('cert_verify'))} ${ICONS.externalLink}
         </a>
       </div>
-    </div>
+    </article>
   `;
 }

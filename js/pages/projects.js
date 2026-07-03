@@ -12,11 +12,11 @@ function renderProjectsPage() {
     <section class="page-header">
       <div class="container">
         <nav class="breadcrumb reveal" aria-label="Breadcrumb">
-          <a href="#/" data-route>Home</a>
+          <a href="#/" data-route>${escHtml(t('breadcrumb_home'))}</a>
           <span class="breadcrumb__sep" aria-hidden="true">/</span>
-          <span aria-current="page">Projects</span>
+          <span aria-current="page">${escHtml(t('breadcrumb_projects'))}</span>
         </nav>
-        <div class="section__eyebrow reveal">Work</div>
+        <div class="section__eyebrow reveal">${escHtml(t('work_eyebrow'))}</div>
         <h1 class="page-header__title reveal">${escHtml(projects.title)}</h1>
         <p class="page-header__subtitle reveal">${escHtml(projects.subtitle)}</p>
       </div>

@@ -45,7 +45,7 @@ function renderHomePage() {
 
           <div class="hero__visual" aria-hidden="true">
             <div class="hero__visual-card">
-              <div class="hero__visual-label">Delivery Track Record</div>
+              <div class="hero__visual-label">${escHtml(t('hero_visual_label'))}</div>
               <svg class="hero__visual-chart" viewBox="0 0 340 140" xmlns="http://www.w3.org/2000/svg">
                 ${renderSparkline()}
               </svg>
@@ -66,8 +66,8 @@ function renderHomePage() {
     <section class="section section--alt" aria-label="About">
       <div class="container">
         <div class="section__header reveal">
-          <div class="section__eyebrow">About</div>
-          <h2 class="section__title">Engineering + Delivery</h2>
+          <div class="section__eyebrow">${escHtml(t('about_eyebrow'))}</div>
+          <h2 class="section__title">${escHtml(t('about_title'))}</h2>
         </div>
         <div class="about__grid">
           <div class="about__body reveal">
@@ -84,7 +84,7 @@ function renderHomePage() {
         </div>
         <div class="skills">
           <div class="section__header reveal">
-            <div class="section__eyebrow">Technical Skills</div>
+            <div class="section__eyebrow">${escHtml(t('skills_eyebrow'))}</div>
           </div>
           <div class="skills__grid">
             ${skills.categories.map(cat => `
@@ -104,12 +104,12 @@ function renderHomePage() {
       <div class="container">
         <div class="section__header reveal section__header--row">
           <div>
-            <div class="section__eyebrow">Work</div>
+            <div class="section__eyebrow">${escHtml(t('work_eyebrow'))}</div>
             <h2 class="section__title">${escHtml(projects.title)}</h2>
             <p class="section__subtitle">${escHtml(projects.subtitle)}</p>
           </div>
           <a href="#/projects" class="btn btn--ghost section__header-cta" data-route>
-            View all projects ${ICONS.arrowRight}
+            ${escHtml(t('view_all_projects'))} ${ICONS.arrowRight}
           </a>
         </div>
         <div class="projects__grid">
@@ -122,11 +122,11 @@ function renderHomePage() {
       <div class="container container--md">
         <div class="section__header reveal section__header--row">
           <div>
-            <div class="section__eyebrow">Writing</div>
+            <div class="section__eyebrow">${escHtml(t('writing_eyebrow'))}</div>
             <h2 class="section__title">${escHtml(blog.title)}</h2>
           </div>
           <a href="#/blog" class="btn btn--ghost section__header-cta" data-route>
-            All articles ${ICONS.arrowRight}
+            ${escHtml(t('all_articles'))} ${ICONS.arrowRight}
           </a>
         </div>
         <div class="blog__list">
@@ -145,7 +145,7 @@ function renderHomePage() {
           <h2 class="cta-strip__title">${escHtml(SITE_DATA.contact.title)}</h2>
           <p class="cta-strip__desc">${escHtml(SITE_DATA.contact.subtitle)}</p>
           <a href="#/contact" class="btn btn--primary" data-route>
-            Get in touch ${ICONS.arrowRight}
+            ${escHtml(t('get_in_touch'))} ${ICONS.arrowRight}
           </a>
         </div>
       </div>
@@ -154,13 +154,18 @@ function renderHomePage() {
 
   const cleanupBg = initHeroBg();
   const cleanupReveal = initScrollReveal();
-  return () => { cleanupBg && cleanupBg(); cleanupReveal && cleanupReveal(); };
+  const cleanupCounters = initCounters(root);
+  return () => {
+    cleanupBg && cleanupBg();
+    cleanupReveal && cleanupReveal();
+    cleanupCounters && cleanupCounters();
+  };
 }
 
 function renderProjectCard(p, i) {
   return `
     <article class="project-card reveal reveal--delay-${i % 3 + 1}">
-      <a href="#/projects/${escHtml(p.id)}" class="project-card__link" data-route aria-label="View case study: ${escHtml(p.title)}">
+      <a href="#/projects/${escHtml(p.id)}" class="project-card__link" data-route aria-label="${escHtml(p.title)}">
         <div class="project-card__meta">
           <span class="project-card__domain">${escHtml(p.domain)}</span>
           <span class="project-card__year">${escHtml(p.year)}</span>
@@ -172,7 +177,7 @@ function renderProjectCard(p, i) {
           <div class="project-card__tags">
             ${p.tags.map(t => `<span class="tag">${escHtml(t)}</span>`).join('')}
           </div>
-          <span class="project-card__cta">Read case study ${ICONS.arrowRight}</span>
+          <span class="project-card__cta">${escHtml(t('read_case_study'))} ${ICONS.arrowRight}</span>
         </div>
       </a>
     </article>
@@ -196,7 +201,7 @@ function renderPostCard(post) {
           </div>
           <h3 class="post-card__title">${escHtml(post.title)}</h3>
           <p class="post-card__excerpt">${escHtml(post.excerpt)}</p>
-          <span class="post-card__cta">Read article ${ICONS.arrowRight}</span>
+          <span class="post-card__cta">${escHtml(t('read_article'))} ${ICONS.arrowRight}</span>
         </div>
       </a>
     </article>

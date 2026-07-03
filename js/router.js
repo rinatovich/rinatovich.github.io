@@ -84,5 +84,10 @@ const Router = (() => {
     resolve();
   }
 
-  return { register, registerNotFound, navigate, init, parseHash };
+  /** Re-render whatever route is currently active (e.g. after a language switch) */
+  function refresh() {
+    resolve();
+  }
+
+  return { register, registerNotFound, navigate, init, parseHash, refresh };
 })();

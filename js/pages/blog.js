@@ -10,13 +10,13 @@ function renderBlogPage() {
 
   root.innerHTML = `
     <section class="page-header">
-      <div class="container">
+      <div class="container container--md">
         <nav class="breadcrumb reveal" aria-label="Breadcrumb">
-          <a href="#/" data-route>Home</a>
+          <a href="#/" data-route>${escHtml(t('breadcrumb_home'))}</a>
           <span class="breadcrumb__sep" aria-hidden="true">/</span>
-          <span aria-current="page">Writing</span>
+          <span aria-current="page">${escHtml(t('breadcrumb_writing'))}</span>
         </nav>
-        <div class="section__eyebrow reveal">Writing</div>
+        <div class="section__eyebrow reveal">${escHtml(t('writing_eyebrow'))}</div>
         <h1 class="page-header__title reveal">${escHtml(blog.title)}</h1>
         <p class="page-header__subtitle reveal">${escHtml(blog.subtitle)}</p>
       </div>

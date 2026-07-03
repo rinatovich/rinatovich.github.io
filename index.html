@@ -50,6 +50,11 @@
   <!-- Persistent navigation -->
   <nav id="nav" class="nav" role="navigation" aria-label="Main navigation"></nav>
 
+  <!-- Scroll progress indicator -->
+  <div class="scroll-progress" aria-hidden="true">
+    <div class="scroll-progress__bar" id="scrollProgressBar"></div>
+  </div>
+
   <!-- SPA root — all page content renders here -->
   <main id="main">
     <div id="app"></div>
@@ -59,13 +64,15 @@
   <footer id="footer" class="footer" role="contentinfo"></footer>
 
   <!-- ── JS load order matters ──
-       1. data.js     — SITE_DATA constant
-       2. utils.js    — shared helpers (escHtml, ICONS, parseDate, etc.)
-       3. router.js   — Router singleton
-       4. pages/*.js  — page renderers (depend on utils + data)
-       5. app.js      — wires everything together, boots the SPA
+       1. data.js     — SITE_CONTENT constant (per-language content)
+       2. i18n.js     — language state, SITE_DATA, t(), setLang()
+       3. utils.js    — shared helpers (escHtml, ICONS, parseDate, etc.)
+       4. router.js   — Router singleton
+       5. pages/*.js  — page renderers (depend on utils + data)
+       6. app.js      — wires everything together, boots the SPA
   -->
   <script src="js/data.js"></script>
+  <script src="js/i18n.js"></script>
   <script src="js/utils.js"></script>
   <script src="js/router.js"></script>
   <script src="js/pages/home.js"></script>
