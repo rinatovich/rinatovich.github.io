@@ -17,11 +17,11 @@ const SITE_CONTENT = {
       "name": "Valiakhmad Makhamatov",
       "role": "Technical Project Manager & Full Stack Engineer",
       "location": "Remote · UTC+5",
-      "email": "valiakhmad.makhamatov@gmail.com",
+      "email": "makhamatov.valiakhmad@gmail.com",
       "telegram": "https://t.me/rinatovic99",
       "linkedin": "https://www.linkedin.com/in/valiakhmad-makhamatov-55b2aa203/",
       "github": "https://github.com/rinatovich",
-      "cv": "assets/valiakhmad-makhamatov-cv-2025.pdf",
+      "cv": "assets/valiakhmad-makhamatov-cv-2026_en.pdf",
       "availability": { "open": true, "label": "Open to opportunities" }
     },
 
@@ -30,7 +30,7 @@ const SITE_CONTENT = {
       "headline": "Valiakhmad\nMakhamatov",
       "description": "I bridge engineering complexity and business outcomes. With 8+ years of experience, I architect scalable systems, lead cross-functional teams, and ship products that outlast the sprint cycle.",
       "cta_primary": { "label": "View Projects", "href": "#/projects" },
-      "cta_secondary": { "label": "Download Resume", "href": "assets/valiakhmad-makhamatov-cv-2025.pdf" }
+      "cta_secondary": { "label": "Download Resume", "href": "assets/valiakhmad-makhamatov-cv-2026_en.pdf" }
     },
 
     "about": {
@@ -327,7 +327,7 @@ const SITE_CONTENT = {
         { "label": "LinkedIn", "href": "https://www.linkedin.com/in/valiakhmad-makhamatov-55b2aa203/", "icon": "linkedin" },
         { "label": "GitHub",   "href": "https://github.com/rinatovich",      "icon": "github" },
         { "label": "Telegram",   "href": "https://t.me/rinatovic99",      "icon": "telegram" },
-        { "label": "Email",    "href": "mailto:valiakhmad.makhamatov@gmail.com",        "icon": "email" }
+        { "label": "Email",    "href": "mailto:makhamatov.valiakhmad@gmail.com",        "icon": "email" }
       ]
     },
 
@@ -347,11 +347,11 @@ const SITE_CONTENT = {
       "name": "Valiakhmad Makhamatov",
       "role": "Технический руководитель проектов и Full Stack инженер",
       "location": "Удалённо · UTC+5",
-      "email": "valiakhmad.makhamatov@gmail.com",
+      "email": "makhamatov.valiakhmad@gmail.com",
       "linkedin": "https://www.linkedin.com/in/valiakhmad-makhamatov-55b2aa203/",
       "telegram": "https://t.me/rinatovic99",
       "github": "https://github.com/rinatovich",
-      "cv": "assets/valiakhmad-makhamatov-cv-2025.pdf",
+      "cv": "assets/valiakhmad-makhamatov-cv-2026_ru.pdf",
       "availability": { "open": true, "label": "Открыт для предложений" }
     },
 
@@ -360,7 +360,7 @@ const SITE_CONTENT = {
       "headline": "Valiakhmad\nMakhamatov",
       "description": "Я соединяю инженерную сложность и бизнес-результат. За 8+ лет опыта я проектирую масштабируемые системы, руковожу кросс-функциональными командами и выпускаю продукты, которые живут дольше одного спринта.",
       "cta_primary": { "label": "Смотреть проекты", "href": "#/projects" },
-      "cta_secondary": { "label": "Скачать резюме", "href": "assets/valiakhmad-makhamatov-cv-2025.pdf" }
+      "cta_secondary": { "label": "Скачать резюме", "href": "assets/valiakhmad-makhamatov-cv-2026_ru.pdf" }
     },
 
     "about": {
@@ -656,7 +656,7 @@ const SITE_CONTENT = {
       "methods": [
         { "label": "LinkedIn", "href": "https://www.linkedin.com/in/valiakhmad-makhamatov-55b2aa203/", "icon": "linkedin" },
         { "label": "GitHub",   "href": "https://github.com/rinatovich",      "icon": "github" },
-        { "label": "Email",    "href": "mailto:valiakhmad.makhamatov@gmail.com",        "icon": "email" },
+        { "label": "Email",    "href": "mailto:makhamatov.valiakhmad@gmail.com",        "icon": "email" },
         { "label": "Telegram",   "href": "https://t.me/rinatovic99",      "icon": "telegram" },
       ]
     },
@@ -677,11 +677,11 @@ const SITE_CONTENT = {
       "name": "Valiakhmad Makhamatov",
       "role": "Texnik loyiha menejeri va Full Stack muhandis",
       "location": "Masofaviy · UTC+5",
-      "email": "valiakhmad.makhamatov@gmail.com",
+      "email": "makhamatov.valiakhmad@gmail.com",
       "linkedin": "https://www.linkedin.com/in/valiakhmad-makhamatov-55b2aa203/",
       "telegram": "https://t.me/rinatovic99",
       "github": "https://github.com/rinatovich",
-      "cv": "assets/valiakhmad-makhamatov-cv-2025.pdf",
+      "cv": "assets/valiakhmad-makhamatov-cv-2026_ru.pdf",
       "availability": { "open": true, "label": "Takliflarga ochiqman" }
     },
 
@@ -690,7 +690,7 @@ const SITE_CONTENT = {
       "headline": "Valiakhmad\nMakhamatov",
       "description": "Men muhandislik murakkabligini biznes natijalari bilan bog'layman. 8 yildan ortiq tajribam davomida masshtablanuvchi tizimlar quraman, funksiyalararo jamoalarga rahbarlik qilaman va bitta sprintdan uzoqroq umr ko'radigan mahsulotlarni ishga tushiraman.",
       "cta_primary": { "label": "Loyihalarni ko'rish", "href": "#/projects" },
-      "cta_secondary": { "label": "Rezyumeni yuklab olish", "href": "assets/valiakhmad-makhamatov-cv-2025.pdf" }
+      "cta_secondary": { "label": "Rezyumeni yuklab olish", "href": "assets/valiakhmad-makhamatov-cv-2026_ru.pdf" }
     },
 
     "about": {
@@ -986,7 +986,7 @@ const SITE_CONTENT = {
       "methods": [
         { "label": "LinkedIn", "href": "https://www.linkedin.com/in/valiakhmad-makhamatov-55b2aa203/", "icon": "linkedin" },
         { "label": "GitHub",   "href": "https://github.com/rinatovich",      "icon": "github" },
-        { "label": "Email",    "href": "mailto:valiakhmad.makhamatov@gmail.com",        "icon": "email" },
+        { "label": "Email",    "href": "mailto:makhamatov.valiakhmad@gmail.com",        "icon": "email" },
         { "label": "Telegram",   "href": "https://t.me/rinatovic99",      "icon": "telegram" },
       ]
     },

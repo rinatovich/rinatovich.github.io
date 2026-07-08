@@ -453,7 +453,7 @@ ul, ol { list-style: none; }
 
 @media (min-width: 1024px) {
   .hero__inner {
-    grid-template-columns: 1fr 420px;
+    grid-template-columns: 1fr 460px;
     align-items: center;
     gap: var(--sp-12);
   }
@@ -538,10 +538,13 @@ ul, ol { list-style: none; }
   animation: fadeSlideUp 0.7s cubic-bezier(0.16,1,0.3,1) 0.52s forwards;
 }
 
-/* Visual panel (right side) */
+/* Visual panel (right side): portrait photo with the stats card
+   floating over its lower-left corner, per the design mock. */
 .hero__visual {
   position: relative;
   display: none;
+  width: 100%;
+  aspect-ratio: 0.62;
   opacity: 0;
   animation: fadeIn 1s cubic-bezier(0.16,1,0.3,1) 0.6s forwards;
 }
@@ -550,14 +553,38 @@ ul, ol { list-style: none; }
   .hero__visual { display: block; }
 }
 
+.hero__photo-wrap {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.hero__photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 0%;
+  border-radius: var(--r-lg);
+  display: block;
+  user-select: none;
+}
+
 .hero__visual-card {
-  background: var(--col-surface);
+  position: absolute;
+  left: -8px;
+  right: 12px;
+  bottom: 28px;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(10px);
   border: 1px solid var(--col-border);
   border-radius: var(--r-lg);
   padding: var(--sp-6);
-  box-shadow: var(--sh-md);
-  position: relative;
+  box-shadow: var(--sh-lg, var(--sh-md));
   overflow: hidden;
+  z-index: 2;
 }
 
 .hero__visual-card::before {
@@ -2351,7 +2378,11 @@ ul, ol { list-style: none; }
    HERO — ensure it starts below fixed nav
    ============================================================ */
 
-.hero { padding-top: var(--nav-h); }
+/* NOTE: previously this rule painted assets/img/hero.png as a full-section
+   tiled/fixed background, which fought with the real hero layout below.
+   The portrait photo is now rendered as a proper <img> inside
+   .hero__visual (see .hero__photo rules further down), so this override
+   has been removed. */
 
 /* ============================================================
    MOTION & DELIGHT
@@ -2498,7 +2529,6 @@ ul, ol { list-style: none; }
 .project-card,
 .cert-card,
 .post-card,
-.hero__visual-card,
 .case-result-card {
   position: relative;
   overflow: hidden;

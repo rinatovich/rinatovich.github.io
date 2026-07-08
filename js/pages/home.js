@@ -43,6 +43,9 @@ function renderHomePage() {
           </div>
 
           <div class="hero__visual" aria-hidden="true">
+            <div class="hero__photo-wrap">
+              <img class="hero__photo" src="assets/img/hero-crop.png" alt="" />
+            </div>
             <div class="hero__visual-card">
               <div class="hero__visual-label">${escHtml(t('hero_visual_label'))}</div>
               <svg class="hero__visual-chart" viewBox="0 0 340 140" xmlns="http://www.w3.org/2000/svg">
