@@ -11,13 +11,14 @@
 
 'use strict';
 
-const SUPPORTED_LANGS = ['en', 'ru'];
+const SUPPORTED_LANGS = ['en', 'ru', 'uz'];
 const LANG_STORAGE_KEY = 'rinatovich.github.io-lang';
 
 /** Metadata used to render the language switcher itself */
 const LANG_META = {
   en: { short: 'EN', name: 'English',  htmlLang: 'en', dateLocale: 'en-US' },
-  ru: { short: 'RU', name: 'Русский',  htmlLang: 'ru', dateLocale: 'ru-RU' }
+  ru: { short: 'RU', name: 'Русский',  htmlLang: 'ru', dateLocale: 'ru-RU' },
+  uz: { short: 'UZ', name: "O'zbek",   htmlLang: 'uz', dateLocale: 'uz-UZ' }
 };
 
 /** UI copy that lives outside SITE_CONTENT (labels, headings, buttons, etc.) */
@@ -101,6 +102,8 @@ const UI_STRINGS = {
     form_success: "Message sent. I'll be in touch within 2 business days.",
     form_submit: 'Send Message',
     form_sending: 'Sending…',
+    form_error_required: 'Please fill in your name, email, and message.',
+    form_error_generic: "Couldn't send the message. Please try again or email me directly.",
 
     notfound_title: 'Page not found.',
     notfound_desc: "The page you're looking for doesn't exist or has been moved.",
@@ -187,11 +190,101 @@ const UI_STRINGS = {
     form_success: 'Сообщение отправлено. Отвечу в течение 2 рабочих дней.',
     form_submit: 'Отправить',
     form_sending: 'Отправка…',
+    form_error_required: 'Пожалуйста, заполните имя, email и сообщение.',
+    form_error_generic: 'Не удалось отправить сообщение. Попробуйте ещё раз или напишите мне напрямую.',
 
     notfound_title: 'Страница не найдена.',
     notfound_desc: 'Страница, которую вы ищете, не существует или была перемещена.',
     notfound_home: 'На главную',
     notfound_projects: 'Смотреть проекты'
+  },
+
+  uz: {
+    site_title: 'Valiakhmad Makhamatov — Texnik loyiha menejeri va Full Stack muhandis',
+    site_description: '8 yildan ortiq tajribaga ega texnik loyiha menejeri va Full Stack muhandis, muhandislik va biznes chorrahasida masshtablanuvchi raqamli mahsulotlar yaratadi.',
+
+    nav_resume: 'Rezyume',
+    nav_resume_full: 'Rezyumeni yuklab olish',
+    lang_switch_label: 'Tilni almashtirish',
+
+    footer_email: 'Email',
+    footer_rights: 'Barcha huquqlar himoyalangan',
+
+    breadcrumb_home: 'Bosh sahifa',
+    breadcrumb_projects: 'Loyihalar',
+    breadcrumb_certificates: 'Sertifikatlar',
+    breadcrumb_writing: 'Blog',
+    breadcrumb_contact: 'Aloqa',
+
+    hero_visual_label: "Ish natijalari ko'rsatkichlari",
+
+    about_eyebrow: 'Men haqimda',
+    about_title: 'Muhandislik + Yetkazib berish',
+    skills_eyebrow: 'Texnik ko\'nikmalar',
+
+    work_eyebrow: 'Ish',
+    view_all_projects: "Barcha loyihalarni ko'rish",
+    read_case_study: "Keysni o'qish",
+
+    writing_eyebrow: 'Blog',
+    all_articles: 'Barcha maqolalar',
+    read_article: "Maqolani o'qish",
+
+    get_in_touch: "Bog'lanish",
+
+    credentials_eyebrow: 'Malakalar',
+    cert_valid: 'Amal qiladi',
+    cert_issued: 'Berilgan',
+    cert_expires: 'Amal qilish muddati',
+    cert_no_expiry: 'Muddatsiz',
+    cert_verify: 'Tekshirish',
+
+    project_not_found: 'Loyiha topilmadi',
+    back_to_projects: 'Loyihalarga qaytish',
+    item_missing: "Bu bo'lim mavjud emas yoki ko'chirilgan.",
+    label_client: 'Mijoz',
+    label_duration: 'Muddat',
+    label_team: 'Jamoa',
+    section_overview: 'Umumiy ko\'rinish',
+    section_problem: 'Muammo',
+    section_approach: 'Yondashuv',
+    section_challenges: 'Qiyinchiliklar',
+    section_results: 'Natijalar',
+    section_lessons: 'Xulosalar',
+    section_stack: 'Texnologiyalar to\'plami',
+    more_work_eyebrow: "Boshqa ishlar",
+    related_projects: "O'xshash loyihalar",
+    back_to_all_projects: 'Barcha loyihalarga qaytish',
+
+    article_not_found: 'Maqola topilmadi',
+    back_to_writing: 'Blogga qaytish',
+    back_to_all_articles: 'Barcha maqolalarga qaytish',
+    keep_reading_eyebrow: "O'qishni davom ettiring",
+    more_articles: 'Boshqa maqolalar',
+
+    contact_eyebrow: 'Aloqa',
+    ways_to_reach: "Men bilan bog'lanish usullari",
+    avail_note: 'Senior darajadagi muhandislik va texnik rahbarlik lavozimlari',
+    form_title: 'Xabar yuborish',
+    form_name: 'Ism',
+    form_name_ph: 'Ismingiz',
+    form_email: 'Email',
+    form_email_ph: 'your@email.com',
+    form_subject: 'Mavzu',
+    form_optional: '(ixtiyoriy)',
+    form_subject_ph: 'masalan, texnik rahbarlik lavozimi',
+    form_message: 'Xabar',
+    form_message_ph: 'Nimani muhokama qilmoqchisiz?',
+    form_success: '2 ish kuni ichida javob beraman.',
+    form_submit: 'Yuborish',
+    form_sending: 'Yuborilmoqda…',
+    form_error_required: "Iltimos, ismingiz, email va xabar maydonlarini to'ldiring.",
+    form_error_generic: "Xabarni yuborib bo'lmadi. Qaytadan urinib ko'ring yoki menga to'g'ridan-to'g'ri email yozing.",
+
+    notfound_title: 'Sahifa topilmadi.',
+    notfound_desc: "Siz qidirayotgan sahifa mavjud emas yoki ko'chirilgan.",
+    notfound_home: 'Bosh sahifaga qaytish',
+    notfound_projects: "Loyihalarni ko'rish"
   }
 };
 

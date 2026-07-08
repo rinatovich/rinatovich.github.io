@@ -27,10 +27,10 @@ function renderContactPage() {
         <div class="contact__grid">
 
           <div class="contact__info reveal">
-            <div class="contact__avail">
+            <!-- <div class="contact__avail">
               <span class="hero__dot" aria-hidden="true"></span>
               <span>${escHtml(person.availability.label)} — ${escHtml(t('avail_note'))}</span>
-            </div>
+            </div> -->
 
             <h2 class="contact__info-title">${escHtml(t('ways_to_reach'))}</h2>
             <div class="contact__methods">
@@ -46,7 +46,7 @@ function renderContactPage() {
 
             <p class="contact__response-time">${escHtml(contact.response_time)}</p>
           </div>
-
+          <!-- Form 
           <div class="contact__form-wrap reveal">
             <form class="contact__form" id="contactForm" novalidate>
               <h2 class="contact__form-title">${escHtml(t('form_title'))}</h2>
@@ -71,10 +71,18 @@ function renderContactPage() {
                 <textarea id="cf-message" name="message" rows="5" placeholder="${escHtml(t('form_message_ph'))}" required></textarea>
               </div>
 
+             
+              <div class="form-field form-field--hp" aria-hidden="true">
+                <label for="cf-website">Website</label>
+                <input type="text" id="cf-website" name="website" tabindex="-1" autocomplete="off">
+              </div>
+
               <button type="submit" class="btn btn--primary form-submit" id="cfSubmit">
                 <span class="form-submit__label">${escHtml(t('form_submit'))}</span>
                 ${ICONS.arrowRight}
               </button>
+
+              <p class="form-error" id="cfError" hidden></p>
 
               <div class="form-success" id="cfSuccess" hidden>
                 ${ICONS.check}
@@ -82,6 +90,7 @@ function renderContactPage() {
               </div>
             </form>
           </div>
+          -->
 
         </div>
       </div>
@@ -97,23 +106,97 @@ function bindContactForm() {
   const form = document.getElementById('contactForm');
   if (!form) return;
 
-  form.addEventListener('submit', e => {
+  const submit = document.getElementById('cfSubmit');
+  const label = submit.querySelector('.form-submit__label');
+  const success = document.getElementById('cfSuccess');
+  const errorBox = document.getElementById('cfError');
+
+  form.addEventListener('submit', async e => {
     e.preventDefault();
-    const submit = document.getElementById('cfSubmit');
-    const success = document.getElementById('cfSuccess');
-    const label = submit.querySelector('.form-submit__label');
+
+    // Honeypot: if this hidden field got filled in, silently "succeed"
+    // without sending anything — it's almost certainly a bot.
+    const hp = form.querySelector('#cf-website');
+    if (hp && hp.value.trim() !== '') {
+      form.reset();
+      showFormSuccess();
+      return;
+    }
+
+    errorBox.hidden = true;
+    success.hidden = true;
+    success.classList.remove('is-visible');
+
+    const name = form.querySelector('#cf-name').value.trim();
+    const email = form.querySelector('#cf-email').value.trim();
+    const subject = form.querySelector('#cf-subject').value.trim();
+    const message = form.querySelector('#cf-message').value.trim();
+
+    if (!name || !email || !message) {
+      showFormError(t('form_error_required'));
+      return;
+    }
 
     submit.disabled = true;
     label.textContent = t('form_sending');
 
-    // Simulated submission — wire up to a real endpoint (e.g. Formspree, a
-    // serverless function, or your own API) when you're ready to go live.
-    setTimeout(() => {
+    try {
+      await sendToTelegram({ name, email, subject, message });
       form.reset();
+      showFormSuccess();
+    } catch (err) {
+      showFormError(t('form_error_generic'));
+    } finally {
       submit.disabled = false;
       label.textContent = t('form_submit');
-      success.hidden = false;
-      success.classList.add('is-visible');
-    }, 700);
+    }
   });
+
+  function showFormSuccess() {
+    success.hidden = false;
+    requestAnimationFrame(() => success.classList.add('is-visible'));
+  }
+
+  function showFormError(msg) {
+    errorBox.textContent = msg;
+    errorBox.hidden = false;
+  }
+}
+
+/**
+ * Sends the contact-form payload directly to a Telegram chat via the
+ * Bot API — no backend required. Configure the bot token/chat ID in
+ * js/telegram-config.js.
+ */
+async function sendToTelegram({ name, email, subject, message }) {
+  if (typeof TELEGRAM_CONFIG === 'undefined' ||
+      !TELEGRAM_CONFIG.BOT_TOKEN || TELEGRAM_CONFIG.BOT_TOKEN === 'YOUR_BOT_TOKEN_HERE' ||
+      !TELEGRAM_CONFIG.CHAT_ID || TELEGRAM_CONFIG.CHAT_ID === 'YOUR_CHAT_ID_HERE') {
+    throw new Error('Telegram is not configured yet — edit js/telegram-config.js');
+  }
+
+  const lines = [
+    '📩 New message from the site',
+    `👤 Name: ${name}`,
+    `✉️ Email: ${email}`,
+    subject ? `📝 Subject: ${subject}` : null,
+    '',
+    message
+  ].filter(Boolean);
+
+  const url = `https://api.telegram.org/bot${TELEGRAM_CONFIG.BOT_TOKEN}/sendMessage`;
+
+  const res = await fetch(url, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      chat_id: TELEGRAM_CONFIG.CHAT_ID,
+      text: lines.join('\n')
+    })
+  });
+
+  const data = await res.json().catch(() => null);
+  if (!res.ok || !data || data.ok !== true) {
+    throw new Error((data && data.description) || 'Telegram request failed');
+  }
 }

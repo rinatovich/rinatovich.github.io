@@ -17,9 +17,10 @@ const SITE_CONTENT = {
       "name": "Valiakhmad Makhamatov",
       "role": "Technical Project Manager & Full Stack Engineer",
       "location": "Remote · UTC+5",
-      "email": "hello@valiakhmad.dev",
-      "linkedin": "https://linkedin.com/in/valiakhmad",
-      "github": "https://github.com/valiakhmad",
+      "email": "valiakhmad.makhamatov@gmail.com",
+      "telegram": "https://t.me/rinatovic99",
+      "linkedin": "https://www.linkedin.com/in/valiakhmad-makhamatov-55b2aa203/",
+      "github": "https://github.com/rinatovich",
       "cv": "assets/valiakhmad-makhamatov-cv-2025.pdf",
       "availability": { "open": true, "label": "Open to opportunities" }
     },
@@ -323,9 +324,10 @@ const SITE_CONTENT = {
       "subtitle": "Open to senior engineering and technical leadership roles. I read every message personally.",
       "response_time": "I typically respond within 2 business days.",
       "methods": [
-        { "label": "LinkedIn", "href": "https://linkedin.com/in/valiakhmad", "icon": "linkedin" },
-        { "label": "GitHub",   "href": "https://github.com/valiakhmad",      "icon": "github" },
-        { "label": "Email",    "href": "mailto:hello@valiakhmad.dev",        "icon": "email" }
+        { "label": "LinkedIn", "href": "https://www.linkedin.com/in/valiakhmad-makhamatov-55b2aa203/", "icon": "linkedin" },
+        { "label": "GitHub",   "href": "https://github.com/rinatovich",      "icon": "github" },
+        { "label": "Telegram",   "href": "https://t.me/rinatovic99",      "icon": "telegram" },
+        { "label": "Email",    "href": "mailto:valiakhmad.makhamatov@gmail.com",        "icon": "email" }
       ]
     },
 
@@ -333,7 +335,6 @@ const SITE_CONTENT = {
       { "label": "Home",         "href": "#/" },
       { "label": "Projects",     "href": "#/projects" },
       { "label": "Certificates", "href": "#/certificates" },
-      { "label": "Writing",      "href": "#/blog" },
       { "label": "Contact",      "href": "#/contact" }
     ]
   },
@@ -346,9 +347,10 @@ const SITE_CONTENT = {
       "name": "Valiakhmad Makhamatov",
       "role": "Технический руководитель проектов и Full Stack инженер",
       "location": "Удалённо · UTC+5",
-      "email": "hello@valiakhmad.dev",
-      "linkedin": "https://linkedin.com/in/valiakhmad",
-      "github": "https://github.com/valiakhmad",
+      "email": "valiakhmad.makhamatov@gmail.com",
+      "linkedin": "https://www.linkedin.com/in/valiakhmad-makhamatov-55b2aa203/",
+      "telegram": "https://t.me/rinatovic99",
+      "github": "https://github.com/rinatovich",
       "cv": "assets/valiakhmad-makhamatov-cv-2025.pdf",
       "availability": { "open": true, "label": "Открыт для предложений" }
     },
@@ -652,9 +654,10 @@ const SITE_CONTENT = {
       "subtitle": "Открыт для senior-ролей в инженерии и техническом лидерстве. Читаю каждое сообщение лично.",
       "response_time": "Обычно отвечаю в течение 2 рабочих дней.",
       "methods": [
-        { "label": "LinkedIn", "href": "https://linkedin.com/in/valiakhmad", "icon": "linkedin" },
-        { "label": "GitHub",   "href": "https://github.com/valiakhmad",      "icon": "github" },
-        { "label": "Email",    "href": "mailto:hello@valiakhmad.dev",        "icon": "email" }
+        { "label": "LinkedIn", "href": "https://www.linkedin.com/in/valiakhmad-makhamatov-55b2aa203/", "icon": "linkedin" },
+        { "label": "GitHub",   "href": "https://github.com/rinatovich",      "icon": "github" },
+        { "label": "Email",    "href": "mailto:valiakhmad.makhamatov@gmail.com",        "icon": "email" },
+        { "label": "Telegram",   "href": "https://t.me/rinatovic99",      "icon": "telegram" },
       ]
     },
 
@@ -662,8 +665,337 @@ const SITE_CONTENT = {
       { "label": "Главная",     "href": "#/" },
       { "label": "Проекты",     "href": "#/projects" },
       { "label": "Сертификаты", "href": "#/certificates" },
-      { "label": "Блог",        "href": "#/blog" },
       { "label": "Контакты",    "href": "#/contact" }
+    ]
+  },
+
+  /* ==========================================================
+     O'ZBEKCHA
+     ========================================================== */
+  uz: {
+    "person": {
+      "name": "Valiakhmad Makhamatov",
+      "role": "Texnik loyiha menejeri va Full Stack muhandis",
+      "location": "Masofaviy · UTC+5",
+      "email": "valiakhmad.makhamatov@gmail.com",
+      "linkedin": "https://www.linkedin.com/in/valiakhmad-makhamatov-55b2aa203/",
+      "telegram": "https://t.me/rinatovic99",
+      "github": "https://github.com/rinatovich",
+      "cv": "assets/valiakhmad-makhamatov-cv-2025.pdf",
+      "availability": { "open": true, "label": "Takliflarga ochiqman" }
+    },
+
+    "hero": {
+      "eyebrow": "Texnik loyiha menejeri va Full Stack muhandis",
+      "headline": "Valiakhmad\nMakhamatov",
+      "description": "Men muhandislik murakkabligini biznes natijalari bilan bog'layman. 8 yildan ortiq tajribam davomida masshtablanuvchi tizimlar quraman, funksiyalararo jamoalarga rahbarlik qilaman va bitta sprintdan uzoqroq umr ko'radigan mahsulotlarni ishga tushiraman.",
+      "cta_primary": { "label": "Loyihalarni ko'rish", "href": "#/projects" },
+      "cta_secondary": { "label": "Rezyumeni yuklab olish", "href": "assets/valiakhmad-makhamatov-cv-2025.pdf" }
+    },
+
+    "about": {
+      "title": "Men haqimda",
+      "paragraphs": [
+        "Men dasturiy ta'minot muhandisligi va mahsulotni yetkazib berish chorrahasida ishlayman — bu yerda arxitektura qarorlari biznes cheklovlari bilan uchrashadi, jamoa ichidagi dinamika esa yaxshi g'oya релизга chiqadimi yoki to'xtab qoladimi, shuni belgilaydi.",
+        "Tajribam full-stack dasturlash, platforma arxitekturasi va texnik loyiha boshqaruvini qamrab oladi. Men 4 dan 20 tagacha muhandisdan iborat jamoalarga rahbarlik qildim, legacy monolitlarni to'xtovsiz qayta qurdim va deploy siklini haftalardan soatlarga qisqartirdim.",
+        "Men ishonamanki, eng yaxshi texnik yetakchilar kod yozadi va mijozlar bilan gaplashadi. Ikkala odat ham sizni o'tkirlashtiradi."
+      ],
+      "stats": [
+        { "value": "8+",  "label": "yil mahsulot yetkazib berishda" },
+        { "value": "12",  "label": "ishga tushirilgan mahsulot" },
+        { "value": "40%", "label": "o'rtacha deploy vaqti qisqarishi" },
+        { "value": "20",  "label": "boshqarilgan muhandis" }
+      ]
+    },
+
+    "skills": {
+      "title": "Texnik ko'nikmalar",
+      "categories": [
+        { "name": "Dasturlash tillari", "items": ["TypeScript", "Python", "Go", "SQL", "Bash"] },
+        { "name": "Frontend",           "items": ["React", "Next.js", "CSS / Tailwind", "Framer Motion"] },
+        { "name": "Backend",            "items": ["Node.js", "FastAPI", "PostgreSQL", "Redis", "GraphQL"] },
+        { "name": "Infratuzilma",       "items": ["AWS", "Docker", "Kubernetes", "GitHub Actions", "Terraform"] },
+        { "name": "Boshqaruv",          "items": ["Texnik rejalashtirish", "OKR", "Sprint rejalashtirish", "Arxitektura ko'rib chiqish", "Yollash"] }
+      ]
+    },
+
+    "projects": {
+      "title": "Tanlangan ishlar",
+      "subtitle": "Ham muhandislik, ham natija muhim bo'lgan loyihalardan keyslar.",
+      "items": [
+        {
+          "id": "platform-rebuild",
+          "title": "Platformani to'xtovsiz qayta qurish",
+          "domain": "Platforma muhandisligi",
+          "year": "2023",
+          "description": "5 yillik, 1000 ta bir vaqtdagi foydalanuvchiga xizmat ko'rsatuvchi monolitni mikroservis arxitekturasiga o'tkazdik. Nol to'xtash vaqti. 6 oylik muddat. 6 muhandisdan iborat jamoa.",
+          "outcome": "Sig'im 10 barobar oshdi. Infratuzilma xarajatlari 40% ga kamaydi.",
+          "tags": ["Next.js", "Node.js", "AWS ECS", "PostgreSQL"],
+          "role": "Tex. lid / arxitektor",
+          "detail": {
+            "client": "B2B SaaS platformasi (Series B bosqichi)",
+            "duration": "6 oy",
+            "team": "6 muhandis, 1 dizayner, 1 PM",
+            "overview": "Mavjud platforma kompaniya faoliyatining dastlabki yillarida qurilgan 5 yillik monolit edi. U ishlar edi — to'xtaguncha. Trafik 1000 ta bir vaqtdagi foydalanuvchidan oshgach, javob vaqti yomonlasha boshladi, deploylar bir necha soatlik xavfli tadbirlarga aylandi, har bir yangi funksiya oldingisidan ko'ra uzoqroq vaqt oldi.",
+            "problem": [
+              "Monolitda aniq servis chegaralari yo'q edi — billing kodidagi o'zgarish dashboardni buzishi mumkin edi.",
+              "Deploy mijozlar vaqt zonalariga moslashtirilgan 2 soatlik texnik xizmat oynasini talab qilardi.",
+              "Jamoa hech narsani refaktoring qilishdan qo'rqardi, chunki hech kim bog'liqliklar grafigini to'liq tushunmasdi."
+            ],
+            "approach": [
+              "To'liq qayta yozishdan voz kechdik — mablag' jalb qilish jarayonidagi kompaniya uchun 6 oylik funksiyalarni muzlatish tijorat jihatdan imkonsiz edi.",
+              "Buning o'rniga Strangler Fig patternidan foydalandik: yangi funksionallik birinchi kundanoq alohida servislar sifatida qurildi, mavjud funksionallik esa monolitdan bosqichma-bosqich, bir chegaralangan kontekstdan boshqasiga ajratildi.",
+              "Monolit va yangi servislar oldiga API gateway o'rnatdik, shunda frontend qaysi tizim so'rovga javob berayotganini bilmasdi.",
+              "Har bir ko'chirilgan servis o'z ma'lumotlar ombori, deploy pipeline va navbatchilikka ega bo'ldi — bu haqiqiy javobgarlik chegaralarini shakllantirishga majbur qildi."
+            ],
+            "challenges": [
+              "Eng qiyin muammo umumiy baza jadvallari bo'ldi — ikkita servis ko'pincha bir xil jadvalni turli sabablarga ko'ra o'qir va yozardi, buni yechish uchun vaqtinchalik ikki tomonlama yozish davri va keyin solishtirish kerak bo'ldi.",
+              "Indekslanmagan SQL so'rovlarida qancha biznes-mantiq yashiringanini kam baholadik — bu mantiqni yangi servislarda aniq qayta tiklash uchun uch hafta ketdi."
+            ],
+            "results": [
+              { "metric": "Sig'im 10× oshdi",  "detail": "~1000 dan 10 000+ bir vaqtdagi foydalanuvchigacha, arxitekturani qayta ko'rib chiqmasdan" },
+              { "metric": "Infratuzilma xarajati 40% kamaydi",  "detail": "Bitta ortiqcha katta monolit o'rniga har bir servis uchun mos o'lchamdagi konteynerlar" },
+              { "metric": "Nol to'xtash vaqti",                  "detail": "Butun migratsiya mijozlarga sezilarli bironta ham uzilishsiz o'tkazildi" },
+              { "metric": "Deploy vaqti: 2 soat → 8 daqiqa",        "detail": "Servis bo'yicha deploylar monolit relizi jarayonini almashtirdi" }
+            ],
+            "lessons": "Migratsiyadan oldin monitoringni sozlang, migratsiya paytida emas. Biz birinchi kundanoq yangi servislarga observability qo'shdik, ammo legacy monolit loyihaning oxirigacha 'qora quti' bo'lib qoldi — va aynan shu ko'r nuqta bizga eng ko'p vaqtga tushdi."
+          }
+        },
+        {
+          "id": "ci-cd-overhaul",
+          "title": "CI/CD pipelineni qayta qurish",
+          "domain": "Dasturchi tajribasi",
+          "year": "2022",
+          "description": "4 ta mahsulot jamoasi bo'yicha deploy pipeline'larini qayta loyihalashtirdik. Trunk-based dasturlashni, avtomatik test gate'larini va muhitlar orasidagi promotion jarayonlarini joriy qildik.",
+          "outcome": "Deploy chastotasi: haftada bir marta → har kuni. Rollback vaqti: 2 soat → 4 daqiqa.",
+          "tags": ["GitHub Actions", "Docker", "Terraform", "Datadog"],
+          "role": "Texnik PM",
+          "detail": {
+            "client": "O'rta hajmdagi fintech, 4 ta mahsulot jamoasi",
+            "duration": "3 oy",
+            "team": "2 platforma muhandisi + 1 TPM (men), 4 jamoaga joylashtirilgan",
+            "overview": "To'rtta mahsulot jamoasi ikki yil oldin bitta jamoa uchun qurilgan bitta deploy pipeline'ni baham ko'rardi. Har bir jamoaning relizi bir xil navbatga da'vogar edi. Bir jamoa kodidagi muvaffaqiyatsiz test boshqa barcha jamoalarning relizini soatlab bloklashi mumkin edi.",
+            "problem": [
+              "Jamoalar orasida build navbati izolyatsiyasi bo'lmagan yagona umumiy Jenkins pipeline.",
+              "Har qanday production deploydan oldin qo'lda QA tasdig'i talab qilinardi — relizlar an'anaga ko'ra haftada bir marta, payshanba kunlari chiqardi.",
+              "Muvaffaqiyatsiz deployni ortga qaytarish butun pipeline'ni noldan qayta ishga tushirishni anglatardi — taxminan 2 soat."
+            ],
+            "approach": [
+              "Jenkins'dan GitHub Actions'ga jamoa va servis bo'yicha alohida pipeline'lar bilan o'tdik — bu umumiy navbatni butunlay bartaraf etdi.",
+              "Qisqa muddatli feature branch'lar va merge oldidan majburiy avtomatik test gate'lari bilan trunk-based dasturlashni joriy qildik.",
+              "O'zgarmas konteyner teglariga asoslangan bir bosishli rollback mexanizmini qurdik — rollback endi 'butun jarayonni qayta ishga tushirish' emas, 'oldingi tegni qayta deploy qilish'ni anglatadi.",
+              "Jamoalarga yangi jarayonni o'zlashtirishga yordam berish uchun birinchi oyda haftalik 'deploy soatlari'ni o'tkazdik."
+            ],
+            "challenges": [
+              "Ikkita jamoaning test to'plami 25+ daqiqa ishlardi, bu esa yangi 'merge faqat yashil testlar bilan' siyosatini og'riqli qildi. Yangi jarayon amalga oshguncha ularning test runner'larini parallellashtirishga to'g'ri keldi.",
+              "Haftalik reliz ritmidan voz kechishga madaniy qarshilik — ba'zi muhandislar dastlab kundalik production deploylardan xavotirlanishdi."
+            ],
+            "results": [
+              { "metric": "Kundalik deploylar",            "detail": "Haftada bitta belgilangan reliz kuni o'rniga" },
+              { "metric": "Rollback: 2 soat → 4 daqiqa",     "detail": "Pipeline'ni to'liq qayta ishga tushirish o'rniga o'zgarmas teglarni qayta deploy qilish orqali" },
+              { "metric": "Build navbati bartaraf etildi",    "detail": "Endi har bir jamoa boshqa jamoalarni bloklamasdan mustaqil deploy qiladi" },
+              { "metric": "Test to'plami: 25 daqiqa → 6 daqiqa",  "detail": "Ikkita eng sekin jamoada parallellashtirishdan keyin" }
+            ],
+            "lessons": "Texnik migratsiya eng oson qismi bo'ldi. Qiyinrog'i muhandislarni kundalik deploylar haftaliklardan ko'ra xavfsizroq ekaniga ishontirish edi — kichikroq o'zgarishlarni debug qilish osonroq. Bunga kunlar emas, haftalar davomida ishonch qurish kerak bo'ldi."
+          }
+        },
+        {
+          "id": "b2b-saas-mvp",
+          "title": "B2B SaaS MVP — noldan ishga tushirishgacha",
+          "domain": "Mahsulot muhandisligi",
+          "year": "2021",
+          "description": "Fintech B2B mahsulotini taxta g'oyasidan productionga 4 oyda olib chiqdim. Ham texnik arxitektura, ham sprint yetkazib berishga javobgar edim. 16-haftada birinchi to'lovchi mijoz paydo bo'ldi.",
+          "outcome": "Ishga tushirishda $120K ARR. 3 oydan keyin seed raundi yopildi.",
+          "tags": ["React", "FastAPI", "PostgreSQL", "Stripe"],
+          "role": "Full Stack muhandis / TPM",
+          "detail": {
+            "client": "Pre-seed bosqichidagi fintech startapi (2 ta hammuassis)",
+            "duration": "4 oy",
+            "team": "Men + 1 shartnoma dizayneri, sotuvni asoschilar olib borishdi",
+            "overview": "Ikkita notexnik hammuassisning tasdiqlangan g'oyasi va bir nechta potentsial mijozlardan LOI (niyat xati) bor edi, lekin mahsulot yo'q edi. Meni birinchi texnik xodim sifatida taklif qilishdi — men ham MVP yaratish, ham yetkazib berish jarayonini boshqarish uchun javobgar edim, alohida PM yo'q edi.",
+            "problem": [
+              "Mavjud texnik infratuzilma yo'q edi — so'zma-so'z bo'sh repozitoriydan boshlash.",
+              "Asoschilarga 4 oy ichida birinchi to'lovchi mijozlarni yopish uchun namoyish qilsa bo'ladigan narsa kerak edi, aks holda LOI'larni yo'qotish xavfi bor edi.",
+              "Pre-seed bosqichida infratuzilma va uchinchi tomon xizmatlari uchun byudjet deyarli nolga teng edi."
+            ],
+            "approach": [
+              "MVP'ni ataylab tor qildik — yaxshi bajarilgan bitta asosiy jarayon, yarim bajarilgan beshta jarayon o'rniga.",
+              "Yagona muhandis sifatida o'z tezligimni maksimal darajaga ko'tarish uchun oddiy, yaxshi tushunilgan texnologiyalardan (React, FastAPI, PostgreSQL) foydalandim.",
+              "Asoschilar bilan haftalik demo o'tkazdim, ular potentsial mijozlardan olingan fikr-mulohazalarni deyarli real vaqtda uzatishardi — bu bozor bilan haftalik fikr-mulohaza siklini yaratdi.",
+              "10-haftada, jadvaldan oldin Stripe billingni integratsiya qildim, shunda birinchi mijozga shartnoma imzolangan zahoti hisob-faktura chiqarish mumkin bo'ldi."
+            ],
+            "challenges": [
+              "Yagona muhandis bo'lganim uchun barcha arxitektura qarorlari faqat menga tegishli edi, hech kim bilan tekshirib ko'rish imkoni yo'q edi. Norasmiy xavfsizlik tarmog'i sifatida boshqa kompaniyadagi do'stimdan haftalik asinxron kod ko'rib chiqishga tayandim.",
+              "Ikki potentsial mijoz ko'lamni ikki barobar oshiradigan funksiyalarni so'rashdi. Ikkalasiga ham ikki marta 'yo'q' deyish loyihaning eng qiyin va eng qimmatli qarori bo'ldi."
+            ],
+            "results": [
+              { "metric": "Ishga tushirishda $120K ARR",     "detail": "Ommaviy ishga tushirish sanasigacha uchta to'lovchi mijoz imzolandi" },
+              { "metric": "Birinchi mijoz: 16-hafta", "detail": "Dastlabki 4 oylik maqsad doirasida" },
+              { "metric": "Seed raund yopildi",       "detail": "Ishga tushirilgandan 3 oy o'tib, ishlaydigan mahsulot asosiy due diligence omili sifatida ko'rsatildi" },
+              { "metric": "Ko'lam kengayishisiz ishga tushirildi", "detail": "Ikkita yirik funksiya so'rovi ataylab ishga tushirishdan oldin rad etildi" }
+            ],
+            "lessons": "Ishga tushirishdan oldin mijozning funksiya so'roviga yo'q deyish noqulay, lekin ko'pincha to'g'ri. Rad etilgan ikkala funksiya ham keyinchalik mijozlarning 5% dan kamiga kerak bo'lgan chekka holatlar ekani ma'lum bo'ldi."
+          }
+        }
+      ]
+    },
+
+    "certificates": {
+      "title": "Sertifikatlar",
+      "subtitle": "Tasdiqlangan professional malakalar.",
+      "items": [
+        {
+          "name": "CS50's Compyuter Science",
+          "issuer": "Edx and Harvard University",
+          "date": "2021",
+          "expiry": null,
+          "valid": true,
+          "image": "../../assets/img/certificates/img/Makhamatov_Valiakhmad_CS50_Harvard_EDU-2-1.png",
+          "verify": "../../assets/img/certificates/pdf/Makhamatov_Valiakhmad_CS50_Harvard_EDU-2.pdf",
+          "badge": "CS"
+        },
+        {
+          "name": "Fullstack Web Development",
+          "issuer": "STARK EDU",
+          "date": "2019",
+          "expiry": null,
+          "valid": true,
+          "image": "../../assets/img/certificates/img/Stark_EDU_Certificate-1.png",
+          "verify": "../../assets/img/certificates/pdf/Stark_EDU_Certificate.pdf",
+          "badge": "WEB"
+        },
+        {
+          "name": "Fortinet Certified Fundamentals in Cybersecurity",
+          "issuer": "Fortinet",
+          "date": "2025",
+          "expiry": "2027",
+          "valid": true,
+          "image": "../../assets/img/certificates/img/Valiakhmad Makhamatov FCF Cybersecurity-3-1.png",
+          "verify": "../../assets/img/certificates/pdf/Valiakhmad Makhamatov FCF Cybersecurity-3.pdf",
+          "badge": "CS"
+        },
+        {
+          "name": "Introduction to the Threat Landscape",
+          "issuer": "Fortinet",
+          "date": "2025",
+          "expiry": null,
+          "valid": true,
+          "image": "../../assets/img/certificates/img/Course_Completion_Certificate-2-1.png",
+          "verify": "../../assets/img/certificates/pdf/Course_Completion_Certificate-2.pdf",
+          "badge": "CS"
+        },
+        {
+          "name": "Project management",
+          "issuer": "Google",
+          "date": "2022",
+          "expiry": null,
+          "valid": true,
+          "image": "../../assets/img/certificates/img/Makhamatov_Valiakhmad_GPM-1-1.png",
+          "verify": "../../assets/img/certificates/pdf/Makhamatov_Valiakhmad_GPM-1.pdf",
+          "badge": "PM"
+        }
+      ]
+    },
+
+    "blog": {
+      "title": "Blog",
+      "subtitle": "Muhandislik, mahsulot va ular oralig'idagi bo'shliq haqida kuzatuvlar.",
+      "items": [
+        {
+          "id": "why-platform-teams-fail",
+          "title": "Nega platforma jamoalari muvaffaqiyatsizlikka uchraydi (va buni qanday tuzatish mumkin)",
+          "date": "2024-11-12",
+          "readTime": "7 daqiqalik o'qish",
+          "category": "Muhandislik",
+          "excerpt": "Vositalarga e'tibor qaratib, dasturchi tajribasiga e'tibor bermaydigan platforma jamoalari yomon vositalar tufayli muvaffaqiyatsizlikka uchramaydi. Ular kim uchun qurayotganini unutgani uchun muvaffaqiyatsizlikka uchraydi.",
+          "content": [
+            { "type": "p", "text": "So'nggi besh yilda uchta platforma jamoasining muvaffaqiyatsizligini kuzatdim va ularning barchasi bir xil sababdan — yomon vositalar emas, balki unutilgan auditoriya tufayli muvaffaqiyatsizlikka uchradi." },
+            { "type": "h2", "text": "Naqsh" },
+            { "type": "p", "text": "Platforma jamoasi tuziladi. Ular aqlli, motivatsiyalangan va haqiqiy avtonomiyaga ega. Ular chindan ham ta'sirli narsa quradi — o'z-o'ziga xizmat ko'rsatuvchi deploy tizimi, chiroyli ichki CLI, service mesh. Olti oydan keyin qabul qilish deyarli nolga tushadi va jamoadan o'z shtatini asoslashi so'raladi." },
+            { "type": "p", "text": "Muammo muhandislikda emas edi. Muammo shundaki, platforma jamoasi olti oy davomida xayoliy ideal foydalanuvchi uchun emas, balki koridordagi haqiqiy, band, shubhali muhandis uchun mahsulot qurishi kerak edi." },
+            { "type": "h2", "text": "Uchta erta ogohlantiruvchi belgi" },
+            { "type": "list", "items": [
+              "Platforma jamoasining roadmap'ida mahsulot muhandisining shikoyatidan to'g'ridan-to'g'ri kelib chiqqan bironta ham element yo'q.",
+              "Platforma jamoasidagi hech kim o'z platformasidan foydalanib mijozga mo'ljallangan funksiyani chiqarmagan.",
+              "Qabul qilish platforma muqobillardan aniq yaxshi bo'lgani uchun emas, balki buyruq bilan haydalmoqda."
+            ]},
+            { "type": "h2", "text": "Haqiqatan ham nima ishlaydi" },
+            { "type": "p", "text": "Men muvaffaqiyatli ko'rgan barcha platforma jamoalari bir jozibasiz narsani qilishdi: ular platforma kodining bitta qatorini yozishdan oldin to'liq sprint davomida mahsulot jamoasiga qo'shilishdi. Workshop emas. Intervyu emas. Haqiqiy juftlikda ishlash, haqiqiy navbatchilik, deploy kunining haqiqiy stressi." },
+            { "type": "quote", "text": "Agar platforma jamoangiz o'tgan hafta deploy nosozligi tufayli tunda soat ikkida chaqirilgan muhandisning ismini ayta olmasa, demak, ular muammoga yetarlicha yaqin emas." },
+            { "type": "p", "text": "Platforma muhandisligi — infratuzilma kiyimidagi mahsulot intizomi. Unga shunday munosabatda bo'ling, vositalar esa o'zi izidan ergashadi." }
+          ]
+        },
+        {
+          "id": "technical-pm-dilemma",
+          "title": "Texnik PM dilemmasi: kod yozishmi yoki koordinatsiya qilishmi?",
+          "date": "2024-09-03",
+          "readTime": "5 daqiqalik o'qish",
+          "category": "Yetakchilik",
+          "excerpt": "Men ishlagan eng yaxshi texnik loyiha menejerlari bitta odatni baham ko'rishadi: ular qo'llarini kod bazasida ushlab turishadi. Nimanidir isbotlash uchun emas — halol qolish uchun.",
+          "content": [
+            { "type": "p", "text": "Texnik PM sifatida uchinchi yilingiz atrofida kimdir katta lavozimdagi kishi sizga yumshoq tarzda kod yozishni to'xtatishingiz kerakligini aytadi. Vaqtingizni koordinatsiyaga sarflagan yaxshiroq, degan fikr bildiriladi. Muhandislar muhandislik qilsin." },
+            { "type": "p", "text": "Menimcha, bu maslahat yarmi to'g'ri va xavfli darajada to'liq emas." },
+            { "type": "h2", "text": "Chetga chiqish uchun dalillar" },
+            { "type": "p", "text": "Kunning olti soatini IDE'da o'tkazadigan TPM jamoaga kerak bo'lgan koordinatsiya ishini bajarmayotgani rost. Sprint rejalashtirish o'z-o'zidan bajarilmaydi. Manfaatdor tomonlar uchun yangilanishlar o'z-o'zidan yozilmaydi. Kodga chuqur sho'ng'ib qolishning haqiqiy muqobil narxi bor." },
+            { "type": "h2", "text": "Yaqin qolish uchun dalillar" },
+            { "type": "p", "text": "Ammo koddan to'liq chetlashgan TPM'larda men kuzatgan aniq muvaffaqiyatsizlik ssenariysi bor: ular bahoning noto'g'ri ekanini 'hidlash' qobiliyatini yo'qotishadi. Hisoblash emas — hidlash. Mushak xotirasidan qurilgan sezgi, 'ikki kunlik' vazifa aslida niqoblangan besh kunlik vazifa ekanini." },
+            { "type": "list", "items": [
+              "Bu sezgisiz har bir baho e'tiqod asosida qabul qilinishi kerak.",
+              "Bu sezgisiz texnik qarz haqidagi suhbatlar mavhum bo'lib qoladi, aniq emas.",
+              "Bu sezgisiz muhandis biror narsa ko'rinishidan qiyinroq deganida ishonchli tarzda e'tiroz bildira olmaysiz — chunki chindan ham bilmaysiz."
+            ]},
+            { "type": "h2", "text": "Mening haqiqiy amaliyotim" },
+            { "type": "p", "text": "Men boshidan oxirigacha o'zim egallik qiladigan kod bazasining bitta kichik, haqiqiy qismini saqlab qolaman — odatda ichki vosita yoki kichik servis kabi past xavfli narsa. Tashkilotga uni chiqarishim kerak bo'lgani uchun emas. O'zimni kalibrlangan holda saqlash uchun uni chiqarishim kerak bo'lgani uchun." },
+            { "type": "quote", "text": "Texnik kalibrovkasiz koordinatsiya boshqaruv teatriga aylanadi. Siz tushunmaydigan yopishqoq qog'ozlarni siljitayapsiz." }
+          ]
+        },
+        {
+          "id": "strangler-fig-playbook",
+          "title": "Strangler Fig migratsiyasi: amaliy qo'llanma",
+          "date": "2024-06-20",
+          "readTime": "12 daqiqalik o'qish",
+          "category": "Arxitektura",
+          "excerpt": "Katta portlash bilan qayta yozish deyarli har doim noto'g'ri qaror. Mana funksiyalarni muzlatmasdan uchta legacy monolitni ko'chirish uchun ishlatgan bosqichma-bosqich yondashuvim.",
+          "content": [
+            { "type": "p", "text": "Men endi uchta juda xilma-xil monolitda — Rails e-commerce platformasi, PHP fintech backend va 'Platformani qayta qurish' keysida tavsiflangan Node.js platformasida — uchta Strangler Fig migratsiyasini o'tkazdim. Har safar tafsilotlar farq qiladi. Qo'llanma esa yo'q." },
+            { "type": "h2", "text": "1-qadam — avval chegaralangan kontekstlarni xaritalang" },
+            { "type": "p", "text": "Migratsiya kodini yozishdan oldin monolitning qaysi qismlari haqiqatan ham alohida biznes domenlarini ifodalashini xaritalashga haqiqiy vaqt — bir hafta, ba'zan ikki hafta — sarflang. Bu eshitilganidan sekinroq, chunki monolitlar yillar davomida qulay biriktirish orqali o'z chegaralarini faol ravishda yashiradi." },
+            { "type": "h2", "text": "2-qadam — avval eng past xavfli servisni tanlang" },
+            { "type": "p", "text": "Tizimning eng og'riqli qismini birinchi bo'lib ko'chirish vasvasasiga qarshilik ko'rsating. Eng kam bog'liqliklarga va eng aniq chegaraga ega qismni ko'chiring. Birinchi migratsiyaning vazifasi — maksimal darhol qiymat berish emas, balki patternning aynan sizning muhitingizda ishlashini isbotlash." },
+            { "type": "h2", "text": "3-qadam — hamma narsaning oldiga gateway qo'ying" },
+            { "type": "p", "text": "Monolit va yangi servislar oldida turgan API gateway (yoki hatto marshrutlash qoidalari bilan oddiy reverse proxy) muhokama qilinmaydi. U yo'nalishlarni birma-bir, frontend uchun sezilmasdan ko'chirish imkonini beradi." },
+            { "type": "h2", "text": "4-qadam — o'tishdan oldin ikki tomonlama yozing" },
+            { "type": "p", "text": "Ham monolit, ham yangi servisga kerak bo'lgan har qanday ma'lumot uchun ikki tomonlama yozish davrini o'tkazing: ikkala tizim ham yozadi, lekin faqat bittasi haqiqat manbai hisoblanadi, farqlar esa solishtiriladi. Bu zerikarli. Ammo bu migratsiya paytida ma'lumot yo'qotilishining oldini olish uchun eng yuqori samarali qadam." },
+            { "type": "list", "items": [
+              "Kamida bitta to'liq biznes sikli davomida ikki tomonlama yozing (haftalik, oylik — nima mos kelsa)",
+              "Har qanday farqlanish haqida ogohlantiradigan solishtirish job'ini qurng",
+              "Haqiqat manbaini faqat butun sikl davomida farqlanish nolga teng bo'lgandan keyin almashtiring"
+            ]},
+            { "type": "h2", "text": "5-qadam — eski kodni o'chiring. Haqiqatan ham o'chiring." },
+            { "type": "p", "text": "Hamma o'tkazib yuboradigan qadam. Servis ko'chirilgach, monolitdagi tegishli kod tuzoqqa aylanadi — yarim qo'llab-quvvatlanadigan, ba'zan tasodifan hali ham trafik oladigan, doimiy chalkashlik manbai. O'chirishni o'sha ko'chirish bilan bir sprintda, alohida egasi bo'lgan alohida ticket sifatida rejalashtiring." },
+            { "type": "quote", "text": "Migratsiya yangi servis ishlaganda emas, balki eski kod yo'qolib, hech kim tasodifan trafikni unga qaytara olmaganda tugallangan hisoblanadi." }
+          ]
+        }
+      ]
+    },
+
+    "contact": {
+      "title": "Keling, gaplashamiz",
+      "subtitle": "Senior darajadagi muhandislik va texnik rahbarlik lavozimlariga ochiqman. Har bir xabarni shaxsan o'qiyman.",
+      "response_time": "Odatda 2 ish kuni ichida javob beraman.",
+      "methods": [
+        { "label": "LinkedIn", "href": "https://www.linkedin.com/in/valiakhmad-makhamatov-55b2aa203/", "icon": "linkedin" },
+        { "label": "GitHub",   "href": "https://github.com/rinatovich",      "icon": "github" },
+        { "label": "Email",    "href": "mailto:valiakhmad.makhamatov@gmail.com",        "icon": "email" },
+        { "label": "Telegram",   "href": "https://t.me/rinatovic99",      "icon": "telegram" },
+      ]
+    },
+
+    "nav": [
+      { "label": "Bosh sahifa",  "href": "#/" },
+      { "label": "Loyihalar",    "href": "#/projects" },
+      { "label": "Sertifikatlar","href": "#/certificates" },
+      { "label": "Aloqa",        "href": "#/contact" }
     ]
   }
 };

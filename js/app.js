@@ -122,6 +122,14 @@ function renderFooter() {
              target="_blank" rel="noopener noreferrer" aria-label="GitHub">
             ${ICONS.github}
           </a>
+          <a href="${escHtml(person.telegram)}" class="footer__social"
+             target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            ${ICONS.telegram}
+          </a>
+          <a href="${escHtml(person.email)}" class="footer__social"
+             target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            ${ICONS.email}
+          </a>
         </div>
       </div>
     </div>

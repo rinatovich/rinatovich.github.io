@@ -1118,34 +1118,44 @@ ul, ol { list-style: none; }
    CONTACT
    ============================================================ */
 
-.contact__wrapper {
+.contact__grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--sp-12);
 }
 
 @media (min-width: 768px) {
-  .contact__wrapper { grid-template-columns: 1fr 1fr; align-items: start; }
+  .contact__grid { grid-template-columns: 0.85fr; align-items: start; }
 }
 
-.contact__info p {
-  font-size: 16px;
-  color: var(--col-text-sec);
-  line-height: 1.7;
-  margin-bottom: var(--sp-6);
+.contact__info { min-width: 0; }
+
+.contact__avail {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--col-success);
+  background: var(--col-success-lt);
+  border: 1px solid #A7F3D0;
+  padding: 7px var(--sp-4);
+  border-radius: var(--r-full);
+  margin-bottom: var(--sp-8);
 }
 
-.contact__response {
+.contact__response-time {
   font-size: 13px;
   color: var(--col-text-muted);
-  margin-top: var(--sp-2);
+  margin-top: var(--sp-8);
+  line-height: 1.6;
 }
 
 .contact__methods {
   display: flex;
   flex-direction: column;
   gap: var(--sp-3);
-  margin-top: var(--sp-6);
+  margin-top: var(--sp-5);
 }
 
 .contact__method {
@@ -1184,32 +1194,55 @@ ul, ol { list-style: none; }
   background: var(--col-accent-med);
 }
 
-/* Contact form */
+.contact__method-label { flex: 1; font-weight: 600; color: var(--col-text); font-size: 15px; }
+
+/* Contact form card */
+.contact__form-wrap {
+  background: var(--col-surface);
+  border: 1px solid var(--col-border);
+  border-radius: var(--r-lg);
+  padding: var(--sp-8);
+  box-shadow: var(--sh-sm);
+}
+
+.contact__form-title {
+  font-size: clamp(19px, 2.2vw, 22px);
+  font-weight: 700;
+  color: var(--col-text);
+  letter-spacing: -0.02em;
+  margin-bottom: var(--sp-6);
+}
+
 .contact__form {
   display: flex;
   flex-direction: column;
-  gap: var(--sp-4);
+  gap: var(--sp-5);
 }
 
-.form-group {
+.form-field {
   display: flex;
   flex-direction: column;
   gap: var(--sp-2);
 }
 
-.form-group label {
+.form-field label {
   font-size: 13px;
   font-weight: 600;
   color: var(--col-text);
   letter-spacing: -0.01em;
 }
 
-.form-group input,
-.form-group textarea {
+.form-field__optional {
+  font-weight: 400;
+  color: var(--col-text-muted);
+}
+
+.form-field input,
+.form-field textarea {
   font-family: var(--font-sans);
   font-size: 15px;
   color: var(--col-text);
-  background: var(--col-surface);
+  background: var(--col-base);
   border: 1.5px solid var(--col-border);
   border-radius: var(--r-sm);
   padding: 11px var(--sp-4);
@@ -1218,36 +1251,70 @@ ul, ol { list-style: none; }
   outline: none;
 }
 
-.form-group input::placeholder,
-.form-group textarea::placeholder {
+.form-field input::placeholder,
+.form-field textarea::placeholder {
   color: var(--col-text-muted);
 }
 
-.form-group input:focus,
-.form-group textarea:focus {
+.form-field input:focus,
+.form-field textarea:focus {
   border-color: var(--col-accent);
   box-shadow: 0 0 0 3px rgba(37,99,235,0.1);
 }
 
-.form-group textarea {
+.form-field textarea {
   resize: vertical;
   min-height: 120px;
   line-height: 1.6;
 }
 
-.form__submit {
+.form-submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-2);
   align-self: flex-start;
+  margin-top: var(--sp-1);
 }
 
-.form__success {
-  display: none;
+.form-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.form-success {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
   padding: var(--sp-4) var(--sp-5);
   background: var(--col-success-lt);
   border: 1px solid #A7F3D0;
   border-radius: var(--r-md);
-  font-size: 15px;
+  font-size: 14px;
   color: var(--col-success);
   font-weight: 500;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity var(--t-fast), transform var(--t-fast);
+}
+
+.form-success[hidden] { display: none; }
+.form-success.is-visible { opacity: 1; transform: translateY(0); }
+.form-success svg { flex-shrink: 0; }
+
+.form-error {
+  font-size: 13px;
+  color: #EF4444;
+  margin-top: -6px;
+}
+
+/* Honeypot field — hidden from real users, only bots fill it in */
+.form-field--hp {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
 }
 
 /* ============================================================
@@ -2157,69 +2224,6 @@ ul, ol { list-style: none; }
    CONTACT PAGE — ENHANCED
    ============================================================ */
 
-.contact__info-title,
-.contact__form-title {
-  font-size: 18px;
-  font-weight: 700;
-  color: var(--col-text);
-  margin-bottom: var(--sp-3);
-  letter-spacing: -0.02em;
-}
-
-.contact__info-note {
-  font-size: 14px;
-  color: var(--col-text-muted);
-  margin-bottom: var(--sp-6);
-}
-
-.contact__method-body { flex: 1; }
-.contact__method-label { font-weight: 600; color: var(--col-text); font-size: 15px; }
-.contact__method-arrow { color: var(--col-text-muted); transition: transform var(--t-fast), color var(--t-fast); }
-.contact__method:hover .contact__method-arrow { transform: translateX(3px); color: var(--col-accent); }
-
-/* Availability block */
-.contact__availability {
-  margin-top: var(--sp-8);
-  padding: var(--sp-5);
-  background: var(--col-alt);
-  border: 1px solid var(--col-border);
-  border-radius: var(--r-md);
-  display: flex;
-  align-items: flex-start;
-  gap: var(--sp-4);
-}
-
-.contact__avail-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: var(--col-success);
-  flex-shrink: 0;
-  margin-top: 5px;
-  animation: pulse 2.4s ease-in-out infinite;
-}
-
-.contact__avail-status {
-  font-size: 14px;
-  font-weight: 700;
-  color: var(--col-success);
-  margin-bottom: 2px;
-}
-
-.contact__avail-note {
-  font-size: 13px;
-  color: var(--col-text-muted);
-}
-
-/* Form enhancements */
-.form-optional { font-size: 12px; font-weight: 400; color: var(--col-text-muted); }
-
-.form-group input.is-error,
-.form-group textarea.is-error {
-  border-color: #EF4444;
-  box-shadow: 0 0 0 3px rgba(239,68,68,0.1);
-}
-
 .btn-spinner {
   display: inline-block;
   width: 14px;
@@ -2232,20 +2236,6 @@ ul, ol { list-style: none; }
 }
 
 @keyframes spin { to { transform: rotate(360deg); } }
-
-.form__success {
-  display: none;
-  align-items: center;
-  gap: var(--sp-3);
-  padding: var(--sp-4) var(--sp-5);
-  background: #ECFDF5;
-  border: 1px solid #A7F3D0;
-  border-radius: var(--r-md);
-  font-size: 15px;
-  color: var(--col-success);
-  font-weight: 500;
-  margin-bottom: var(--sp-4);
-}
 
 /* ============================================================
    CTA STRIP (Homepage bottom)

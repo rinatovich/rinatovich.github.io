@@ -7,11 +7,10 @@
 'use strict';
 
 function renderHomePage() {
-  const { hero, about, skills, projects, blog } = SITE_DATA;
+  const { hero, about, skills, projects } = SITE_DATA;
   const root = document.getElementById('app');
 
   const featuredProjects = projects.items.slice(0, 3);
-  const recentPosts = blog.items.slice(0, 2);
 
   const [firstName, ...rest] = hero.headline.split('\n');
 
@@ -118,22 +117,9 @@ function renderHomePage() {
       </div>
     </section>
 
-    <section class="section section--alt" aria-label="Recent writing">
-      <div class="container container--md">
-        <div class="section__header reveal section__header--row">
-          <div>
-            <div class="section__eyebrow">${escHtml(t('writing_eyebrow'))}</div>
-            <h2 class="section__title">${escHtml(blog.title)}</h2>
-          </div>
-          <a href="#/blog" class="btn btn--ghost section__header-cta" data-route>
-            ${escHtml(t('all_articles'))} ${ICONS.arrowRight}
-          </a>
-        </div>
-        <div class="blog__list">
-          ${recentPosts.map(post => renderPostCard(post)).join('')}
-        </div>
-      </div>
-    </section>
+    <!-- Blog section hidden — remove this comment and restore the
+         "Recent writing" <section> block (see project README/instructions)
+         to bring the blog back. -->
 
     <section class="section cta-strip" aria-label="Contact">
       <div class="container container--sm">
