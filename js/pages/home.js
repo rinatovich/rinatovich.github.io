@@ -43,23 +43,25 @@ function renderHomePage() {
           </div>
 
           <div class="hero__visual" aria-hidden="true">
-            <div class="hero__photo-wrap">
-              <img class="hero__photo" src="assets/img/hero-crop.png" alt="" />
-            </div>
-            <div class="hero__visual-card">
-              <div class="hero__visual-label">${escHtml(t('hero_visual_label'))}</div>
-              <svg class="hero__visual-chart" viewBox="0 0 340 140" xmlns="http://www.w3.org/2000/svg">
-                ${renderSparkline()}
-              </svg>
-              <div class="hero__stats">
-                ${about.stats.map(s => `
-                  <div class="hero__stat">
-                    <div class="hero__stat-value">${escHtml(s.value)}</div>
-                    <div class="hero__stat-label">${escHtml(s.label)}</div>
-                  </div>
-                `).join('')}
-              </div>
-            </div>
+            <svg class="hero__blob" viewBox="0 0 480 600" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+              <defs>
+                <linearGradient id="heroBlobGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#C7D2FE" />
+                  <stop offset="100%" stop-color="#EEF2FF" />
+                </linearGradient>
+              </defs>
+              <rect x="20" y="20" width="440" height="560" rx="36"
+                    transform="rotate(-5 240 300)" fill="url(#heroBlobGradient)" />
+            </svg>
+            <svg class="hero__dots" viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <pattern id="heroDotGrid" width="20" height="20" patternUnits="userSpaceOnUse">
+                  <circle cx="2.5" cy="2.5" r="2.5" fill="#818CF8" />
+                </pattern>
+              </defs>
+              <rect width="160" height="160" fill="url(#heroDotGrid)" />
+            </svg>
+            <img class="hero__photo" src="assets/img/me-hero.png" alt="" />
           </div>
         </div>
       </div>

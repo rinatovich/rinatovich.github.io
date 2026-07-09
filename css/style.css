@@ -148,11 +148,24 @@ ul, ol { list-style: none; }
   right: 0;
   z-index: 100;
   height: var(--nav-h);
+  border-bottom: 1px solid transparent;
+  transition: border-color var(--t-normal), box-shadow var(--t-normal);
+}
+
+/* Frosted-glass background lives on a pseudo-element rather than on .nav
+   itself. backdrop-filter (like transform/filter) establishes a new
+   containing block for any position:fixed descendant — since .nav__mobile
+   is fixed and lives inside .nav, that made it size itself relative to
+   .nav's own 64px-tall box instead of the viewport, collapsing the mobile
+   menu panel. Keeping the filter off .nav avoids that entirely. */
+.nav::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
   background: rgba(250,250,250,0.85);
   backdrop-filter: blur(12px) saturate(1.5);
   -webkit-backdrop-filter: blur(12px) saturate(1.5);
-  border-bottom: 1px solid transparent;
-  transition: border-color var(--t-normal), box-shadow var(--t-normal);
 }
 
 .nav--scrolled {
@@ -453,14 +466,14 @@ ul, ol { list-style: none; }
 
 @media (min-width: 1024px) {
   .hero__inner {
-    grid-template-columns: 1fr 460px;
-    align-items: center;
+    grid-template-columns: 1fr 1fr;
+    align-items: stretch;
     gap: var(--sp-12);
   }
 }
 
 /* Content */
-.hero__content { display: flex; flex-direction: column; }
+.hero__content { display: flex; flex-direction: column; justify-content: center; }
 
 .hero__eyebrow {
   display: inline-flex;
@@ -538,61 +551,57 @@ ul, ol { list-style: none; }
   animation: fadeSlideUp 0.7s cubic-bezier(0.16,1,0.3,1) 0.52s forwards;
 }
 
-/* Visual panel (right side): portrait photo with the stats card
-   floating over its lower-left corner, per the design mock. */
+/* Visual panel (right side): full portrait photo, scaled to fit without
+   cropping (object-fit: contain), so it always renders identically
+   regardless of how tall the row ends up being. */
 .hero__visual {
   position: relative;
   display: none;
-  width: 100%;
-  aspect-ratio: 0.62;
+  height: min(680px, 66vh);
   opacity: 0;
   animation: fadeIn 1s cubic-bezier(0.16,1,0.3,1) 0.6s forwards;
 }
 
 @media (min-width: 1024px) {
-  .hero__visual { display: block; }
+  .hero__visual {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+  }
 }
 
-.hero__photo-wrap {
+.hero__blob {
   position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
+  left: -8%;
+  bottom: 2%;
+  width: 78%;
+  height: 90%;
+  z-index: 0;
   pointer-events: none;
+  opacity: 0.9;
+}
+
+.hero__dots {
+  position: absolute;
+  right: -6%;
+  top: -4%;
+  width: 42%;
+  height: 38%;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.55;
 }
 
 .hero__photo {
+  position: relative;
+  z-index: 1;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: 50% 0%;
-  border-radius: var(--r-lg);
+  max-height: 820px;
+  object-fit: contain;
+  object-position: bottom center;
   display: block;
   user-select: none;
-}
-
-.hero__visual-card {
-  position: absolute;
-  left: -8px;
-  right: 12px;
-  bottom: 28px;
-  background: rgba(255,255,255,0.92);
-  backdrop-filter: blur(10px);
-  border: 1px solid var(--col-border);
-  border-radius: var(--r-lg);
-  padding: var(--sp-6);
-  box-shadow: var(--sh-lg, var(--sh-md));
-  overflow: hidden;
-  z-index: 2;
-}
-
-.hero__visual-card::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, var(--col-accent), #60A5FA);
 }
 
 .hero__visual-label {
