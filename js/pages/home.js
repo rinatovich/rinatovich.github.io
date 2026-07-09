@@ -86,9 +86,40 @@ function renderHomePage() {
             `).join('')}
           </div>
         </div>
+      </div>
+    </section>
+        ${about.education && about.education.length ? `
+    <section class="section education" aria-label="Education">
+      <div class="container">
+        <div class="section__header reveal">
+          <div class="section__eyebrow">${escHtml(t('edu_section_eyebrow'))}</div>
+          <h2 class="section__title">${escHtml(t('edu_section_title'))}</h2>
+        </div>
+        <div class="education__grid">
+          ${about.education.map((edu, i) => `
+            <div class="edu-card reveal${i ? ` reveal--delay-${i % 3 + 1}` : ''}">
+              <div class="edu-card__logo">
+                <img src="${escHtml(edu.logo)}" alt="${escHtml(edu.logoAlt || edu.institution)}" loading="lazy"
+                     onerror="this.parentElement.classList.add('edu-card__logo--fallback'); this.remove();">
+              </div>
+              <div class="edu-card__content">
+                <div class="edu-card__year">${escHtml(edu.period)}</div>
+                <h3 class="edu-card__degree">${escHtml(edu.degree)}</h3>
+                <p class="edu-card__university">${escHtml(edu.institution)}</p>
+                <div class="edu-card__tag">${escHtml(edu.tag)}</div>
+              </div>
+            </div>
+          `).join('')}
+        </div>
+      </div>
+    </section>
+    ` : ''}
+    <section class="section section--alt" aria-label="Skills">
+      <div class="container">
         <div class="skills">
           <div class="section__header reveal">
             <div class="section__eyebrow">${escHtml(t('skills_eyebrow'))}</div>
+            <h2 class="section__title">${skills.subtitle}</h2>
           </div>
           <div class="skills__grid">
             ${skills.categories.map(cat => `
@@ -104,6 +135,22 @@ function renderHomePage() {
       </div>
     </section>
 
+   <!-- <div class="skills">
+          <div class="section__header reveal">
+            <div class="section__eyebrow">${escHtml(t('skills_eyebrow'))}</div>
+          </div>
+          <div class="skills__grid">
+            ${skills.categories.map(cat => `
+              <div class="skill-cat reveal">
+                <div class="skill-cat__name">${escHtml(cat.name)}</div>
+                <div class="skill-cat__items">
+                  ${cat.items.map(item => `<div class="skill-cat__item">${escHtml(item)}</div>`).join('')}
+                </div>
+              </div>
+            `).join('')}
+          </div>
+        </div>-->
+    
     <section class="section" aria-label="Featured work">
       <div class="container">
         <div class="section__header reveal section__header--row">

@@ -39,11 +39,15 @@ const UI_STRINGS = {
     breadcrumb_certificates: 'Certificates',
     breadcrumb_writing: 'Writing',
     breadcrumb_contact: 'Contact',
+    breadcrumb_about: 'About',
 
     hero_visual_label: 'Delivery Track Record',
 
     about_eyebrow: 'About',
     about_title: 'Engineering + Delivery',
+    edu_section_eyebrow: 'Academic Background',
+    edu_section_title: 'Education',
+    edu_degree_label: 'Degree',
     skills_eyebrow: 'Technical Skills',
 
     work_eyebrow: 'Work',
@@ -62,6 +66,9 @@ const UI_STRINGS = {
     cert_expires: 'Expires',
     cert_no_expiry: 'No expiry',
     cert_verify: 'Verify',
+    education_eyebrow: 'Education & Certifications',
+    education_title: 'Where I studied and what I earned',
+    view_all_certificates: 'View all certificates',
 
     project_not_found: 'Project not found',
     back_to_projects: 'Back to Projects',
@@ -127,11 +134,15 @@ const UI_STRINGS = {
     breadcrumb_certificates: 'Сертификаты',
     breadcrumb_writing: 'Блог',
     breadcrumb_contact: 'Контакты',
+    breadcrumb_about: 'Обо мне',
 
     hero_visual_label: 'Показатели деливери',
 
     about_eyebrow: 'Обо мне',
     about_title: 'Инженерия + Деливери',
+    edu_section_eyebrow: 'Академический бэкграунд',
+    edu_section_title: 'Образование',
+    edu_degree_label: 'Специальность',
     skills_eyebrow: 'Технические навыки',
 
     work_eyebrow: 'Работа',
@@ -150,6 +161,7 @@ const UI_STRINGS = {
     cert_expires: 'Истекает',
     cert_no_expiry: 'Бессрочно',
     cert_verify: 'Проверить',
+    view_all_certificates: 'Смотреть все сертификаты',
 
     project_not_found: 'Проект не найден',
     back_to_projects: 'К списку проектов',
@@ -215,11 +227,15 @@ const UI_STRINGS = {
     breadcrumb_certificates: 'Sertifikatlar',
     breadcrumb_writing: 'Blog',
     breadcrumb_contact: 'Aloqa',
+    breadcrumb_about: 'Men haqimda',
 
     hero_visual_label: "Ish natijalari ko'rsatkichlari",
 
     about_eyebrow: 'Men haqimda',
     about_title: 'Muhandislik + Yetkazib berish',
+    edu_section_eyebrow: 'Akademik tayyorgarlik',
+    edu_section_title: "Ta'lim",
+    edu_degree_label: "Mutaxassislik",
     skills_eyebrow: 'Texnik ko\'nikmalar',
 
     work_eyebrow: 'Ish',
@@ -238,6 +254,7 @@ const UI_STRINGS = {
     cert_expires: 'Amal qilish muddati',
     cert_no_expiry: 'Muddatsiz',
     cert_verify: 'Tekshirish',
+    view_all_certificates: 'Barcha sertifikatlarni ko\'rish',
 
     project_not_found: 'Loyiha topilmadi',
     back_to_projects: 'Loyihalarga qaytish',

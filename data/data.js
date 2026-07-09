@@ -48,7 +48,7 @@ const SITE_CONTENT = {
       ],
       "education": [
         {
-          "logo": "./assets/img/TGTU.jpg",
+          "logo": "assets/img/edu/tstu-logo.png",
           "logoAlt": "TSTU logo",
           "period": "2019 — 2023",
           "degree": "Bachelor of Electronics and Automation Engineering",
@@ -56,7 +56,7 @@ const SITE_CONTENT = {
           "tag": "Higher education"
         },
         {
-          "logo": "./assets/img/TPKIT.webp",
+          "logo": "assets/img/edu/tpkit-logo.png",
           "logoAlt": "TPKIT logo",
           "period": "2016 — 2019",
           "degree": "Telecommunication and Network Technologies",
@@ -396,7 +396,7 @@ const SITE_CONTENT = {
       ],
       "education": [
         {
-          "logo": "./assets/img/TGTU.jpg",
+          "logo": "assets/img/edu/tstu-logo.png",
           "logoAlt": "Логотип ТГТУ",
           "period": "2019 — 2023",
           "degree": "Бакалавр по направлению «Электроника и автоматизация»",
@@ -404,7 +404,7 @@ const SITE_CONTENT = {
           "tag": "Высшее образование"
         },
         {
-          "logo": "./assets/img/TPKIT.webp",
+          "logo": "assets/img/edu/tpkit-logo.png",
           "logoAlt": "Логотип TPKIT",
           "period": "2016 — 2019",
           "degree": "Телекоммуникационные и сетевые технологии",
@@ -415,8 +415,7 @@ const SITE_CONTENT = {
     },
 
     "skills": {
-      "title": "Навыки",
-      "subtitle": "Технические навыки",
+      "title": "Технические навыки",
       "categories": [
         { "name": "Языки",         "items": ["TypeScript", "Python", "Go", "SQL", "Bash"] },
         { "name": "Frontend",      "items": ["React", "Next.js", "CSS / Tailwind", "Framer Motion"] },
@@ -745,7 +744,7 @@ const SITE_CONTENT = {
       ],
       "education": [
         {
-          "logo": "./assets/img/TGTU.jpg",
+          "logo": "assets/img/edu/tstu-logo.png",
           "logoAlt": "TDTU logotipi",
           "period": "2019 — 2023",
           "degree": "Elektronika va avtomatlashtirish muhandisligi bakalavri",
@@ -753,7 +752,7 @@ const SITE_CONTENT = {
           "tag": "Oliy ta'lim"
         },
         {
-          "logo": "./assets/img/TPKIT.webp",
+          "logo": "assets/img/edu/tpkit-logo.png",
           "logoAlt": "TPKIT logotipi",
           "period": "2016 — 2019",
           "degree": "Telekommunikatsiya va tarmoq texnologiyalari",

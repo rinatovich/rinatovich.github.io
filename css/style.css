@@ -559,6 +559,12 @@ ul, ol { list-style: none; }
   display: none;
   height: min(680px, 66vh);
   opacity: 0;
+  /*overflow: hidden;*/
+  min-width: 0; /* critical: without this, a grid item's default
+  min-width:auto lets its content (the <img>) push the column wider
+  than the declared 460px track — this was why the photo bled past
+  the container edge and covered the background dot pattern. */
+  border-radius: var(--r-lg);
   animation: fadeIn 1s cubic-bezier(0.16,1,0.3,1) 0.6s forwards;
 }
 
@@ -603,7 +609,28 @@ ul, ol { list-style: none; }
   display: block;
   user-select: none;
 }
+.hero__visual-card {
+  position: absolute;
+  left: -8px;
+  right: 12px;
+  bottom: 28px;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--col-border);
+  border-radius: var(--r-lg);
+  padding: var(--sp-6);
+  box-shadow: var(--sh-lg, var(--sh-md));
+  /*overflow: hidden;*/
+  z-index: 2;
+}
 
+.hero__visual-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--col-accent), #60A5FA);
+}
 .hero__visual-label {
   font-size: 11px;
   font-weight: 600;
@@ -771,11 +798,117 @@ ul, ol { list-style: none; }
   line-height: 1.4;
 }
 
+
+/* ============================================================
+   EDUCATION
+   ============================================================ */
+
+.education__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--sp-5);
+}
+
+@media (min-width: 640px) {
+  .education__grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+.edu-card {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--sp-5);
+  background: var(--col-surface);
+  border: 1px solid var(--col-border);
+  border-radius: var(--r-lg);
+  padding: var(--sp-6);
+  transition: border-color var(--t-fast), box-shadow var(--t-fast), transform var(--t-fast);
+}
+
+.edu-card:hover {
+  border-color: var(--col-accent-med);
+  box-shadow: var(--sh-sm);
+  transform: translateY(-2px);
+}
+
+.edu-card__logo {
+  flex-shrink: 0;
+  width: 56px;
+  height: 56px;
+  border-radius: var(--r-md);
+  background: var(--col-alt);
+  border: 1px solid var(--col-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.edu-card__logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  /*padding: var(--sp-2);*/
+}
+
+/* If the logo image 404s, the inline onerror handler removes the <img>
+   and adds this class — fall back to a simple graduation-cap glyph so
+   the card never shows a broken-image icon. */
+.edu-card__logo--fallback {
+  color: var(--col-accent);
+}
+
+.edu-card__logo--fallback::before {
+  content: '';
+  width: 24px;
+  height: 24px;
+  background: var(--col-accent);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M22 10 12 5 2 10l10 5 10-5Z'/%3E%3Cpath d='M6 12v5c0 1.5 3 3 6 3s6-1.5 6-3v-5'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M22 10 12 5 2 10l10 5 10-5Z'/%3E%3Cpath d='M6 12v5c0 1.5 3 3 6 3s6-1.5 6-3v-5'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+
+.edu-card__content { min-width: 0; }
+
+.edu-card__year {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--col-accent);
+  margin-bottom: var(--sp-2);
+}
+
+.edu-card__degree {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--col-text);
+  letter-spacing: -0.01em;
+  line-height: 1.35;
+  margin-bottom: var(--sp-2);
+}
+
+.edu-card__university {
+  font-size: 14px;
+  color: var(--col-text-sec);
+  line-height: 1.5;
+  margin-bottom: var(--sp-3);
+}
+
+.edu-card__tag {
+  display: inline-flex;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--col-text-muted);
+  background: var(--col-alt);
+  border: 1px solid var(--col-border);
+  padding: 4px var(--sp-3);
+  border-radius: var(--r-full);
+}
+
 /* ── Skills ── */
 .skills {
-  margin-top: var(--sp-16);
-  padding-top: var(--sp-12);
-  border-top: 1px solid var(--col-border);
+  /*margin-top: var(--sp-16);*/
+  /*padding-top: var(--sp-12);*/
+  /*border-top: 1px solid var(--col-border);*/
 }
 
 .skills__grid {
