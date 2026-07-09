@@ -20,10 +20,10 @@ function renderHomePage() {
       <div class="container">
         <div class="hero__inner">
           <div class="hero__content">
-            <div class="hero__eyebrow">
+            <!-- <div class="hero__eyebrow">
               <span class="hero__dot" aria-hidden="true"></span>
               <span class="hero__eyebrow-text">${escHtml(hero.eyebrow)}</span>
-            </div>
+            </div>-->
 
             <h1 class="hero__name">
               ${escHtml(firstName)}<span class="hero__name-accent">${escHtml(rest.join(' ') || '')}</span>
