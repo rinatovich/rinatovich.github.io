@@ -12,11 +12,11 @@ function renderCertificatesPage() {
     <section class="page-header">
       <div class="container">
         <nav class="breadcrumb reveal" aria-label="Breadcrumb">
-          <a href="#/" data-route>Home</a>
+          <a href="#/" data-route>${escHtml(t('breadcrumb_home'))}</a>
           <span class="breadcrumb__sep" aria-hidden="true">/</span>
-          <span aria-current="page">Certificates</span>
+          <span aria-current="page">${escHtml(t('breadcrumb_certificates'))}</span>
         </nav>
-        <div class="section__eyebrow reveal">Credentials</div>
+        <div class="section__eyebrow reveal">${escHtml(t('credentials_eyebrow'))}</div>
         <h1 class="page-header__title reveal">${escHtml(certificates.title)}</h1>
         <p class="page-header__subtitle reveal">${escHtml(certificates.subtitle)}</p>
       </div>
