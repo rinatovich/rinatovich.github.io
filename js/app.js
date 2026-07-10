@@ -155,7 +155,7 @@ function bindNavInteractions() {
     const open = mobile.classList.toggle('is-open');
     toggle.classList.toggle('is-open', open);
     toggle.setAttribute('aria-expanded', String(open));
-    document.body.style.overflow = open ? 'hidden' : '';
+    document.body.style.overflow = open ? 'hidden' : 'auto';
   });
 
   mobile.querySelectorAll('[data-close]').forEach(link => {
@@ -215,11 +215,7 @@ function initLinkInterception() {
     // Just close mobile nav if open
     const mobile = document.getElementById('navMobile');
     const toggle = document.getElementById('navToggle');
-    if (mobile && mobile.classList.contains('is-open')) {
-      mobile.classList.remove('is-open');
-      toggle && toggle.classList.remove('is-open');
-      document.body.style.overflow = '';
-    }
+    closeMobileMenu();
   });
 }
 
@@ -242,8 +238,19 @@ function setupRouter() {
 }
 
 /* ── Language change ─────────────────────────────────────── */
+function closeMobileMenu() {
+  const mobile = document.getElementById('navMobile');
+  const toggle = document.getElementById('navToggle');
 
+  mobile?.classList.remove('is-open');
+  toggle?.classList.remove('is-open');
+  toggle?.setAttribute('aria-expanded', 'false');
+
+  document.body.style.overflow = '';
+}
 function onLangChange() {
+
+  closeMobileMenu();
   const nav = document.getElementById('nav');
   const footer = document.getElementById('footer');
   const chrome = [nav, footer].filter(Boolean);
@@ -293,6 +300,7 @@ function boot() {
   renderFooter();
   initNavScroll();
   bindNavInteractions();
+
   initLinkInterception();
   initSpotlightCards();
   initMagneticButtons();
