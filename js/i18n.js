@@ -24,8 +24,8 @@ const LANG_META = {
 /** UI copy that lives outside SITE_CONTENT (labels, headings, buttons, etc.) */
 const UI_STRINGS = {
   en: {
-    site_title: 'Valiakhmad Makhamatov — Technical Project Manager & Full Stack Engineer',
-    site_description: 'Technical Project Manager and Full Stack Engineer with 8+ years building scalable digital products at the intersection of engineering and business.',
+    site_title: 'Valiakhmad Makhamatov — Technical Project Manager & Business Development Manager',
+    site_description: 'Technical Project Manager and Business Development Manager with 5+ years delivering large-scale technology programs at the intersection of engineering and business.',
 
     nav_resume: 'Resume',
     nav_resume_full: 'Download Resume',
@@ -120,8 +120,8 @@ const UI_STRINGS = {
   },
 
   ru: {
-    site_title: 'Валиахмад Махаматов — технический руководитель проектов и Full Stack инженер',
-    site_description: 'Технический руководитель проектов и Full Stack инженер с опытом 8+ лет в создании масштабируемых цифровых продуктов на стыке инженерии и бизнеса.',
+    site_title: 'Валиахмад Махаматов — технический руководитель проектов и менеджер развития бизнеса',
+    site_description: 'Технический руководитель проектов и менеджер развития бизнеса с опытом 5+ лет в реализации высокотехнологичных программ на стыке инженерии и бизнеса.',
 
     nav_resume: 'Резюме',
     nav_resume_full: 'Скачать резюме',
@@ -214,8 +214,8 @@ const UI_STRINGS = {
   },
 
   uz: {
-    site_title: 'Valiakhmad Makhamatov — Texnik loyiha menejeri va Full Stack muhandis',
-    site_description: '8 yildan ortiq tajribaga ega texnik loyiha menejeri va Full Stack muhandis, muhandislik va biznes chorrahasida masshtablanuvchi raqamli mahsulotlar yaratadi.',
+    site_title: "Valiakhmad Makhamatov — texnik loyihalar rahbari va biznesni rivojlantirish menejeri",
+    site_description: "5 yildan ortiq tajribaga ega texnik loyihalar rahbari va biznesni rivojlantirish menejeri, muhandislik va biznes chorrahasida yirik texnologik dasturlarni amalga oshiradi.",
 
     nav_resume: 'Rezyume',
     nav_resume_full: 'Rezyumeni yuklab olish',

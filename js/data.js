@@ -19,19 +19,20 @@ const SITE_CONTENT = {
       "location": "Remote · UTC+5",
       "email": "makhamatov.valiakhmad@gmail.com",
       "telegram": "https://t.me/rinatovic99",
-      "linkedin": "https://www.linkedin.com/in/valiakhmad-makhamatov-55b2aa203/",
+      "linkedin": "https://www.linkedin.com/in/valiakhmad-makhamatov/",
       "github": "https://github.com/rinatovich",
       "cv": "assets/valiakhmad-makhamatov-cv-2025.pdf",
       "availability": { "open": true, "label": "Open to opportunities" }
     },
 
     "hero": {
-      "eyebrow": "Technical Project Manager & Full Stack Engineer",
+      "eyebrow": "Technical Project Manager | Business Development Manager",
       "headline": "Valiakhmad\nMakhamatov",
-      "description": "I bridge engineering complexity and business outcomes. With 8+ years of experience, I architect scalable systems, lead cross-functional teams, and ship products that outlast the sprint cycle.",
+      "description": "I manage the full end-to-end lifecycle of complex technology programs. I combine deep engineering expertise with a systematic approach to leading cross-functional teams, delivering national-scale projects with a focus on measurable ROI and operational efficiency.",
       "cta_primary": { "label": "View Projects", "href": "#/projects" },
       "cta_secondary": { "label": "Download Resume", "href": "assets/valiakhmad-makhamatov-cv-2025.pdf" }
     },
+
 
     "about": {
       "title": "About",
@@ -67,15 +68,18 @@ const SITE_CONTENT = {
     },
 
     "skills": {
-      "title": "Technical Skills",
+      "title": "Skills",
+      "subtitle": "From IT infrastructure and program management to full-stack engineering.",
       "categories": [
-        { "name": "Languages",      "items": ["TypeScript", "Python", "Go", "SQL", "Bash"] },
-        { "name": "Frontend",       "items": ["React", "Next.js", "CSS / Tailwind", "Framer Motion"] },
-        { "name": "Backend",        "items": ["Node.js", "FastAPI", "PostgreSQL", "Redis", "GraphQL"] },
-        { "name": "Infrastructure", "items": ["AWS", "Docker", "Kubernetes", "GitHub Actions", "Terraform"] },
-        { "name": "Management",     "items": ["Technical Roadmapping", "OKRs", "Sprint Planning", "Architecture Review", "Hiring"] }
+        { "name": "Program & Project Management", "items": ["Program Management", "Technical Roadmapping", "RFP Development", "Risk Management", "Vendor & Stakeholder Management", "Agile / Scrum", "Team Leadership & Hiring"] },
+        { "name": "Financial & Business Analysis", "items": ["Financial Modeling", "Feasibility Studies (TEO)", "Business Case Development", "Cost Estimation & Budgeting", "ROI / NPV Analysis", "Market & Vendor Research"] },
+        { "name": "IT Infrastructure & Data Centers", "items": ["Network Architecture (WAN)", "Data Center Design (Tier III)", "Server & Storage Systems", "Virtualization", "Core Banking Systems (CBS)", "Equipment Procurement & Logistics"] },
+        { "name": "Contact Center & AI Automation", "items": ["Omnichannel Platforms", "Chatbots & Voice Bots", "Speech Analytics", "Workforce Management (WFM)", "AI-Based Video & Traffic Analytics"] },
+        { "name": "Web Development", "items": ["React", "Next.js", "Node.js", "TypeScript", "Python", "PostgreSQL"] },
+        { "name": "DevOps & Systems Administration", "items": ["Docker", "GitHub Actions", "Nginx", "Linux", "GitLab", "Zabbix", "Prometheus"] }
       ]
     },
+
 
     "projects": {
       "title": "Selected Work",
@@ -516,7 +520,7 @@ const SITE_CONTENT = {
       "subtitle": "Open to senior engineering and technical leadership roles. I read every message personally.",
       "response_time": "I typically respond within 2 business days.",
       "methods": [
-        { "label": "LinkedIn", "href": "https://www.linkedin.com/in/valiakhmad-makhamatov-55b2aa203/", "icon": "linkedin" },
+        { "label": "LinkedIn", "href": "https://www.linkedin.com/in/valiakhmad-makhamatov/", "icon": "linkedin" },
         { "label": "GitHub",   "href": "https://github.com/rinatovich",      "icon": "github" },
         { "label": "Telegram",   "href": "https://t.me/rinatovic99",      "icon": "telegram" },
         { "label": "Email",    "href": "mailto:makhamatov.valiakhmad@gmail.com",        "icon": "email" }
@@ -540,7 +544,7 @@ const SITE_CONTENT = {
       "role": "Технический руководитель проектов | Менеджер развития бизнеса",
       "location": "Удалённо · UTC+5",
       "email": "makhamatov.valiakhmad@gmail.com",
-      "linkedin": "https://www.linkedin.com/in/valiakhmad-makhamatov-55b2aa203/",
+      "linkedin": "https://www.linkedin.com/in/valiakhmad-makhamatov/",
       "telegram": "https://t.me/rinatovic99",
       "github": "https://github.com/rinatovich",
       "cv": "assets/valiakhmad-makhamatov-cv-2025.pdf",
@@ -554,6 +558,7 @@ const SITE_CONTENT = {
       "cta_primary": { "label": "Смотреть проекты", "href": "#/projects" },
       "cta_secondary": { "label": "Скачать резюме", "href": "assets/valiakhmad-makhamatov-cv-2025.pdf" }
     },
+
 
     "about": {
       "title": "Обо мне",
@@ -590,13 +595,17 @@ const SITE_CONTENT = {
 
     "skills": {
       "title": "Навыки",
-      "subtitle": "Технические навыки",
+      "subtitle": "От управления ИТ-инфраструктурой и программами до full-stack разработки.",
       "categories": [
-        { "name": "Менеджмент и стратегия",    "items": ["Технический роадмэппинг", "Спринт-планирование", "Ревью архитектуры", "Найм персонала", "Финансовое моделирование", "Управление рисками", "Управление вендорами"] },
-        { "name": "Вэб-разработка",      "items": ["React", "Next.js", "CSS / Tailwind", "Node.js", "PostgreSQL","TypeScript", "Python"] },
-        { "name": "Инфраструктура","items": ["Docker", "GitHub Actions", "Nginx", "Linux OS", "Gitlab", "Zabbix", "Prometheus"] }
+        { "name": "Управление программами и проектами", "items": ["Программный менеджмент", "Технический роадмэппинг", "Разработка RFP", "Управление рисками", "Управление вендорами и стейкхолдерами", "Agile / Scrum", "Формирование команд и найм"] },
+        { "name": "Финансы и бизнес-анализ", "items": ["Финансовое моделирование", "ТЭО (технико-экономическое обоснование)", "Разработка бизнес-кейсов", "Оценка стоимости и бюджетирование", "ROI / NPV анализ", "Маркетинговые исследования рынка"] },
+        { "name": "ИТ-инфраструктура и ЦОД", "items": ["Сетевая архитектура (КСПД)", "Проектирование ЦОД (Tier III)", "Серверные системы и СХД", "Виртуализация", "Основные банковские системы (АБС)", "Поставка оборудования и логистика"] },
+        { "name": "Контакт-центр и AI-автоматизация", "items": ["Омниканальные платформы", "Чат- и голосовые боты", "Речевая аналитика", "Workforce Management (WFM)", "Видеоаналитика и AI для трафика"] },
+        { "name": "Веб-разработка", "items": ["React", "Next.js", "Node.js", "TypeScript", "Python", "PostgreSQL"] },
+        { "name": "DevOps и системное администрирование", "items": ["Docker", "GitHub Actions", "Nginx", "Linux OS", "GitLab", "Zabbix", "Prometheus"] }
       ]
     },
+
 
     "projects": {
       "title": "Избранные проекты",
@@ -1037,7 +1046,7 @@ const SITE_CONTENT = {
       "subtitle": "Открыт для senior-ролей в инженерии и техническом лидерстве. Читаю каждое сообщение лично.",
       "response_time": "Обычно отвечаю в течение 2 рабочих дней.",
       "methods": [
-        { "label": "LinkedIn", "href": "https://www.linkedin.com/in/valiakhmad-makhamatov-55b2aa203/", "icon": "linkedin" },
+        { "label": "LinkedIn", "href": "https://www.linkedin.com/in/valiakhmad-makhamatov/", "icon": "linkedin" },
         { "label": "GitHub",   "href": "https://github.com/rinatovich",      "icon": "github" },
         { "label": "Email",    "href": "mailto:makhamatov.valiakhmad@gmail.com",        "icon": "email" },
         { "label": "Telegram",   "href": "https://t.me/rinatovic99",      "icon": "telegram" },
@@ -1061,7 +1070,7 @@ const SITE_CONTENT = {
       "role": "Texnik loyiha menejeri va Full Stack muhandis",
       "location": "Masofaviy · UTC+5",
       "email": "makhamatov.valiakhmad@gmail.com",
-      "linkedin": "https://www.linkedin.com/in/valiakhmad-makhamatov-55b2aa203/",
+      "linkedin": "https://www.linkedin.com/in/valiakhmad-makhamatov/",
       "telegram": "https://t.me/rinatovic99",
       "github": "https://github.com/rinatovich",
       "cv": "assets/valiakhmad-makhamatov-cv-2025.pdf",
@@ -1069,12 +1078,13 @@ const SITE_CONTENT = {
     },
 
     "hero": {
-      "eyebrow": "Texnik loyiha menejeri va Full Stack muhandis",
+      "eyebrow": "Texnik loyihalar rahbari | Biznesni rivojlantirish menejeri",
       "headline": "Valiakhmad\nMakhamatov",
-      "description": "Men muhandislik murakkabligini biznes natijalari bilan bog'layman. 8 yildan ortiq tajribam davomida masshtablanuvchi tizimlar quraman, funksiyalararo jamoalarga rahbarlik qilaman va bitta sprintdan uzoqroq umr ko'radigan mahsulotlarni ishga tushiraman.",
+      "description": "Yuqori texnologik dasturlarning to'liq hayotiy siklini (End-to-End) boshqaraman. Chuqur muhandislik tajribasini funksiyalararo jamoalarni boshqarishga tizimli yondashuv bilan uyg'unlashtiraman. Milliy miqyosdagi loyihalarni o'lchanadigan ROI va operatsion samaradorlikka e'tibor qaratgan holda amalga oshiraman.",
       "cta_primary": { "label": "Loyihalarni ko'rish", "href": "#/projects" },
       "cta_secondary": { "label": "Rezyumeni yuklab olish", "href": "assets/valiakhmad-makhamatov-cv-2025.pdf" }
     },
+
 
     "about": {
       "title": "Men haqimda",
@@ -1110,15 +1120,18 @@ const SITE_CONTENT = {
     },
 
     "skills": {
-      "title": "Texnik ko'nikmalar",
+      "title": "Ko'nikmalar",
+      "subtitle": "IT infratuzilmasi va dasturlarni boshqarishdan full-stack dasturlashgacha.",
       "categories": [
-        { "name": "Dasturlash tillari", "items": ["TypeScript", "Python", "Go", "SQL", "Bash"] },
-        { "name": "Frontend",           "items": ["React", "Next.js", "CSS / Tailwind", "Framer Motion"] },
-        { "name": "Backend",            "items": ["Node.js", "FastAPI", "PostgreSQL", "Redis", "GraphQL"] },
-        { "name": "Infratuzilma",       "items": ["AWS", "Docker", "Kubernetes", "GitHub Actions", "Terraform"] },
-        { "name": "Boshqaruv",          "items": ["Texnik rejalashtirish", "OKR", "Sprint rejalashtirish", "Arxitektura ko'rib chiqish", "Yollash"] }
+        { "name": "Dastur va loyihalarni boshqarish", "items": ["Dastur menejmenti", "Texnik rejalashtirish", "RFP tayyorlash", "Risklarni boshqarish", "Vendor va manfaatdor tomonlarni boshqarish", "Agile / Scrum", "Jamoa shakllantirish va yollash"] },
+        { "name": "Moliya va biznes-tahlil", "items": ["Moliyaviy modellashtirish", "TIA (texnik-iqtisodiy asoslash)", "Biznes-keys ishlab chiqish", "Xarajatlarni baholash va byudjetlashtirish", "ROI / NPV tahlili", "Bozor va vendorlarni tadqiq qilish"] },
+        { "name": "IT infratuzilma va ma'lumotlar markazlari", "items": ["Tarmoq arxitekturasi (KSPD)", "Ma'lumotlar markazini loyihalashtirish (Tier III)", "Server tizimlari va SXD", "Virtualizatsiya", "Asosiy bank tizimlari (ABT)", "Uskuna yetkazib berish va logistika"] },
+        { "name": "Kontakt-markaz va AI-avtomatlashtirish", "items": ["Omnikanal platformalar", "Chat va ovozli botlar", "Nutq analitikasi", "Workforce Management (WFM)", "Video analitika va trafik uchun AI"] },
+        { "name": "Veb-dasturlash", "items": ["React", "Next.js", "Node.js", "TypeScript", "Python", "PostgreSQL"] },
+        { "name": "DevOps va tizim ma'muriyati", "items": ["Docker", "GitHub Actions", "Nginx", "Linux OS", "GitLab", "Zabbix", "Prometheus"] }
       ]
     },
+
 
     "projects": {
       "title": "Tanlangan ishlar",
@@ -1559,7 +1572,7 @@ const SITE_CONTENT = {
       "subtitle": "Senior darajadagi muhandislik va texnik rahbarlik lavozimlariga ochiqman. Har bir xabarni shaxsan o'qiyman.",
       "response_time": "Odatda 2 ish kuni ichida javob beraman.",
       "methods": [
-        { "label": "LinkedIn", "href": "https://www.linkedin.com/in/valiakhmad-makhamatov-55b2aa203/", "icon": "linkedin" },
+        { "label": "LinkedIn", "href": "https://www.linkedin.com/in/valiakhmad-makhamatov/", "icon": "linkedin" },
         { "label": "GitHub",   "href": "https://github.com/rinatovich",      "icon": "github" },
         { "label": "Email",    "href": "mailto:makhamatov.valiakhmad@gmail.com",        "icon": "email" },
         { "label": "Telegram",   "href": "https://t.me/rinatovic99",      "icon": "telegram" },
