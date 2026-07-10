@@ -29,6 +29,7 @@ function renderProjectDetailPage(params) {
 
         <div class="case-meta reveal">
           <span class="project-card__domain">${escHtml(project.domain)}</span>
+          ${project.status ? `<span class="project-card__status project-card__status--${escHtml(project.status.type)}">${escHtml(project.status.label)}</span>` : ''}
           <span class="case-meta__sep">·</span>
           <span>${escHtml(project.year)}</span>
           <span class="case-meta__sep">·</span>
@@ -37,6 +38,11 @@ function renderProjectDetailPage(params) {
 
         <h1 class="page-header__title reveal">${escHtml(project.title)}</h1>
         <p class="page-header__subtitle reveal">${escHtml(project.description)}</p>
+        ${project.link ? `
+          <a href="${escHtml(project.link)}" class="btn btn--secondary reveal" target="_blank" rel="noopener noreferrer" style="margin-top: var(--sp-4);">
+            ${escHtml(t('view_live_project'))} ${ICONS.externalLink}
+          </a>
+        ` : ''}
       </div>
     </section>
 

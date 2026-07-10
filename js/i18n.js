@@ -53,6 +53,7 @@ const UI_STRINGS = {
     work_eyebrow: 'Work',
     view_all_projects: 'View all projects',
     read_case_study: 'Read case study',
+    view_live_project: 'View live project',
 
     writing_eyebrow: 'Writing',
     all_articles: 'All articles',
@@ -148,6 +149,7 @@ const UI_STRINGS = {
     work_eyebrow: 'Работа',
     view_all_projects: 'Все проекты',
     read_case_study: 'Читать кейс',
+    view_live_project: 'Открыть проект',
 
     writing_eyebrow: 'Блог',
     all_articles: 'Все статьи',
@@ -241,6 +243,7 @@ const UI_STRINGS = {
     work_eyebrow: 'Ish',
     view_all_projects: "Barcha loyihalarni ko'rish",
     read_case_study: "Keysni o'qish",
+    view_live_project: "Loyihani ochish",
 
     writing_eyebrow: 'Blog',
     all_articles: 'Barcha maqolalar',

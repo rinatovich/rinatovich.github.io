@@ -205,7 +205,10 @@ function renderProjectCard(p, i) {
     <article class="project-card reveal reveal--delay-${i % 3 + 1}">
       <a href="#/projects/${escHtml(p.id)}" class="project-card__link" data-route aria-label="${escHtml(p.title)}">
         <div class="project-card__meta">
-          <span class="project-card__domain">${escHtml(p.domain)}</span>
+          <div class="project-card__meta-left">
+            <span class="project-card__domain">${escHtml(p.domain)}</span>
+            ${p.status ? `<span class="project-card__status project-card__status--${escHtml(p.status.type)}">${escHtml(p.status.label)}</span>` : ''}
+          </div>
           <span class="project-card__year">${escHtml(p.year)}</span>
         </div>
         <h3 class="project-card__title">${escHtml(p.title)}</h3>
@@ -218,6 +221,11 @@ function renderProjectCard(p, i) {
           <span class="project-card__cta">${escHtml(t('read_case_study'))} ${ICONS.arrowRight}</span>
         </div>
       </a>
+      ${p.link ? `
+        <a href="${escHtml(p.link)}" class="project-card__external" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">
+          ${escHtml(t('view_live_project'))} ${ICONS.externalLink}
+        </a>
+      ` : ''}
     </article>
   `;
 }

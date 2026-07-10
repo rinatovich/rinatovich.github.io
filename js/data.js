@@ -82,117 +82,291 @@ const SITE_CONTENT = {
       "subtitle": "Case studies from projects where both the engineering and the outcome mattered.",
       "items": [
         {
-          "id": "platform-rebuild",
-          "title": "Platform Rebuild Without Downtime",
-          "domain": "Platform Engineering",
-          "year": "2023",
-          "description": "Migrated a 5-year-old monolith serving 1,000 concurrent users to a microservices architecture. Zero downtime. 6-month timeline. Team of 6 engineers.",
-          "outcome": "10× capacity increase. 40% reduction in infrastructure cost.",
-          "tags": ["Next.js", "Node.js", "AWS ECS", "PostgreSQL"],
-          "role": "Tech Lead / Architect",
+          "id": "bank-modernization",
+          "title": "IT Infrastructure Modernization for a Major National Bank",
+          "domain": "IT Infrastructure",
+          "year": "2025",
+          "description": "Led a large-scale modernization of a bank's infrastructure: the core banking system was migrated to new, higher-capacity hardware, and the entire corporate network was upgraded to modern equipment.",
+          "outcome": "25% faster end-of-day banking close. 10× increase in corporate network throughput.",
+          "tags": ["IT Infrastructure", "Core Banking", "Banking", "Fintech"],
+          "role": "Project Manager",
           "detail": {
-            "client": "B2B SaaS Platform (Series B)",
+            "client": "Major state-owned bank",
+            "duration": "1 year",
+            "team": "10 engineers, 5 brokers/vendor reps, 1 PM, 1 presales engineer",
+            "overview": "The bank's existing infrastructure was over five years old and could no longer keep pace with current transaction volumes.",
+            "problem": [
+              "Low throughput on the corporate data network.",
+              "Server infrastructure running at over 70% utilization.",
+              "Much of the hardware was end-of-life and no longer eligible for vendor support or upgrades.",
+              "No centralized management of IT resources and networks."
+            ],
+            "approach": [
+              "Ran a full audit of all existing hardware across the bank's infrastructure.",
+              "Designed a phased migration plan to move the core banking system onto new hardware without service interruption."
+            ],
+            "challenges": [
+              "Delivering the migration while keeping banking services fully available at all times.",
+              "Some hardware installations required additional engineering work to fit the new architecture."
+            ],
+            "results": [
+              { "metric": "10× network throughput",  "detail": "Network hardware replacement moved corporate bandwidth from 100 Mbit to 1 Gbit" },
+              { "metric": "Higher-capacity backbone",  "detail": "Infrastructure network rebuilt on 10/40 Gbit switches, up from a 1 Gbit ceiling" },
+              { "metric": "25% faster end-of-day close", "detail": "Average close time dropped 25% within the first month on the new hardware" },
+              { "metric": "Centralized IT resource management", "detail": "Rolled out centralized management tooling across the infrastructure" }
+            ],
+            "lessons": "Careful planning of every step, with repeated rehearsals, pays off — the discipline invested upfront is what makes a zero-downtime migration possible."
+          }
+        },
+        {
+          "id": "chemical-safety",
+          "title": "National Hazardous Chemicals Registry Platform",
+          "domain": "Software Development",
+          "year": "2026",
+          "description": "Designed and built a hazardous chemicals registry platform end to end.",
+          "outcome": "Digitized chemical-substance records that previously existed only as scattered paper and file-based documentation.",
+          "tags": ["Web Development", "Platform", "Chem Registry"],
+          "role": "Full Stack Engineer",
+          "link": "",
+          "detail": {
+            "client": "Committee of Ecology",
             "duration": "6 months",
-            "team": "6 engineers, 1 designer, 1 PM",
-            "overview": "The existing platform was a five-year-old monolith built during the company's earliest days. It worked — until it didn't. As traffic grew past 1,000 concurrent users, response times degraded, deploys became risky multi-hour events, and every new feature took longer to ship than the last.",
+            "team": "2 frontend engineers, 2 backend engineers, 1 business analyst, 1 project manager, 1 designer",
+            "overview": "The client initially wanted a working version in 1–2 months; reaching a genuinely production-ready platform took 6.",
             "problem": [
-              "The monolith had no clear service boundaries — a change to billing code could break the dashboard.",
-              "Deploys required a 2-hour maintenance window, scheduled around customer time zones.",
-              "The team was afraid to refactor anything, because nobody fully understood the dependency graph anymore."
+              "No unified electronic system existed for looking up information on hazardous chemical substances.",
+              "Documentation for each substance was kept in scattered, inconsistent formats across different departments."
             ],
             "approach": [
-              "We rejected a full rewrite. A 6-month feature freeze was commercially impossible for a company mid-fundraise.",
-              "Instead, we used the Strangler Fig pattern: new functionality was built as standalone services from day one, and existing functionality was peeled off the monolith incrementally, one bounded context at a time.",
-              "We introduced an API gateway in front of both the monolith and new services, so the frontend never knew which system was answering a request.",
-              "Each migrated service got its own datastore, deployment pipeline, and on-call rotation — forcing real ownership boundaries."
+              "Co-developed detailed requirements with the client before writing code.",
+              "Worked in short Agile cycles — shipping a usable increment to the client every week or sooner, then moving on to the next module."
             ],
             "challenges": [
-              "Shared database tables were the hardest problem. Two services often read and wrote the same table for different reasons, and untangling that required a temporary dual-write period with reconciliation jobs.",
-              "We underestimated how much business logic was implicit in unindexed SQL queries — three weeks were lost rebuilding that logic explicitly in the new services."
+              "Functionality added mid-project at the client's request required a partial re-architecture of the platform."
             ],
             "results": [
-              { "metric": "10× concurrent user capacity",  "detail": "From ~1,000 to 10,000+ concurrent users without re-architecting again" },
-              { "metric": "40% lower infrastructure cost",  "detail": "Right-sized containers per service vs. one oversized monolith instance" },
-              { "metric": "Zero downtime",                  "detail": "Entire migration shipped without a single customer-facing outage" },
-              { "metric": "Deploy time: 2hrs → 8min",        "detail": "Per-service deploys replaced the monolithic release process" }
+              { "metric": "One unified system of record", "detail": "Replaced hundreds of scattered files with a single searchable registry" },
+              { "metric": "Bulk import/export", "detail": "Added Excel import so operators could register dozens of substances at once instead of one by one" }
             ],
-            "lessons": "Instrument before you migrate. We added observability to new services from day one, but the legacy monolith stayed a black box until late in the project — and that blind spot cost us the most time."
+            "lessons": "Getting the client to a precise, shared understanding of how the product and the underlying business process will actually work is the single biggest driver of project success."
           }
         },
         {
-          "id": "ci-cd-overhaul",
-          "title": "CI/CD Pipeline Overhaul",
-          "domain": "Developer Experience",
+          "id": "Techno-Economic-Feasibility-Study",
+          "title": "National Spatial Data Infrastructure",
+          "domain": "Technical Advisory",
+          "year": "2025",
+          "description": "Built and defended the technical and financial case for Uzbekistan's National Spatial Data Infrastructure to secure World Bank investment.",
+          "outcome": "Secured $35M in investment financing.",
+          "tags": ["Investment Case", "Business Planning", "Economic Analysis", "Technical Analysis"],
+          "role": "Technical Expert",
+          "detail": {
+            "client": "Government agency | Cadastre Agency under the Ministry of Economy and Finance of the Republic of Uzbekistan",
+            "duration": "8 months",
+            "team": "Technical expert, financial analyst, systems analyst, systems architect",
+            "overview": "Prepared a large-scale Feasibility Study to support a World Bank investment application. The process ran roughly 8 months and involved deep engagement with multiple government institutions.",
+            "problem": [
+              "No National Spatial Data Infrastructure existed.",
+              "Low levels of digitization and no unified architecture across agencies."
+            ],
+            "approach": [
+              "Conducted a full audit of the client's existing infrastructure, with deep immersion into every information system and how it actually operated.",
+              "Documented the client's business processes for handling and storing spatial data."
+            ],
+            "challenges": [
+              "Maintaining full alignment across every government stakeholder involved.",
+              "Making the full potential and value of the program legible and convincing to a non-technical audience."
+            ],
+            "results": [
+              { "metric": "Pilot planned in the country's top tourism destination",     "detail": "First rollout scheduled in one of Uzbekistan's cities, with roughly $5M allocated to the pilot" },
+              { "metric": "Two new Tier III data centers designed", "detail": "Scoped two additional Tier III data centers, with 5-year operating costs modeled" },
+              { "metric": "Existing infrastructure modernization plan",       "detail": "Scoped upgrades to existing equipment to meet the requirements of the new infrastructure and platforms" },
+              { "metric": "Full investment case delivered and defended", "detail": "Prepared and jointly presented the detailed defense document alongside the client's leadership" }
+            ],
+            "lessons": "Working toward a genuinely public-benefit outcome is sometimes more motivating than the financial upside alone."
+          }
+        },
+        {
+          "id": "innovative-contact-center",
+          "title": "Innovative Contact Center — End-to-End Automation of Bank Customer Service",
+          "domain": "Contact Center / Automation",
+          "year": "2026 — 2031",
+          "status": { "label": "In funding defense", "type": "progress" },
+          "description": "A six-component program: an omnichannel chat platform, a chatbot for it, inbound and outbound voice bots, a speech analytics platform, and an intelligent Workforce Management system.",
+          "outcome": "$26M in savings vs. the baseline scenario, $8M NPV, targeting 40% automation by year 5.",
+          "tags": ["Omnichannel", "Chatbot", "Voice Bot", "Speech Analytics", "WFM", "Financial Modeling"],
+          "role": "Automation Program Lead",
+          "detail": {
+            "client": "Major commercial bank",
+            "duration": "Case-building and defense: 2024–2026; execution: late 2026 onward (5-year horizon)",
+            "team": "Business analysts, financial analyst, solution architects, vendor managers, program lead (me)",
+            "overview": "The program brings together six major contact-center automation components: an omnichannel chat platform, a chatbot for that platform, an outbound voice bot, an inbound voice bot, a speech analytics platform, and an intelligent Workforce Management platform for operator scheduling. The project has completed its full pre-project phase and is now preparing for funding defense.",
+            "problem": [
+              "Customer service ran on fragmented, manual contact-center processes with no unified omnichannel platform.",
+              "The absence of intelligent automation on voice and chat channels drove constant headcount growth and operator overload.",
+              "Operator schedules were built manually, with no demand forecasting — leading to overstaffing or understaffing depending on the period."
+            ],
+            "approach": [
+              "Ran a detailed study of current contact-center business processes and every customer touchpoint across channels.",
+              "Analyzed the local and global vendor markets for omnichannel platforms, chat and voice bots, speech analytics, and WFM, including deployment experience at other banks.",
+              "Ran pilots and tests with multiple vendors across the program's key components.",
+              "Drafted a separate RFP for each of the six components.",
+              "Built a two-scenario financial model — baseline vs. automated — projecting economic impact over a 5-year horizon.",
+              "Prepared the internal documentation package: implementation strategy, phased rollout plan, and a full project risk register."
+            ],
+            "challenges": [
+              "Aligning business units, IT, and risk management around a single vision for a large cross-functional program.",
+              "Reconciling six independent components into one coherent architecture and delivery roadmap.",
+              "Building a business case strong enough to justify a large budget and prove payback over a five-year horizon."
+            ],
+            "results": [
+              { "metric": "$26M in savings", "detail": "Difference between the automated and baseline scenarios over the program horizon" },
+              { "metric": "$8M NPV", "detail": "Net present value from the financial model" },
+              { "metric": "421 fewer headcount required", "detail": "Achieved through automation of routine contact-center operations" },
+              { "metric": "$10M in payroll savings", "detail": "Reduced staffing costs from automating operator functions" },
+              { "metric": "40% target automation rate", "detail": "By the end of program year 5" }
+            ],
+            "lessons": "A large-scale automation program needs more than a strong technical case — it needs an equally rigorous financial model and a clear phased rollout strategy, since that combination is ultimately what determines whether a project gets funded."
+          }
+        },
+        {
+          "id": "koica-equipment-supply",
+          "title": "Network and Server Equipment Rollout for an IT Park, KOICA-Financed",
+          "domain": "IT Infrastructure / Procurement",
           "year": "2022",
-          "description": "Redesigned deployment pipelines across 4 product teams. Introduced trunk-based development, automated testing gates, and environment promotion workflows.",
-          "outcome": "Deploy frequency: weekly → daily. Rollback time: 2 hours → 4 minutes.",
-          "tags": ["GitHub Actions", "Docker", "Terraform", "Datadog"],
-          "role": "Technical PM",
+          "description": "Procured and commissioned network and server hardware and storage systems for an IT park under financing from KOICA, including delivery of key software licenses.",
+          "outcome": "$1.5M project budget, delivered in 5 months including customs delays.",
+          "tags": ["Equipment Procurement", "Network Infrastructure", "Data Center", "KOICA"],
+          "role": "Technical Project Lead",
           "detail": {
-            "client": "Mid-size fintech, 4 product teams",
-            "duration": "3 months",
-            "team": "2 platform engineers + 1 TPM (me), embedded across 4 teams",
-            "overview": "Four product teams shared one deployment pipeline, originally built for a single team two years earlier. Every team's release competed for the same queue. A failed test in one team's code could block every other team's release for hours.",
+            "client": "Uzbekistan IT Park · financed by KOICA (Korea International Cooperation Agency)",
+            "duration": "5 months (including equipment customs delay)",
+            "team": "Technical project lead (me), supplier partner, logistics, installation engineers",
+            "overview": "Procured and commissioned new network, server, and storage hardware for an IT park under KOICA financing. The defining constraint was that every aspect of equipment placement, installation, and configuration had to meet KOICA's standards. I was involved from spec sign-off through to full go-live.",
             "problem": [
-              "One shared Jenkins pipeline, no isolation between teams' build queues.",
-              "Manual QA sign-off was required before any production deploy — releases happened once a week, on Thursdays, by tradition.",
-              "Rolling back a bad deploy meant re-running the entire pipeline from scratch — roughly 2 hours."
+              "The IT park's network and server infrastructure needed a full refresh on a tight timeline.",
+              "Every step, from architecture to installation, had to strictly comply with the donor's technical standards.",
+              "Part of the budget covered software license procurement, which added complexity to logistics and customs clearance."
             ],
             "approach": [
-              "Migrated from Jenkins to GitHub Actions with per-team, per-service pipelines — eliminating the shared queue entirely.",
-              "Introduced trunk-based development with short-lived feature branches and mandatory automated test gates before merge.",
-              "Built a one-click rollback mechanism using immutable container tags — rolling back became 'redeploy the previous tag', not 're-run everything'.",
-              "Ran weekly 'deploy office hours' for the first month to coach teams through the new workflow."
+              "Ran a market study of network, server, and storage equipment vendors.",
+              "Designed and signed off on a solution architecture aligned with KOICA's requirements and standards.",
+              "Agreed technical specifications for equipment and licenses with both the donor and the client.",
+              "Managed customs clearance, installation, and full commissioning of every system."
             ],
             "challenges": [
-              "Two teams had test suites that took 25+ minutes to run, which made the new 'merge requires green tests' policy painful. We had to parallelize their test runners before the new process was viable.",
-              "Cultural resistance to giving up the weekly release cadence — some engineers were nervous about daily production deploys at first."
+              "Equipment was delayed in customs over documentation, requiring a schedule revision without exceeding the overall budget.",
+              "Strict compliance with KOICA's placement and installation standards required extra sign-off at every stage."
             ],
             "results": [
-              { "metric": "Daily deploys",            "detail": "Up from one fixed release day per week" },
-              { "metric": "Rollback: 2hrs → 4min",     "detail": "Via immutable tag redeploys instead of full pipeline reruns" },
-              { "metric": "Build queue eliminated",    "detail": "Each team now deploys independently, with zero cross-team blocking" },
-              { "metric": "Test suite: 25min → 6min",  "detail": "After parallelization across the two slowest teams" }
+              { "metric": "$1.5M project budget", "detail": "Full delivery of network, server, and storage hardware plus software licenses" },
+              { "metric": "5-month delivery", "detail": "Including a customs delay on equipment shipment" },
+              { "metric": "Full compliance with KOICA standards", "detail": "Across placement, installation, and configuration of all delivered equipment" }
             ],
-            "lessons": "The technical migration was the easy part. The harder part was convincing engineers that daily deploys were safer than weekly ones — smaller diffs are easier to debug. That took weeks of trust-building, not days."
+            "lessons": "On donor-financed projects, customs clearance and documentation are effectively a project within the project — they need the same rigor in planning as the technical architecture itself."
           }
         },
         {
-          "id": "b2b-saas-mvp",
-          "title": "B2B SaaS MVP — 0 to Launch",
-          "domain": "Product Engineering",
-          "year": "2021",
-          "description": "Took a fintech B2B product from whiteboard to production in 4 months. Owned both technical architecture and sprint delivery. First paying customer in week 16.",
-          "outcome": "$120K ARR at launch. Raised seed round 3 months later.",
-          "tags": ["React", "FastAPI", "PostgreSQL", "Stripe"],
-          "role": "Full Stack Engineer / TPM",
+          "id": "situation-center-security",
+          "title": "Situational Center Design for a Security Agency",
+          "domain": "Infrastructure Design",
+          "year": "2024",
+          "status": { "label": "Not implemented", "type": "not-implemented" },
+          "description": "Full design of the infrastructure and operating processes for a situational center for a national security agency: market analysis, work plan, and procurement plan.",
+          "outcome": "Delivered a complete project documentation package and a validated cost estimate of $2.3M.",
+          "tags": ["Situational Center", "Infrastructure Design", "Security Sector", "Procurement"],
+          "role": "Technical Expert / Solution Designer",
           "detail": {
-            "client": "Pre-seed fintech startup (2 co-founders)",
-            "duration": "4 months",
-            "team": "Me + 1 contract designer, founders handled sales",
-            "overview": "Two non-technical co-founders had a validated idea and a handful of LOIs from prospective customers, but no product. I was brought on as the first technical hire, responsible for both building the MVP and running the delivery process — there was no separate PM.",
+            "client": "National security agency, Republic of Uzbekistan",
+            "duration": "Several months, 2024",
+            "team": "Technical expert (me), market analysts, cost estimators",
+            "overview": "The project called for a complete design of the infrastructure and operating processes for a situational center — from equipment architecture through to a procurement plan and a fully justified cost estimate for the tender committee.",
             "problem": [
-              "No existing technical infrastructure — literally starting from an empty repository.",
-              "Founders needed something demoable to close their first paying customers within 4 months, or risk losing the LOIs.",
-              "Budget for infrastructure and third-party services was near zero pre-seed."
+              "The client had no situational center meeting modern monitoring and decision-making requirements.",
+              "Infrastructure needed to be designed from scratch, with every cost fully justified."
             ],
             "approach": [
-              "Scoped a deliberately narrow MVP — one core workflow, done well, instead of five workflows done partially.",
-              "Used boring, well-understood technology (React, FastAPI, PostgreSQL) to maximize my own velocity as a solo engineer.",
-              "Ran weekly demos with the founders, who relayed feedback from prospective customers in near real time — effectively a 1-week feedback loop with the market.",
-              "Integrated Stripe billing in week 10, ahead of schedule, so the first customer could be invoiced immediately at signature."
+              "Ran a market analysis of equipment and solutions for situational centers.",
+              "Built a detailed work plan for standing up the center.",
+              "Prepared a procurement plan with a cost justification for every component."
             ],
             "challenges": [
-              "Being the only engineer meant every architectural decision was mine alone, with no one to sanity-check tradeoffs. I leaned on weekly async code review from a friend at another company as an informal safety net.",
-              "Two prospective customers asked for features that would have doubled the scope. Saying no to both, twice, was the hardest and most valuable decision of the project."
+              "High competition in the tender with non-transparent selection criteria.",
+              "The tender was ultimately awarded to a different company, despite a complete and well-prepared solution."
             ],
             "results": [
-              { "metric": "$120K ARR at launch",     "detail": "Three paying customers signed before the public launch date" },
-              { "metric": "First customer: week 16", "detail": "Within the original 4-month target" },
-              { "metric": "Seed round closed",       "detail": "3 months post-launch, citing working product as key diligence factor" },
-              { "metric": "Zero scope creep features shipped", "detail": "Two large feature requests were deliberately declined pre-launch" }
+              { "metric": "$2.3M", "detail": "Full project cost estimate, built from market analysis and the procurement plan" },
+              { "metric": "Complete design documentation package", "detail": "Work plan and procurement plan, ready for execution" }
             ],
-            "lessons": "Saying no to a customer's feature request before launch is uncomfortable but often correct. Both declined features turned out to be edge cases that fewer than 5% of later customers ever needed."
+            "lessons": "Not every well-prepared project reaches implementation — public-sector tenders don't depend on technical and financial rigor alone. Even so, the situational-center design methodology built here carried directly into later projects."
+          }
+        },
+        {
+          "id": "smart-highway-huawei",
+          "title": "Smart Highway — AI-Based Traffic Control System with Huawei",
+          "domain": "Smart Roads / AI",
+          "year": "2024",
+          "status": { "label": "Project frozen", "type": "frozen" },
+          "description": "Led the IT workstream of a smart-highway program with Huawei: infrastructure for an AI-based road traffic control system.",
+          "outcome": "Delivered a complete implementation plan and a $50M cost estimate for the IT workstream.",
+          "tags": ["Smart Road", "AI", "Huawei", "Video Analytics", "Supply Chain Logistics"],
+          "role": "Technical Expert / IT Workstream Lead",
+          "detail": {
+            "client": "National smart-highway program · in partnership with Huawei",
+            "duration": "2024",
+            "team": "Technical expert (me), Huawei partners, vendor managers",
+            "overview": "On a joint program with Huawei to build a smart highway, I owned the IT workstream — the infrastructure for an AI-based road traffic control system.",
+            "problem": [
+              "An intelligent traffic-control infrastructure had to be designed from scratch for a long highway corridor.",
+              "Equipment supply logistics were complex and required selecting the right vendors jointly with Huawei."
+            ],
+            "approach": [
+              "Ran a detailed scoping phase to understand the project and the requirements for an AI-based traffic control system.",
+              "Built an implementation plan for the IT workstream.",
+              "Selected equipment vendors and structured the supply logistics chain.",
+              "Delivered the final cost estimate for the IT workstream."
+            ],
+            "challenges": [
+              "The scale of the program ($50M for the IT workstream alone) required sign-off from a wide range of stakeholders.",
+              "The project was frozen after the planning phase, for reasons unrelated to the technical work."
+            ],
+            "results": [
+              { "metric": "$50M", "detail": "Cost estimate for the IT workstream — the AI-based traffic control infrastructure" },
+              { "metric": "Complete implementation plan", "detail": "Logistics chains, vendors, and architecture agreed with Huawei" }
+            ],
+            "lessons": "Working alongside a major international partner like Huawei builds real depth in AI infrastructure, even when the project itself doesn't ultimately reach execution."
+          }
+        },
+        {
+          "id": "small-business-web-projects",
+          "title": "Web Development for Small Businesses",
+          "domain": "Web Development",
+          "year": "2020 — 2024",
+          "description": "A series of small web projects — brochure sites, landing pages, and simple online stores — for small business owners.",
+          "outcome": "First digital presence and first online sales for several small businesses.",
+          "tags": ["React", "Landing Page", "Small Business", "Web Development"],
+          "role": "Full Stack Developer",
+          "detail": {
+            "client": "Several small businesses (private clients)",
+            "duration": "Standalone projects, 2–4 weeks each",
+            "team": "Solo developer",
+            "overview": "Alongside larger infrastructure and advisory programs, I regularly take on small web projects for small business owners — from brochure sites to simple online stores — helping them get their first real digital presence.",
+            "problem": [
+              "Most clients had no website at all — only a social media page.",
+              "Budget and timelines were always tight."
+            ],
+            "approach": [
+              "Used a standard but flexible stack (React, HTML/CSS, a lightweight backend where needed) to move fast.",
+              "Focused on simple, clear sites the business owner could update themselves afterward."
+            ],
+            "challenges": [
+              "Fitting small projects around larger program work required disciplined time management."
+            ],
+            "results": [
+              { "metric": "Several sites shipped", "detail": "Brochure sites and landing pages for local small businesses" },
+              { "metric": "Fast turnaround", "detail": "2 to 4 weeks from kickoff to launch per project" }
+            ],
+            "lessons": "Small projects are a great way to stay close to hands-on development, even as the primary role shifts toward management and strategy."
           }
         }
       ]
@@ -443,9 +617,9 @@ const SITE_CONTENT = {
             "team": "10 инженеров, 5 Брокеры, 1 PM, 1 Пресейл инженер",
             "overview": "Существующая инфраструктура представляла собой сет оборудования которым уже более 5 лет и за современными нагрузками оно не поспевало.",
             "problem": [
-              "Низкая пропускная спопобность корпоративной сети передачи данных.",
+              "Низкая пропускная способность корпоративной сети передачи данных.",
               "Серверная инфраструктура загружена на более чем 70%.",
-              "Большая часть оборудования потеряла свою актуальность и не подляжала дальнейшей поддержки и апгрейда.",
+              "Большая часть оборудования устарела и не подлежала дальнейшей поддержке и апгрейду.",
               "Отсутствовало централизованное управление ресурсами и сетями."
             ],
             "approach": [
@@ -453,13 +627,13 @@ const SITE_CONTENT = {
               "Был разработан специальный план по миграции основной банковской системы на новое оборудование без остановки работы",
             ],
             "challenges": [
-              "Выполнение задач в условиях того чтобы банковские сервисы были в полной доступности",
+              "Выполнение работ при условии сохранения полной непрерывной доступности банковских сервисов",
               "Монтаж нового оборудования частично требовал инженерных доработок",
             ],
             "results": [
               { "metric": "Рост пропускной способности корпоративной сети передачи данных 10Х",  "detail": "В связи с заменной сетевого оборудования, пропускная способность сети из 100МБит перешла на 1ГБит  " },
               { "metric": "Рост пропускной способности инфраструктурной сети",  "detail": "Инфраструктурная сеть построена на основе 10 и 20Гбитных коммутаторах в то время как до этого максимальная пропускная способность была 1Гбит" },
-              { "metric": "Сокращение закрытия банковского дня",                  "detail": "Банковский день закрывался в среднем на 25% быстрее после первого месяца эксплуатации нового обоурдования" },
+              { "metric": "Сокращение закрытия банковского дня",                  "detail": "Банковский день закрывался в среднем на 25% быстрее после первого месяца эксплуатации нового оборудования" },
               { "metric": "Централизованное управление всеми ресурсами ИТ",        "detail": "Были внедрены системы централизованное управления ресурсами ИТ инфраструктуры" }
             ],
             "lessons": "Тщательное планирование каждого шага и многократные репитиции дают свой плод. Как говориться тяжело в учении, легко в бою"
@@ -474,27 +648,28 @@ const SITE_CONTENT = {
           "outcome": "Цифровизация карточек химических веществ",
           "tags": ["Web Development", "Platform", "Chem-registry"],
           "role": "Fullstack инженер",
+          "link": "",
           "detail": {
-            "client": "Коммитет экологии",
+            "client": "Комитет экологии",
             "duration": "6 месяца",
             "team": "2 фронт энд разработчика, 2 бэкэнд разработчика, 1 бизнес аналитик, 1 проектный менеджер, 1 дизайнер",
             "overview": "Разработка требовалось в кратчайшие сроки за 1-2 месяца но по итогу до стадии полноценного продукта он дошел только за 6 месяцев",
             "problem": [
-              "Отстутсвовала полноценная электронная система где можно увидеть информацию об опасных химических веществах.",
-              "Все документы об элементе храняться разрознено.",
+              "Отсутствовала единая электронная система для учёта и просмотра информации об опасных химических веществах.",
+              "Документация по каждому веществу хранилась разрозненно, в разных форматах и у разных ответственных.",
             ],
             "approach": [
-              "Была разработано ТЗ совместно с заказчиком.",
-              "Разработак ввелась в режиме Agile когда мы каждую неделю или даже за более короткий срок выдавали результат заказжику и далее прорабатывали другие части."
+              "Совместно с заказчиком было разработано техническое задание.",
+              "Разработка велась в режиме Agile: каждую неделю, а иногда и чаще, заказчику передавался готовый результат, после чего команда переходила к следующему модулю."
             ],
             "challenges": [
-              "Некоторый функиональ который мы хотели внедрить в середине проекта требовал перестройки архитектуры",
+              "Часть функциональности, добавленной в середине проекта по запросу заказчика, потребовала пересмотра архитектуры",
             ],
             "results": [
               { "metric": "Единая система для хранения информации", "detail": "Вместо сотни разрозненных файлов внедрена единая система" },
               { "metric": "Возможность импорта и экспорта",     "detail": "Для удобства ввода химических элементов десятками была внедрена система импорта из Excel" },
             ],
-            "lessons": "Очень важно формировывать четкое понимание у заказчика как продукт или бизнес процесс может быть реализован на деле"
+            "lessons": "Чёткое совместное понимание того, как продукт и бизнес-процесс будут работать на практике, — главный фактор успеха такого проекта"
           }
         },
         {
@@ -510,7 +685,7 @@ const SITE_CONTENT = {
             "client": "Государственный орган | Кадастровое агентство при Министерстве экономики и финансов Республики Узбекистан",
             "duration": "8 месяцев",
             "team": "Технический эксперт, финансовый аналитик, аналитик систем, системный архитектор",
-            "overview": "Подготовка масштабного документа Технико-экономического обоснования проекта (ТЭО) для зашиты инвестиций от Всемирного банка. Процедура заняла около 8 месяцев и была потрясающим обытом взаимодействия с различными государтсвенными институтами",
+            "overview": "Подготовка масштабного документа Технико-экономического обоснования проекта (ТЭО) для защиты инвестиций от Всемирного банка. Процедура заняла около 8 месяцев и стала ценным опытом взаимодействия с различными государственными институтами",
             "problem": [
               "Отсутствие Национальной инфраструктуры пространственных данных.",
               "Низкая цифровизация и остутсвие единой архитектуры.",
@@ -530,6 +705,189 @@ const SITE_CONTENT = {
               { "metric": "Подготовлен детальный документ", "detail": "Подготовлен детальный документ по зашитие проекта а также осуществлена защита совместно с руководствующим составом заказчика" }
             ],
             "lessons": "Работа на общее благо иногда дает больше мотивации нежели чем материальное состовляющее."
+          }
+        },
+        {
+          "id": "innovative-contact-center",
+          "title": "Инновационный контакт-центр — комплексная автоматизация клиентского сервиса банка",
+          "domain": "Контакт-центр / Автоматизация",
+          "year": "2026 — 2031",
+          "status": { "label": "На стадии защиты", "type": "progress" },
+          "description": "Программа из шести взаимосвязанных компонентов: омниканальная чат-платформа, чат-бот, голосовые боты для инбаунда и аутбаунда, платформа речевой аналитики и интеллектуальная система Workforce Management.",
+          "outcome": "$26 млн экономии против базового сценария, NPV $8 млн, целевой уровень автоматизации 40% к концу 5-го года.",
+          "tags": ["Omnichannel", "Chatbot", "Voice Bot", "Speech Analytics", "WFM", "Финансовое моделирование"],
+          "role": "Руководитель программы автоматизации",
+          "detail": {
+            "client": "Крупный коммерческий банк",
+            "duration": "Обоснование и защита — 2024–2026, реализация — конец 2026 и далее (горизонт 5 лет)",
+            "team": "Бизнес-аналитики, финансовый аналитик, архитекторы решений, вендор-менеджеры, руководитель программы (я)",
+            "overview": "Программа объединяет шесть крупных компонентов автоматизации контакт-центра банка: омниканальную чат-платформу, чат-бота для неё, голосового бота для аутбаунда, голосового бота для инбаунда, платформу речевой аналитики и интеллектуальную платформу Workforce Management для составления графиков операторов. Проект прошёл полный цикл предпроектной подготовки и сейчас готовится к защите для получения финансирования на реализацию.",
+            "problem": [
+              "Обслуживание клиентов банка построено на разрозненных ручных процессах контакт-центра без единой омниканальной платформы.",
+              "Отсутствие интеллектуальной автоматизации в голосовых и чат-каналах приводит к высокой нагрузке на операторов и постоянному росту штата.",
+              "Графики операторов составляются вручную, без учёта прогноза нагрузки, что ведёт к переизбытку или дефициту персонала в разные периоды."
+            ],
+            "approach": [
+              "Проведено детальное изучение текущих бизнес-процессов контакт-центра и точек контакта с клиентом по всем каналам.",
+              "Выполнен анализ локального и мирового рынка поставщиков решений для омниканальных платформ, чат- и голосовых ботов, речевой аналитики и WFM, включая опыт внедрения в других банках.",
+              "Проведены пилотные проекты и тестирования с несколькими вендорами по ключевым компонентам решения.",
+              "Разработаны отдельные RFP по каждому из шести компонентов программы.",
+              "Построена финансовая модель с двумя сценариями — базовым и с автоматизацией — с расчётом экономического эффекта на горизонте 5 лет.",
+              "Подготовлен пакет внутренних документов: стратегия и план поэтапного внедрения, реестр и матрица рисков проекта."
+            ],
+            "challenges": [
+              "Согласование единого видения между бизнес-подразделениями, ИТ и риск-менеджментом по масштабной кросс-функциональной программе.",
+              "Сведение шести независимых компонентов в единую согласованную архитектуру и дорожную карту внедрения.",
+              "Обоснование крупного бюджета на защите проекта перед руководством и подтверждение окупаемости на пятилетнем горизонте."
+            ],
+            "results": [
+              { "metric": "$26 млн экономии", "detail": "Разница между сценарием с автоматизацией и базовым сценарием на горизонте реализации программы" },
+              { "metric": "NPV $8 млн", "detail": "Чистая приведённая стоимость проекта по результатам финансового моделирования" },
+              { "metric": "Сокращение штата на 421 человека", "detail": "За счёт автоматизации типовых операций контакт-центра" },
+              { "metric": "$10 млн экономии на ФОТ (Perex)", "detail": "Снижение расходов на персонал благодаря автоматизации операторских функций" },
+              { "metric": "Целевой уровень автоматизации 40%", "detail": "К концу 5-го года реализации программы" }
+            ],
+            "lessons": "Масштабная программа автоматизации требует не только сильного технического обоснования, но и убедительной финансовой модели с чёткой стратегией поэтапного внедрения — именно это в итоге определяет, получит ли проект финансирование."
+          }
+        },
+        {
+          "id": "koica-equipment-supply",
+          "title": "Поставка и запуск сетевого и серверного оборудования для ИТ-парка при финансировании KOICA",
+          "domain": "ИТ-инфраструктура / Поставки",
+          "year": "2022",
+          "description": "Поставка и ввод в эксплуатацию сетевого, серверного оборудования и систем хранения данных для ИТ-парка при финансировании международной организации KOICA, включая лицензии ключевого ПО.",
+          "outcome": "Бюджет проекта $1.5 млн, реализован за 5 месяцев с учётом задержки оборудования на таможне.",
+          "tags": ["Поставка оборудования", "Сетевая инфраструктура", "Дата-центр", "KOICA"],
+          "role": "Технический руководитель проекта",
+          "detail": {
+            "client": "ИТ-парк Узбекистана · при финансировании международной организации KOICA",
+            "duration": "5 месяцев (с учётом задержки оборудования на таможне)",
+            "team": "Технический руководитель проекта (я), партнёр-поставщик, логисты, инженеры монтажа",
+            "overview": "Проект по поставке и вводу в эксплуатацию нового сетевого, серверного оборудования и систем хранения данных для ИТ-парка, реализованный при финансировании международной организации KOICA. Ключевым условием было полное соответствие размещения, монтажа и настройки оборудования стандартам KOICA. Я участвовал в проекте от согласования спецификаций до полного запуска.",
+            "problem": [
+              "Требовалось полностью обновить сетевую и серверную инфраструктуру ИТ-парка в сжатые сроки.",
+              "Все работы — от архитектуры до монтажа — должны были строго соответствовать техническим стандартам донора.",
+              "Часть бюджета проекта включала поставку лицензий ключевого ПО, что усложняло логистику и таможенное оформление."
+            ],
+            "approach": [
+              "Проведено маркетинговое исследование рынка поставщиков сетевого, серверного оборудования и систем хранения данных.",
+              "Разработана и согласована архитектура решения с учётом требований и стандартов KOICA.",
+              "Согласованы технические спецификации оборудования и лицензий с донором и заказчиком.",
+              "Организована растаможка оборудования, монтаж и полный запуск систем в эксплуатацию."
+            ],
+            "challenges": [
+              "Оборудование задержалось на таможне из-за документации, что потребовало пересмотра графика без превышения общего бюджета.",
+              "Строгое соответствие всем стандартам KOICA по размещению и монтажу оборудования требовало дополнительных согласований на каждом этапе."
+            ],
+            "results": [
+              { "metric": "Бюджет проекта $1.5 млн", "detail": "Полная поставка сетевого, серверного оборудования, систем хранения данных и лицензий ПО" },
+              { "metric": "Срок реализации 5 месяцев", "detail": "С учётом задержки поставки оборудования на таможне" },
+              { "metric": "Полное соответствие стандартам KOICA", "detail": "По размещению, монтажу и настройке всего поставленного оборудования" }
+            ],
+            "lessons": "При работе с донорским финансированием таможенное оформление и документация — это отдельный проект внутри проекта, который нужно планировать так же тщательно, как техническую архитектуру."
+          }
+        },
+        {
+          "id": "situation-center-security",
+          "title": "Проектирование ситуационного центра для силовых структур",
+          "domain": "Проектирование инфраструктуры",
+          "year": "2024",
+          "status": { "label": "Проект не реализован", "type": "not-implemented" },
+          "description": "Полное проектирование инфраструктуры и рабочих процессов ситуационного центра для силовой структуры: маркетинговый анализ, план работ и план закупа.",
+          "outcome": "Подготовлен полный пакет проектной документации и обоснование стоимости проекта в размере $2.3 млн.",
+          "tags": ["Ситуационный центр", "Проектирование", "Силовые структуры", "Закупки"],
+          "role": "Технический эксперт / Проектировщик",
+          "detail": {
+            "client": "Силовая структура Республики Узбекистан",
+            "duration": "Несколько месяцев, 2024",
+            "team": "Технический эксперт (я), аналитики рынка, сметчики",
+            "overview": "Проект предполагал полное проектирование инфраструктуры и рабочих процессов ситуационного центра для силовой структуры — от архитектуры оборудования до плана закупок и обоснования стоимости перед конкурсной комиссией.",
+            "problem": [
+              "У заказчика отсутствовал ситуационный центр, отвечающий современным требованиям к мониторингу и принятию решений.",
+              "Требовалось спроектировать инфраструктуру с нуля и полностью обосновать её стоимость."
+            ],
+            "approach": [
+              "Проведён маркетинговый анализ рынка оборудования и решений для ситуационных центров.",
+              "Разработан детальный план работ по созданию центра.",
+              "Подготовлен план закупа с обоснованием стоимости каждого компонента."
+            ],
+            "challenges": [
+              "Высокая конкуренция на тендере при непрозрачных критериях отбора победителя.",
+              "Проект в итоге выиграла другая компания — несмотря на подготовленное комплексное решение."
+            ],
+            "results": [
+              { "metric": "$2.3 млн", "detail": "Полная оценка стоимости проекта, подготовленная на основе маркетингового анализа и плана закупа" },
+              { "metric": "Полный пакет проектной документации", "detail": "План работ и план закупа, готовые к реализации" }
+            ],
+            "lessons": "Не каждый качественно подготовленный проект доходит до реализации — тендерные процессы в госсекторе зависят не только от технической и финансовой проработки. Тем не менее, наработанная методология проектирования ситуационных центров пригодилась в последующих проектах."
+          }
+        },
+        {
+          "id": "smart-highway-huawei",
+          "title": "Умная автомагистраль — интеллектуальная система контроля трафика совместно с Huawei",
+          "domain": "Умные дороги / AI",
+          "year": "2024",
+          "status": { "label": "Проект заморожен", "type": "frozen" },
+          "description": "ИТ-часть проекта умной автомагистрали совместно с Huawei: инфраструктура для системы контроля дорожного трафика на основе искусственного интеллекта.",
+          "outcome": "Подготовлен полный план реализации и оценка ИТ-части проекта на $50 млн.",
+          "tags": ["Smart Road", "AI", "Huawei", "Видеоаналитика", "Логистика поставок"],
+          "role": "Технический эксперт / Руководитель ИТ-части",
+          "detail": {
+            "client": "Государственный проект умной автомагистрали · партнёр Huawei",
+            "duration": "2024",
+            "team": "Технический эксперт (я), партнёры Huawei, вендор-менеджеры",
+            "overview": "В рамках совместного с Huawei проекта по созданию умной автомагистрали я отвечал за ИТ-часть — создание инфраструктуры для системы контроля дорожного трафика на основе искусственного интеллекта.",
+            "problem": [
+              "Требовалось спроектировать с нуля инфраструктуру для интеллектуального контроля дорожного трафика на протяжённой автомагистрали.",
+              "Необходимо было выстроить сложную логистику поставки оборудования и подобрать подходящих вендоров совместно с Huawei."
+            ],
+            "approach": [
+              "Проведено детальное ознакомление с проектом и требованиями к системе контроля трафика на основе ИИ.",
+              "Составлен план реализации ИТ-части проекта.",
+              "Подобраны вендоры оборудования и выстроены логистические цепочки поставки.",
+              "Подготовлена итоговая стоимость ИТ-части проекта."
+            ],
+            "challenges": [
+              "Масштаб проекта ($50 млн ИТ-часть) требовал согласования с большим количеством заинтересованных сторон.",
+              "Проект был заморожен после этапа планирования по причинам, не связанным с технической проработкой."
+            ],
+            "results": [
+              { "metric": "$50 млн", "detail": "Оценка стоимости ИТ-части проекта — инфраструктуры системы контроля трафика на основе ИИ" },
+              { "metric": "Готовый план реализации", "detail": "Логистические цепочки, вендоры и архитектура согласованы с партнёром Huawei" }
+            ],
+            "lessons": "Работа с крупным международным партнёром вроде Huawei даёт возможность выстроить экспертизу в области AI-инфраструктуры, даже когда сам проект в итоге не переходит в стадию реализации."
+          }
+        },
+        {
+          "id": "small-business-web-projects",
+          "title": "Веб-разработка для малого бизнеса",
+          "domain": "Веб-разработка",
+          "year": "2020 — 2024",
+          "description": "Серия небольших веб-проектов — сайты-визитки, лендинги и простые интернет-магазины для малого бизнеса.",
+          "outcome": "Digital-присутствие и первые онлайн-продажи для нескольких небольших компаний.",
+          "tags": ["React", "Landing Page", "Small Business", "Web Development"],
+          "role": "Fullstack разработчик",
+          "detail": {
+            "client": "Несколько малых предприятий (частные заказчики)",
+            "duration": "Разовые проекты, по 2–4 недели каждый",
+            "team": "Соло-разработчик",
+            "overview": "Параллельно с крупными инфраструктурными и консалтинговыми проектами я регулярно беру небольшие веб-проекты для малого бизнеса — от сайтов-визиток до простых интернет-магазинов, помогая владельцам бизнеса получить первое цифровое присутствие.",
+            "problem": [
+              "У большинства заказчиков не было сайта или присутствия в интернете — только страницы в соцсетях.",
+              "Бюджет и сроки всегда были крайне ограничены."
+            ],
+            "approach": [
+              "Использовал типовой, но гибкий стек (React, HTML/CSS, лёгкий бэкенд при необходимости) для быстрой разработки.",
+              "Фокусировался на простых и понятных сайтах, которые владелец бизнеса может обновлять сам."
+            ],
+            "challenges": [
+              "Совмещение мелких проектов с основной занятостью на крупных программах требовало чёткого тайм-менеджмента."
+            ],
+            "results": [
+              { "metric": "Несколько запущенных сайтов", "detail": "Сайты-визитки и лендинги для локальных малых предприятий" },
+              { "metric": "Быстрые сроки", "detail": "От 2 до 4 недель на проект от старта до запуска" }
+            ],
+            "lessons": "Небольшие проекты — отличный способ держать руку на пульсе разработки, даже когда основная роль смещается в сторону управления и стратегии."
           }
         },
       ]
@@ -767,117 +1125,291 @@ const SITE_CONTENT = {
       "subtitle": "Ham muhandislik, ham natija muhim bo'lgan loyihalardan keyslar.",
       "items": [
         {
-          "id": "platform-rebuild",
-          "title": "Platformani to'xtovsiz qayta qurish",
-          "domain": "Platforma muhandisligi",
-          "year": "2023",
-          "description": "5 yillik, 1000 ta bir vaqtdagi foydalanuvchiga xizmat ko'rsatuvchi monolitni mikroservis arxitekturasiga o'tkazdik. Nol to'xtash vaqti. 6 oylik muddat. 6 muhandisdan iborat jamoa.",
-          "outcome": "Sig'im 10 barobar oshdi. Infratuzilma xarajatlari 40% ga kamaydi.",
-          "tags": ["Next.js", "Node.js", "AWS ECS", "PostgreSQL"],
-          "role": "Tex. lid / arxitektor",
+          "id": "bank-modernization",
+          "title": "Yirik milliy bank uchun IT infratuzilmasini modernizatsiya qilish",
+          "domain": "IT infratuzilmasi",
+          "year": "2025",
+          "description": "Bankning infratuzilmasini keng ko'lamli modernizatsiya qildim: asosiy bank tizimi yangi, yuqori quvvatli uskunaga ko'chirildi, butun korporativ tarmoq zamonaviy uskunalarga yangilandi.",
+          "outcome": "Bank kunini yopish vaqti 25% qisqardi. Korporativ tarmoq o'tkazuvchanligi 10 barobar oshdi.",
+          "tags": ["IT infratuzilma", "Asosiy bank tizimi", "Banking", "Fintech"],
+          "role": "Loyiha menejeri",
           "detail": {
-            "client": "B2B SaaS platformasi (Series B bosqichi)",
+            "client": "Yirik davlat banki",
+            "duration": "1 yil",
+            "team": "10 muhandis, 5 broker/vendor vakili, 1 PM, 1 preseyl muhandisi",
+            "overview": "Bankning mavjud infratuzilmasi 5 yildan oshgan edi va joriy tranzaksiya hajmlariga endi yetarli emas edi.",
+            "problem": [
+              "Korporativ ma'lumotlar tarmog'ining o'tkazuvchanligi past edi.",
+              "Server infratuzilmasi 70% dan yuqori yuklangan edi.",
+              "Uskunalarning katta qismi eskirgan va vendor tomonidan qo'llab-quvvatlanmasdi.",
+              "IT resurslari va tarmoqlarni markazlashgan boshqarish tizimi yo'q edi."
+            ],
+            "approach": [
+              "Bankning barcha mavjud uskunalari bo'yicha to'liq audit o'tkazildi.",
+              "Asosiy bank tizimini xizmatni to'xtatmasdan yangi uskunaga ko'chirish uchun bosqichma-bosqich migratsiya rejasi ishlab chiqildi."
+            ],
+            "challenges": [
+              "Bank xizmatlarining to'liq va uzluksiz mavjudligini saqlab qolgan holda ishlarni bajarish.",
+              "Ba'zi uskunalarni o'rnatish yangi arxitekturaga moslashtirish uchun qo'shimcha muhandislik ishlarini talab qildi."
+            ],
+            "results": [
+              { "metric": "Tarmoq o'tkazuvchanligi 10× oshdi",  "detail": "Tarmoq uskunalarini almashtirish orqali korporativ tarmoq 100 Mbit dan 1 Gbit ga o'tdi" },
+              { "metric": "Yuqori quvvatli backbone",  "detail": "Infratuzilma tarmog'i avvalgi 1 Gbit chegarasi o'rniga 10/40 Gbit kommutatorlar asosida qurildi" },
+              { "metric": "Bank kunini yopish 25% tezlashdi", "detail": "Yangi uskunada ishlashning birinchi oyidayoq o'rtacha yopish vaqti 25% ga qisqardi" },
+              { "metric": "IT resurslarini markazlashgan boshqarish", "detail": "Butun infratuzilma bo'ylab markazlashgan boshqaruv vositalari joriy etildi" }
+            ],
+            "lessons": "Har bir qadamni puxta rejalashtirish va bir necha marta sinab ko'rish o'z samarasini beradi — aynan shu intizom to'xtovsiz migratsiyani mumkin qiladi."
+          }
+        },
+        {
+          "id": "chemical-safety",
+          "title": "Xavfli kimyoviy moddalar milliy reyestri platformasi",
+          "domain": "Dasturiy ta'minot ishlab chiqish",
+          "year": "2026",
+          "description": "Xavfli kimyoviy moddalar reyestri uchun platformani noldan to'liq loyihalashtirdim va qurdim.",
+          "outcome": "Ilgari faqat tarqoq qog'oz va fayl ko'rinishida bo'lgan kimyoviy moddalar hujjatlari raqamlashtirildi.",
+          "tags": ["Veb-dasturlash", "Platforma", "Kimyoviy reyestr"],
+          "role": "Full Stack muhandis",
+          "link": "",
+          "detail": {
+            "client": "Ekologiya qo'mitasi",
             "duration": "6 oy",
-            "team": "6 muhandis, 1 dizayner, 1 PM",
-            "overview": "Mavjud platforma kompaniya faoliyatining dastlabki yillarida qurilgan 5 yillik monolit edi. U ishlar edi — to'xtaguncha. Trafik 1000 ta bir vaqtdagi foydalanuvchidan oshgach, javob vaqti yomonlasha boshladi, deploylar bir necha soatlik xavfli tadbirlarga aylandi, har bir yangi funksiya oldingisidan ko'ra uzoqroq vaqt oldi.",
+            "team": "2 frontend muhandis, 2 backend muhandis, 1 biznes-analitik, 1 loyiha menejeri, 1 dizayner",
+            "overview": "Mijoz dastlab 1–2 oyda tayyor variantni xohlagan edi, ammo haqiqiy production darajasidagi platformaga yetishga 6 oy ketdi.",
             "problem": [
-              "Monolitda aniq servis chegaralari yo'q edi — billing kodidagi o'zgarish dashboardni buzishi mumkin edi.",
-              "Deploy mijozlar vaqt zonalariga moslashtirilgan 2 soatlik texnik xizmat oynasini talab qilardi.",
-              "Jamoa hech narsani refaktoring qilishdan qo'rqardi, chunki hech kim bog'liqliklar grafigini to'liq tushunmasdi."
+              "Xavfli kimyoviy moddalar haqidagi ma'lumotni ko'rish uchun yagona elektron tizim mavjud emas edi.",
+              "Har bir modda bo'yicha hujjatlar turli formatlarda va turli bo'limlarda tarqoq holda saqlanardi."
             ],
             "approach": [
-              "To'liq qayta yozishdan voz kechdik — mablag' jalb qilish jarayonidagi kompaniya uchun 6 oylik funksiyalarni muzlatish tijorat jihatdan imkonsiz edi.",
-              "Buning o'rniga Strangler Fig patternidan foydalandik: yangi funksionallik birinchi kundanoq alohida servislar sifatida qurildi, mavjud funksionallik esa monolitdan bosqichma-bosqich, bir chegaralangan kontekstdan boshqasiga ajratildi.",
-              "Monolit va yangi servislar oldiga API gateway o'rnatdik, shunda frontend qaysi tizim so'rovga javob berayotganini bilmasdi.",
-              "Har bir ko'chirilgan servis o'z ma'lumotlar ombori, deploy pipeline va navbatchilikka ega bo'ldi — bu haqiqiy javobgarlik chegaralarini shakllantirishga majbur qildi."
+              "Mijoz bilan birgalikda batafsil texnik topshiriq ishlab chiqildi.",
+              "Ish Agile uslubida olib borildi — har hafta yoki undan tezroq mijozga tayyor natija topshirilib, keyingi modulga o'tilardi."
             ],
             "challenges": [
-              "Eng qiyin muammo umumiy baza jadvallari bo'ldi — ikkita servis ko'pincha bir xil jadvalni turli sabablarga ko'ra o'qir va yozardi, buni yechish uchun vaqtinchalik ikki tomonlama yozish davri va keyin solishtirish kerak bo'ldi.",
-              "Indekslanmagan SQL so'rovlarida qancha biznes-mantiq yashiringanini kam baholadik — bu mantiqni yangi servislarda aniq qayta tiklash uchun uch hafta ketdi."
+              "Loyiha o'rtasida mijoz talabiga ko'ra qo'shilgan ba'zi funksionallik arxitekturani qisman qayta qurishni talab qildi."
             ],
             "results": [
-              { "metric": "Sig'im 10× oshdi",  "detail": "~1000 dan 10 000+ bir vaqtdagi foydalanuvchigacha, arxitekturani qayta ko'rib chiqmasdan" },
-              { "metric": "Infratuzilma xarajati 40% kamaydi",  "detail": "Bitta ortiqcha katta monolit o'rniga har bir servis uchun mos o'lchamdagi konteynerlar" },
-              { "metric": "Nol to'xtash vaqti",                  "detail": "Butun migratsiya mijozlarga sezilarli bironta ham uzilishsiz o'tkazildi" },
-              { "metric": "Deploy vaqti: 2 soat → 8 daqiqa",        "detail": "Servis bo'yicha deploylar monolit relizi jarayonini almashtirdi" }
+              { "metric": "Yagona ma'lumotlar tizimi", "detail": "Yuzlab tarqoq fayllar o'rniga yagona qidiriladigan reyestr joriy etildi" },
+              { "metric": "Ommaviy import/eksport", "detail": "Operatorlar o'nlab moddalarni birma-bir emas, balki Excel orqali bir vaqtda kiritishi uchun import funksiyasi qo'shildi" }
             ],
-            "lessons": "Migratsiyadan oldin monitoringni sozlang, migratsiya paytida emas. Biz birinchi kundanoq yangi servislarga observability qo'shdik, ammo legacy monolit loyihaning oxirigacha 'qora quti' bo'lib qoldi — va aynan shu ko'r nuqta bizga eng ko'p vaqtga tushdi."
+            "lessons": "Mahsulot va tegishli biznes-jarayon amalda qanday ishlashi haqida mijoz bilan aniq umumiy tushunishga erishish — loyiha muvaffaqiyatining asosiy omili."
           }
         },
         {
-          "id": "ci-cd-overhaul",
-          "title": "CI/CD pipelineni qayta qurish",
-          "domain": "Dasturchi tajribasi",
+          "id": "Techno-Economic-Feasibility-Study",
+          "title": "Milliy fazoviy ma'lumotlar infratuzilmasi",
+          "domain": "Texnik ekspertiza",
+          "year": "2025",
+          "description": "Jahon banki investitsiyasini jalb qilish uchun O'zbekistonning Milliy fazoviy ma'lumotlar infratuzilmasi loyihasining texnik va moliyaviy asoslamasini tayyorladim va himoya qildim.",
+          "outcome": "$35 mln hajmida investitsiya jalb qilindi.",
+          "tags": ["Investitsiya jalb qilish", "Biznes-rejalashtirish", "Iqtisodiy tahlil", "Texnik tahlil"],
+          "role": "Texnik ekspert",
+          "detail": {
+            "client": "Davlat organi | O'zbekiston Respublikasi Iqtisodiyot va moliya vazirligi huzuridagi Kadastr agentligi",
+            "duration": "8 oy",
+            "team": "Texnik ekspert, moliyaviy analitik, tizim analitikasi mutaxassisi, tizim arxitektori",
+            "overview": "Jahon banki investitsiyasini himoya qilish uchun keng ko'lamli Texnik-iqtisodiy asoslash (TIA) hujjati tayyorlandi. Jarayon taxminan 8 oy davom etdi va turli davlat institutlari bilan ishlashda qimmatli tajriba bo'ldi.",
+            "problem": [
+              "Milliy fazoviy ma'lumotlar infratuzilmasi mavjud emas edi.",
+              "Raqamlashtirish darajasi past va idoralar o'rtasida yagona arxitektura yo'q edi."
+            ],
+            "approach": [
+              "Mijozning barcha mavjud infratuzilmasi bo'yicha to'liq audit o'tkazildi, har bir axborot tizimi va uning ishlash usuliga chuqur kirib borildi.",
+              "Fazoviy ma'lumotlarni qayta ishlash va saqlash bilan bog'liq mijoz biznes-jarayonlari hujjatlashtirildi."
+            ],
+            "challenges": [
+              "Loyihaga jalb qilingan barcha davlat tuzilmalari bilan to'liq muvofiqlikni saqlash.",
+              "Loyihaning butun salohiyati va qiymatini notexnik auditoriyaga tushunarli va ishonarli tarzda ko'rsatish."
+            ],
+            "results": [
+              { "metric": "Pilot O'zbekistonning eng jozibali turistik shahrida rejalashtirildi",     "detail": "Tizimning birinchi ishga tushirilishi respublika shaharlaridan birida rejalashtirilgan, pilot uchun ~$5 mln ajratilgan" },
+              { "metric": "Ikkita yangi Tier III ma'lumotlar markazi loyihalashtirildi", "detail": "Qo'shimcha ikkita Tier III darajali ma'lumotlar markazi ko'lami aniqlandi, 5 yillik ekspluatatsiya xarajatlari hisoblab chiqildi" },
+              { "metric": "Mavjud uskunalarni modernizatsiya qilish rejasi",       "detail": "Yangi infratuzilma va platformalar talablariga javob berish uchun mavjud uskunalarni yangilash ko'lami belgilandi" },
+              { "metric": "To'liq investitsiya asoslamasi taqdim etildi va himoya qilindi", "detail": "Batafsil himoya hujjati tayyorlandi va mijoz rahbariyati bilan birgalikda taqdim etildi" }
+            ],
+            "lessons": "Jamiyat manfaati uchun ishlash ba'zan faqat moliyaviy natijadan ko'ra kuchliroq motivatsiya beradi."
+          }
+        },
+        {
+          "id": "innovative-contact-center",
+          "title": "Innovatsion kontakt-markaz — bank mijozlarga xizmat ko'rsatishni to'liq avtomatlashtirish",
+          "domain": "Kontakt-markaz / Avtomatlashtirish",
+          "year": "2026 — 2031",
+          "status": { "label": "Moliyalashtirish himoyasi bosqichida", "type": "progress" },
+          "description": "Olti komponentdan iborat dastur: omnikanal chat-platforma, unga mo'ljallangan chat-bot, inbound va outbound uchun ovozli botlar, nutq analitikasi platformasi va aqlli Workforce Management tizimi.",
+          "outcome": "Bazaviy stsenariyga nisbatan $26 mln tejamkorlik, $8 mln NPV, 5-yil oxiriga 40% avtomatlashtirish maqsadi.",
+          "tags": ["Omnichannel", "Chat-bot", "Ovozli bot", "Nutq analitikasi", "WFM", "Moliyaviy modellashtirish"],
+          "role": "Avtomatlashtirish dasturi rahbari",
+          "detail": {
+            "client": "Yirik tijorat banki",
+            "duration": "Asoslash va himoya — 2024–2026, amalga oshirish — 2026 oxiridan boshlab (5 yillik ufq)",
+            "team": "Biznes-analitiklar, moliyaviy analitik, yechim arxitektorlari, vendor-menejerlar, dastur rahbari (men)",
+            "overview": "Dastur bank kontakt-markazini avtomatlashtirishning oltita yirik komponentini birlashtiradi: omnikanal chat-platforma, unga mo'ljallangan chat-bot, outbound uchun ovozli bot, inbound uchun ovozli bot, nutq analitikasi platformasi va operatorlar grafigini tuzuvchi aqlli Workforce Management platformasi. Loyiha loyihagacha bo'lgan barcha bosqichlarni to'liq yakunladi va hozir moliyalashtirishni olish uchun himoyaga tayyorlanmoqda.",
+            "problem": [
+              "Bank mijozlarga xizmat ko'rsatishi yagona omnikanal platformasiz, tarqoq qo'lda bajariladigan kontakt-markaz jarayonlariga asoslangan edi.",
+              "Ovozli va chat kanallarida aqlli avtomatlashtirish yo'qligi operatorlar yukini oshirib, shtatning doimiy o'sishiga olib kelardi.",
+              "Operatorlar grafigi yuklamani prognozlashsiz, qo'lda tuzilardi — bu turli davrlarda xodimlar ortiqcha yoki yetishmovchiligiga sabab bo'lardi."
+            ],
+            "approach": [
+              "Kontakt-markazning joriy biznes-jarayonlari va barcha kanallar bo'yicha mijoz bilan aloqa nuqtalari batafsil o'rganildi.",
+              "Omnikanal platformalar, chat va ovozli botlar, nutq analitikasi va WFM bo'yicha mahalliy va jahon vendorlar bozori, shu jumladan boshqa banklardagi joriy etish tajribasi tahlil qilindi.",
+              "Dasturning asosiy komponentlari bo'yicha bir nechta vendor bilan pilot loyihalar va testlar o'tkazildi.",
+              "Dasturning oltita komponenti bo'yicha alohida RFP tayyorlandi.",
+              "5 yillik ufqda iqtisodiy samarani hisoblagan holda ikki stsenariyli — bazaviy va avtomatlashtirilgan — moliyaviy model qurildi.",
+              "Ichki hujjatlar to'plami tayyorlandi: joriy etish strategiyasi va bosqichma-bosqich reja, loyiha risklari reyestri va matritsasi."
+            ],
+            "challenges": [
+              "Yirik funksiyalararo dastur bo'yicha biznes bo'linmalari, IT va risk-menejment o'rtasida yagona qarashni kelishish.",
+              "Oltita mustaqil komponentni yagona izchil arxitektura va joriy etish yo'l xaritasiga birlashtirish.",
+              "Rahbariyat oldida yirik byudjetni asoslash va besh yillik ufqda o'zini oqlashini tasdiqlash."
+            ],
+            "results": [
+              { "metric": "$26 mln tejamkorlik", "detail": "Dastur amalga oshirilish ufqida avtomatlashtirilgan va bazaviy stsenariylar o'rtasidagi farq" },
+              { "metric": "$8 mln NPV", "detail": "Moliyaviy modellashtirish natijalariga ko'ra loyihaning sof joriy qiymati" },
+              { "metric": "421 kishiga shtat qisqarishi", "detail": "Kontakt-markazning tipik operatsiyalarini avtomatlashtirish hisobiga" },
+              { "metric": "$10 mln FOT tejamkorligi", "detail": "Operator funksiyalarini avtomatlashtirish orqali xodimlar xarajatlarini kamaytirish" },
+              { "metric": "40% maqsadli avtomatlashtirish darajasi", "detail": "Dasturning 5-yili oxiriga kelib" }
+            ],
+            "lessons": "Yirik avtomatlashtirish dasturi kuchli texnik asoslamadan tashqari, xuddi shunday puxta moliyaviy model va aniq bosqichma-bosqich joriy etish strategiyasini talab qiladi — aynan shu birikma loyiha moliyalashtirish olish-olmasligini belgilaydi."
+          }
+        },
+        {
+          "id": "koica-equipment-supply",
+          "title": "KOICA moliyalashtiruvida IT-park uchun tarmoq va server uskunalarini yetkazib berish",
+          "domain": "IT infratuzilmasi / Yetkazib berish",
           "year": "2022",
-          "description": "4 ta mahsulot jamoasi bo'yicha deploy pipeline'larini qayta loyihalashtirdik. Trunk-based dasturlashni, avtomatik test gate'larini va muhitlar orasidagi promotion jarayonlarini joriy qildik.",
-          "outcome": "Deploy chastotasi: haftada bir marta → har kuni. Rollback vaqti: 2 soat → 4 daqiqa.",
-          "tags": ["GitHub Actions", "Docker", "Terraform", "Datadog"],
-          "role": "Texnik PM",
+          "description": "KOICA (Koreya xalqaro hamkorlik agentligi) moliyalashtiruvida IT-park uchun tarmoq, server uskunalari va ma'lumotlarni saqlash tizimlarini yetkazib berdim va ishga tushirdim, shu jumladan asosiy dasturiy ta'minot litsenziyalari.",
+          "outcome": "$1,5 mln loyiha byudjeti, bojxona kechikishlarini hisobga olgan holda 5 oyda amalga oshirildi.",
+          "tags": ["Uskuna yetkazib berish", "Tarmoq infratuzilmasi", "Ma'lumotlar markazi", "KOICA"],
+          "role": "Loyihaning texnik rahbari",
           "detail": {
-            "client": "O'rta hajmdagi fintech, 4 ta mahsulot jamoasi",
-            "duration": "3 oy",
-            "team": "2 platforma muhandisi + 1 TPM (men), 4 jamoaga joylashtirilgan",
-            "overview": "To'rtta mahsulot jamoasi ikki yil oldin bitta jamoa uchun qurilgan bitta deploy pipeline'ni baham ko'rardi. Har bir jamoaning relizi bir xil navbatga da'vogar edi. Bir jamoa kodidagi muvaffaqiyatsiz test boshqa barcha jamoalarning relizini soatlab bloklashi mumkin edi.",
+            "client": "O'zbekiston IT-parki · KOICA moliyalashtiruvida",
+            "duration": "5 oy (uskuna bojxona kechikishini hisobga olgan holda)",
+            "team": "Loyihaning texnik rahbari (men), yetkazib beruvchi hamkor, logistika, o'rnatish muhandislari",
+            "overview": "KOICA moliyalashtiruvida IT-park uchun yangi tarmoq, server uskunalari va ma'lumotlarni saqlash tizimlarini yetkazib berdim va ishga tushirdim. Asosiy shart — uskunalarni joylashtirish, o'rnatish va sozlashning har bir jihati KOICA standartlariga to'liq mos kelishi edi. Loyihada spetsifikatsiyalarni kelishishdan to to'liq ishga tushirilgunga qadar ishtirok etdim.",
             "problem": [
-              "Jamoalar orasida build navbati izolyatsiyasi bo'lmagan yagona umumiy Jenkins pipeline.",
-              "Har qanday production deploydan oldin qo'lda QA tasdig'i talab qilinardi — relizlar an'anaga ko'ra haftada bir marta, payshanba kunlari chiqardi.",
-              "Muvaffaqiyatsiz deployni ortga qaytarish butun pipeline'ni noldan qayta ishga tushirishni anglatardi — taxminan 2 soat."
+              "IT-parkning tarmoq va server infratuzilmasini qisqa muddatda to'liq yangilash kerak edi.",
+              "Arxitekturadan tortib o'rnatishgacha bo'lgan barcha ishlar donor texnik standartlariga qat'iy mos kelishi kerak edi.",
+              "Byudjetning bir qismi dasturiy ta'minot litsenziyalarini yetkazib berishni o'z ichiga olardi, bu logistika va bojxona rasmiylashtirishni murakkablashtirardi."
             ],
             "approach": [
-              "Jenkins'dan GitHub Actions'ga jamoa va servis bo'yicha alohida pipeline'lar bilan o'tdik — bu umumiy navbatni butunlay bartaraf etdi.",
-              "Qisqa muddatli feature branch'lar va merge oldidan majburiy avtomatik test gate'lari bilan trunk-based dasturlashni joriy qildik.",
-              "O'zgarmas konteyner teglariga asoslangan bir bosishli rollback mexanizmini qurdik — rollback endi 'butun jarayonni qayta ishga tushirish' emas, 'oldingi tegni qayta deploy qilish'ni anglatadi.",
-              "Jamoalarga yangi jarayonni o'zlashtirishga yordam berish uchun birinchi oyda haftalik 'deploy soatlari'ni o'tkazdik."
+              "Tarmoq, server uskunalari va ma'lumotlarni saqlash tizimlari yetkazib beruvchilari bozori bo'yicha marketing tadqiqoti o'tkazildi.",
+              "KOICA talablari va standartlariga mos yechim arxitekturasi ishlab chiqildi va kelishildi.",
+              "Uskunalar va litsenziyalarning texnik spetsifikatsiyalari donor va mijoz bilan kelishildi.",
+              "Uskunalarni bojxonadan o'tkazish, o'rnatish va tizimlarni to'liq ishga tushirish tashkil etildi."
             ],
             "challenges": [
-              "Ikkita jamoaning test to'plami 25+ daqiqa ishlardi, bu esa yangi 'merge faqat yashil testlar bilan' siyosatini og'riqli qildi. Yangi jarayon amalga oshguncha ularning test runner'larini parallellashtirishga to'g'ri keldi.",
-              "Haftalik reliz ritmidan voz kechishga madaniy qarshilik — ba'zi muhandislar dastlab kundalik production deploylardan xavotirlanishdi."
+              "Uskuna hujjatlar sababli bojxonada kechikdi, bu umumiy byudjetdan oshmasdan jadvalni qayta ko'rib chiqishni talab qildi.",
+              "KOICA ning joylashtirish va o'rnatish standartlariga qat'iy rioya qilish har bir bosqichda qo'shimcha kelishuvlarni talab qildi."
             ],
             "results": [
-              { "metric": "Kundalik deploylar",            "detail": "Haftada bitta belgilangan reliz kuni o'rniga" },
-              { "metric": "Rollback: 2 soat → 4 daqiqa",     "detail": "Pipeline'ni to'liq qayta ishga tushirish o'rniga o'zgarmas teglarni qayta deploy qilish orqali" },
-              { "metric": "Build navbati bartaraf etildi",    "detail": "Endi har bir jamoa boshqa jamoalarni bloklamasdan mustaqil deploy qiladi" },
-              { "metric": "Test to'plami: 25 daqiqa → 6 daqiqa",  "detail": "Ikkita eng sekin jamoada parallellashtirishdan keyin" }
+              { "metric": "$1,5 mln loyiha byudjeti", "detail": "Tarmoq, server uskunalari, ma'lumotlarni saqlash tizimlari va dasturiy litsenziyalarni to'liq yetkazib berish" },
+              { "metric": "5 oylik amalga oshirish muddati", "detail": "Uskuna yetkazib berishdagi bojxona kechikishini hisobga olgan holda" },
+              { "metric": "KOICA standartlariga to'liq muvofiqlik", "detail": "Yetkazib berilgan barcha uskunalarni joylashtirish, o'rnatish va sozlash bo'yicha" }
             ],
-            "lessons": "Texnik migratsiya eng oson qismi bo'ldi. Qiyinrog'i muhandislarni kundalik deploylar haftaliklardan ko'ra xavfsizroq ekaniga ishontirish edi — kichikroq o'zgarishlarni debug qilish osonroq. Bunga kunlar emas, haftalar davomida ishonch qurish kerak bo'ldi."
+            "lessons": "Donor moliyalashtiruvidagi loyihalarda bojxona rasmiylashtiruvi va hujjatlar aslida loyiha ichidagi alohida loyihadir — uni texnik arxitektura kabi puxtalik bilan rejalashtirish kerak."
           }
         },
         {
-          "id": "b2b-saas-mvp",
-          "title": "B2B SaaS MVP — noldan ishga tushirishgacha",
-          "domain": "Mahsulot muhandisligi",
-          "year": "2021",
-          "description": "Fintech B2B mahsulotini taxta g'oyasidan productionga 4 oyda olib chiqdim. Ham texnik arxitektura, ham sprint yetkazib berishga javobgar edim. 16-haftada birinchi to'lovchi mijoz paydo bo'ldi.",
-          "outcome": "Ishga tushirishda $120K ARR. 3 oydan keyin seed raundi yopildi.",
-          "tags": ["React", "FastAPI", "PostgreSQL", "Stripe"],
-          "role": "Full Stack muhandis / TPM",
+          "id": "situation-center-security",
+          "title": "Kuch tuzilmalari uchun Vaziyat markazini loyihalashtirish",
+          "domain": "Infratuzilmani loyihalashtirish",
+          "year": "2024",
+          "status": { "label": "Loyiha amalga oshirilmadi", "type": "not-implemented" },
+          "description": "Kuch tuzilmasi uchun Vaziyat markazi infratuzilmasi va ish jarayonlarini to'liq loyihalashtirish: marketing tahlili, ish rejasi va xarid rejasi.",
+          "outcome": "To'liq loyiha hujjatlari to'plami va $2,3 mln miqdorida asoslangan xarajat bahosi tayyorlandi.",
+          "tags": ["Vaziyat markazi", "Loyihalashtirish", "Kuch tuzilmalari", "Xaridlar"],
+          "role": "Texnik ekspert / Yechim loyihachisi",
           "detail": {
-            "client": "Pre-seed bosqichidagi fintech startapi (2 ta hammuassis)",
-            "duration": "4 oy",
-            "team": "Men + 1 shartnoma dizayneri, sotuvni asoschilar olib borishdi",
-            "overview": "Ikkita notexnik hammuassisning tasdiqlangan g'oyasi va bir nechta potentsial mijozlardan LOI (niyat xati) bor edi, lekin mahsulot yo'q edi. Meni birinchi texnik xodim sifatida taklif qilishdi — men ham MVP yaratish, ham yetkazib berish jarayonini boshqarish uchun javobgar edim, alohida PM yo'q edi.",
+            "client": "O'zbekiston Respublikasi kuch tuzilmasi",
+            "duration": "Bir necha oy, 2024",
+            "team": "Texnik ekspert (men), bozor analitiklari, smeta mutaxassislari",
+            "overview": "Loyiha kuch tuzilmasi uchun Vaziyat markazi infratuzilmasi va ish jarayonlarini — uskunalar arxitekturasidan tortib xarid rejasi va tender komissiyasi oldida to'liq asoslangan xarajat bahosigacha — to'liq loyihalashtirishni nazarda tutgan edi.",
             "problem": [
-              "Mavjud texnik infratuzilma yo'q edi — so'zma-so'z bo'sh repozitoriydan boshlash.",
-              "Asoschilarga 4 oy ichida birinchi to'lovchi mijozlarni yopish uchun namoyish qilsa bo'ladigan narsa kerak edi, aks holda LOI'larni yo'qotish xavfi bor edi.",
-              "Pre-seed bosqichida infratuzilma va uchinchi tomon xizmatlari uchun byudjet deyarli nolga teng edi."
+              "Mijozda zamonaviy monitoring va qaror qabul qilish talablariga javob beradigan Vaziyat markazi mavjud emas edi.",
+              "Infratuzilmani noldan loyihalashtirish va har bir xarajatni to'liq asoslash kerak edi."
             ],
             "approach": [
-              "MVP'ni ataylab tor qildik — yaxshi bajarilgan bitta asosiy jarayon, yarim bajarilgan beshta jarayon o'rniga.",
-              "Yagona muhandis sifatida o'z tezligimni maksimal darajaga ko'tarish uchun oddiy, yaxshi tushunilgan texnologiyalardan (React, FastAPI, PostgreSQL) foydalandim.",
-              "Asoschilar bilan haftalik demo o'tkazdim, ular potentsial mijozlardan olingan fikr-mulohazalarni deyarli real vaqtda uzatishardi — bu bozor bilan haftalik fikr-mulohaza siklini yaratdi.",
-              "10-haftada, jadvaldan oldin Stripe billingni integratsiya qildim, shunda birinchi mijozga shartnoma imzolangan zahoti hisob-faktura chiqarish mumkin bo'ldi."
+              "Vaziyat markazlari uchun uskunalar va yechimlar bozori tahlili o'tkazildi.",
+              "Markazni yaratish bo'yicha batafsil ish rejasi tuzildi.",
+              "Har bir komponent xarajati asoslangan xarid rejasi tayyorlandi."
             ],
             "challenges": [
-              "Yagona muhandis bo'lganim uchun barcha arxitektura qarorlari faqat menga tegishli edi, hech kim bilan tekshirib ko'rish imkoni yo'q edi. Norasmiy xavfsizlik tarmog'i sifatida boshqa kompaniyadagi do'stimdan haftalik asinxron kod ko'rib chiqishga tayandim.",
-              "Ikki potentsial mijoz ko'lamni ikki barobar oshiradigan funksiyalarni so'rashdi. Ikkalasiga ham ikki marta 'yo'q' deyish loyihaning eng qiyin va eng qimmatli qarori bo'ldi."
+              "Tenderda shaffof bo'lmagan tanlov mezonlari bilan yuqori raqobat.",
+              "To'liq va puxta tayyorlangan yechimga qaramay, tenderni oxir-oqibat boshqa kompaniya yutib oldi."
             ],
             "results": [
-              { "metric": "Ishga tushirishda $120K ARR",     "detail": "Ommaviy ishga tushirish sanasigacha uchta to'lovchi mijoz imzolandi" },
-              { "metric": "Birinchi mijoz: 16-hafta", "detail": "Dastlabki 4 oylik maqsad doirasida" },
-              { "metric": "Seed raund yopildi",       "detail": "Ishga tushirilgandan 3 oy o'tib, ishlaydigan mahsulot asosiy due diligence omili sifatida ko'rsatildi" },
-              { "metric": "Ko'lam kengayishisiz ishga tushirildi", "detail": "Ikkita yirik funksiya so'rovi ataylab ishga tushirishdan oldin rad etildi" }
+              { "metric": "$2,3 mln", "detail": "Bozor tahlili va xarid rejasi asosida tayyorlangan loyihaning to'liq xarajat bahosi" },
+              { "metric": "To'liq loyiha hujjatlari to'plami", "detail": "Amalga oshirishga tayyor ish rejasi va xarid rejasi" }
             ],
-            "lessons": "Ishga tushirishdan oldin mijozning funksiya so'roviga yo'q deyish noqulay, lekin ko'pincha to'g'ri. Rad etilgan ikkala funksiya ham keyinchalik mijozlarning 5% dan kamiga kerak bo'lgan chekka holatlar ekani ma'lum bo'ldi."
+            "lessons": "Har bir puxta tayyorlangan loyiha amalga oshirilishga yetib bormaydi — davlat sektoridagi tenderlar faqat texnik va moliyaviy puxtalikka bog'liq emas. Shunga qaramay, bu yerda ishlab chiqilgan vaziyat markazlarini loyihalashtirish metodologiyasi keyingi loyihalarda to'g'ridan-to'g'ri qo'l keldi."
+          }
+        },
+        {
+          "id": "smart-highway-huawei",
+          "title": "Aqlli avtomagistral — Huawei bilan hamkorlikda AI asosidagi trafikni boshqarish tizimi",
+          "domain": "Aqlli yo'llar / AI",
+          "year": "2024",
+          "status": { "label": "Loyiha muzlatilgan", "type": "frozen" },
+          "description": "Huawei bilan hamkorlikdagi aqlli avtomagistral dasturining IT qismiga rahbarlik qildim: sun'iy intellekt asosidagi yo'l trafigini boshqarish tizimi uchun infratuzilma.",
+          "outcome": "IT qismi uchun to'liq amalga oshirish rejasi va $50 mln xarajat bahosi tayyorlandi.",
+          "tags": ["Aqlli yo'l", "AI", "Huawei", "Video analitika", "Yetkazib berish logistikasi"],
+          "role": "Texnik ekspert / IT qismi rahbari",
+          "detail": {
+            "client": "Milliy aqlli avtomagistral dasturi · Huawei hamkorligida",
+            "duration": "2024",
+            "team": "Texnik ekspert (men), Huawei hamkorlari, vendor-menejerlar",
+            "overview": "Huawei bilan birgalikda aqlli avtomagistral yaratish dasturida men IT qismiga — sun'iy intellekt asosidagi yo'l trafigini boshqarish tizimi uchun infratuzilmaga — javobgar edim.",
+            "problem": [
+              "Uzun avtomagistral yo'nalishi uchun aqlli trafikni boshqarish infratuzilmasini noldan loyihalashtirish kerak edi.",
+              "Uskuna yetkazib berish logistikasi murakkab edi va Huawei bilan birgalikda to'g'ri vendorlarni tanlashni talab qilardi."
+            ],
+            "approach": [
+              "AI asosidagi trafikni boshqarish tizimiga bo'lgan loyiha va talablar bilan batafsil tanishildi.",
+              "IT qismini amalga oshirish rejasi tuzildi.",
+              "Uskuna vendorlari tanlandi va yetkazib berish logistika zanjirlari qurildi.",
+              "IT qismining yakuniy xarajat bahosi tayyorlandi."
+            ],
+            "challenges": [
+              "Dasturning ko'lami (faqat IT qismi uchun $50 mln) ko'plab manfaatdor tomonlar bilan kelishishni talab qildi.",
+              "Loyiha rejalashtirish bosqichidan so'ng, texnik ishlarga bog'liq bo'lmagan sabablarga ko'ra muzlatildi."
+            ],
+            "results": [
+              { "metric": "$50 mln", "detail": "IT qismi — AI asosidagi trafikni boshqarish infratuzilmasi — uchun xarajat bahosi" },
+              { "metric": "To'liq amalga oshirish rejasi", "detail": "Logistika zanjirlari, vendorlar va arxitektura Huawei bilan kelishilgan" }
+            ],
+            "lessons": "Huawei kabi yirik xalqaro hamkor bilan ishlash, hatto loyiha oxir-oqibat amalga oshirish bosqichiga yetmasa ham, AI infratuzilmasi sohasida haqiqiy ekspertiza shakllantiradi."
+          }
+        },
+        {
+          "id": "small-business-web-projects",
+          "title": "Kichik biznes uchun veb-dasturlash",
+          "domain": "Veb-dasturlash",
+          "year": "2020 — 2024",
+          "description": "Kichik biznes egalari uchun bir qator kichik veb-loyihalar — vizit-saytlar, lending-sahifalar va oddiy internet-do'konlar.",
+          "outcome": "Bir nechta kichik kompaniyalar uchun birinchi raqamli mavjudlik va birinchi onlayn sotuvlar.",
+          "tags": ["React", "Lending sahifa", "Kichik biznes", "Veb-dasturlash"],
+          "role": "Full Stack dasturchi",
+          "detail": {
+            "client": "Bir nechta kichik korxonalar (xususiy mijozlar)",
+            "duration": "Alohida loyihalar, har biri 2–4 hafta",
+            "team": "Yakka dasturchi",
+            "overview": "Yirik infratuzilma va konsalting dasturlari bilan bir qatorda men muntazam ravishda kichik biznes egalari uchun kichik veb-loyihalarni — vizit-saytlardan oddiy internet-do'konlargacha — olib boraman, ularga birinchi haqiqiy raqamli mavjudlikka erishishda yordam beraman.",
+            "problem": [
+              "Mijozlarning aksariyatida umuman sayt yo'q edi — faqat ijtimoiy tarmoqdagi sahifa bor edi.",
+              "Byudjet va muddatlar doimo cheklangan edi."
+            ],
+            "approach": [
+              "Tez ishlash uchun standart, ammo moslashuvchan stekdan (React, HTML/CSS, kerak bo'lganda yengil backend) foydalandim.",
+              "Biznes egasi keyinchalik o'zi yangilay oladigan sodda va tushunarli saytlarga e'tibor qaratdim."
+            ],
+            "challenges": [
+              "Kichik loyihalarni yirik dasturlar bilan bir vaqtda olib borish intizomli vaqt boshqaruvini talab qilardi."
+            ],
+            "results": [
+              { "metric": "Bir nechta sayt ishga tushirildi", "detail": "Mahalliy kichik korxonalar uchun vizit-saytlar va lending-sahifalar" },
+              { "metric": "Tez muddat", "detail": "Har bir loyiha uchun boshlanishidan ishga tushirilishigacha 2 dan 4 haftagacha" }
+            ],
+            "lessons": "Kichik loyihalar — asosiy rol boshqaruv va strategiyaga siljigan bo'lsa ham, amaliy dasturlash bilan aloqani saqlab qolishning ajoyib usuli."
           }
         }
       ]

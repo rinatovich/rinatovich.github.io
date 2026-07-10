@@ -46,6 +46,7 @@ function renderContactPage() {
 
             <p class="contact__response-time">${escHtml(contact.response_time)}</p>
           </div>
+          
           <!-- Form 
           <div class="contact__form-wrap reveal">
             <form class="contact__form" id="contactForm" novalidate>
