@@ -272,3 +272,49 @@ function initScrollProgress() {
   window.addEventListener('resize', update);
   update();
 }
+
+
+
+// Функция загрузки GA4 (только если согласие получено)
+function loadGA4() {
+  if (typeof gtag !== 'undefined') return; // уже загружен
+
+  const script = document.createElement('script');
+  script.async = true;
+  script.src = 'https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX'; // подставьте свой ID
+  document.head.appendChild(script);
+
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX'); // подставьте свой ID
+  window.gtag = gtag; // делаем доступной глобально
+}
+
+// Проверяем сохранённое согласие
+const consent = localStorage.getItem('gaConsent');
+const banner = document.getElementById('cookie-banner');
+
+if (consent === 'granted') {
+  // Если уже дал согласие — грузим GA4 сразу
+  loadGA4();
+} else if (consent === 'denied') {
+  // Если отказался — не грузим ничего, баннер не показываем
+  // (но можно показать баннер для смены решения, если нужно)
+} else {
+  // Согласия нет → показываем баннер
+  banner.classList.add('show');
+}
+
+// Обработчики кнопок
+document.getElementById('accept-cookies').addEventListener('click', function() {
+  localStorage.setItem('gaConsent', 'granted');
+  banner.classList.remove('show');
+  loadGA4(); // загружаем скрипт аналитики
+});
+
+document.getElementById('decline-cookies').addEventListener('click', function() {
+  localStorage.setItem('gaConsent', 'denied');
+  banner.classList.remove('show');
+  // GA4 не загружаем (можно также отправить сигнал отказа, если нужно)
+});

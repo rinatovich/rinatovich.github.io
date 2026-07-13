@@ -2916,3 +2916,78 @@ ul, ol { list-style: none; }
 .about__stat-value {
   font-variant-numeric: tabular-nums;
 }
+
+
+
+.cookie-banner {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 600px;
+  width: 90%;
+  background: #1a1a2e; /* ваш цвет фона */
+  color: #ffffff;
+  padding: 20px 25px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  z-index: 9999;
+  font-family: 'Inter', sans-serif;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.cookie-banner-content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.cookie-banner-content p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.cookie-buttons {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+}
+
+.cookie-btn {
+  padding: 8px 24px;
+  border: none;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.cookie-btn.accept {
+  background: #6c63ff; /* ваш акцентный цвет */
+  color: #fff;
+}
+
+.cookie-btn.decline {
+  background: transparent;
+  color: #ccc;
+  border: 1px solid #555;
+}
+
+.cookie-btn:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 12px rgba(108, 99, 255, 0.3);
+}
+
+/* Анимация появления */
+.cookie-banner.show {
+  display: block !important;
+  animation: slideUp 0.4s ease-out;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateX(-50%) translateY(20px); }
+  to { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
