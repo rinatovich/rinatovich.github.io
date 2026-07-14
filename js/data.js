@@ -517,7 +517,7 @@ const SITE_CONTENT = {
 
     "contact": {
       "title": "Let's Talk",
-      "subtitle": "Open to senior engineering and technical leadership roles. I read every message personally.",
+      "subtitle": "Open to leadership roles. I read every message personally.",
       "response_time": "I typically respond within 2 business days.",
       "methods": [
         { "label": "LinkedIn", "href": "https://www.linkedin.com/in/valiakhmad-makhamatov/", "icon": "linkedin" },
@@ -1043,7 +1043,7 @@ const SITE_CONTENT = {
 
     "contact": {
       "title": "Давайте поговорим",
-      "subtitle": "Открыт для senior-ролей в инженерии и техническом лидерстве. Читаю каждое сообщение лично.",
+      "subtitle": "Открыт для предложений. Читаю каждое сообщение лично.",
       "response_time": "Обычно отвечаю в течение 2 рабочих дней.",
       "methods": [
         { "label": "LinkedIn", "href": "https://www.linkedin.com/in/valiakhmad-makhamatov/", "icon": "linkedin" },
@@ -1569,7 +1569,7 @@ const SITE_CONTENT = {
 
     "contact": {
       "title": "Keling, gaplashamiz",
-      "subtitle": "Senior darajadagi muhandislik va texnik rahbarlik lavozimlariga ochiqman. Har bir xabarni shaxsan o'qiyman.",
+      "subtitle": "Har bir xabarni shaxsan o'qiyman.",
       "response_time": "Odatda 2 ish kuni ichida javob beraman.",
       "methods": [
         { "label": "LinkedIn", "href": "https://www.linkedin.com/in/valiakhmad-makhamatov/", "icon": "linkedin" },
